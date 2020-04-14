@@ -1,0 +1,62 @@
+ver si nos sirve esta propuesta de tablero: https://trello.com/b/Fki0VIa2/gesti%C3%B3n-de-proyectos
+
+Idea definitiva del proyecto 
+(ya tenemos el ok de los profes con "Venta de algunas lineas de electrodomesticos")
+
+Product Backlog: definicion de tareas a realizar a lo largo de TODO el proyecto pero separandolas por SPRING (Metodología ágil funciona como guía para kanban y para las estructuras de scrum)
+
+lista de tareas: se pueden armar "Necesidades" / "Requerimientos"/ "Historias de Usuario" con el siguiente esquema: ¿Que quiero como rol de usuario? ¿para lograr que? ¿con que condiciones?. Se recomienda sobre las tareas criticas, no sobre la totalidad del Product Backlog   
+
+El Dueño de Producto es la única persona responsable de gestionar la Lista del Producto (Product Backlog). La gestión de la Lista del Producto incluye:
+Expresar claramente los elementos de la Lista del Producto;
+Ordenar los elementos en la Lista del Producto para alcanzar los objetivos y misiones de la mejor manera posible;
+Optimizar el valor del trabajo que el Equipo de Desarrollo realiza;
+Asegurar que la Lista del Producto es visible, transparente y clara para todos y que muestra aquello en lo que el equipo trabajará a continuación; y,
+Asegurar que el Equipo de Desarrollo entiende los elementos de la Lista del Producto al nivel necesario
+
+https://www.youtube.com/watch?v=FJuq_lrM5Cc
+
+Requisitos del proyecto:descripciones genéricas de funcionalidades deseables, priorizadas según su retorno de inversión (ROI): los elementos que estarán mas arriba en el PB son los que van a generar mayor retorno al negocio (estas son las que se deben detallar mas) La planificación se va completando (sumando mas items al PB) conforme avanza el proyecto, nosotros vamos aprendiendo y a medida que conocemos mas el producto a desarrollar.
+
+--------------------------------------------
+Sprint
+
+El corazón de Scrum es el Sprint, es un bloque de tiempo (time-box) durante
+el cual se crea un incremento de producto “Terminado” utilizable y potencialmente desplegable. consisten en la Planificación del Sprint (Sprint Planning), los Scrums Diarios (Daily Scrums), el trabajo de desarrollo, la Revisión del Sprint (Sprint Review), y la Retrospectiva del Sprint (Sprint Retrospective).
+Durante el Sprint: No se realizan cambios que puedan afectar al Objetivo del Sprint (Sprint Goal); Los objetivos de calidad no disminuyen; y, El alcance puede clarificarse y renegociarse entre el Dueño de Producto y el Equipo de Desarrollo a medida que se va aprendiendo más.
+
+La Planificación de Sprint responde a las siguientes preguntas:
+
+1)¿Qué puede entregarse en el Incremento resultante del Sprint que comienza? La entrada a esta reunión está constituida por la Lista de Producto, el último Incremento de producto, la capacidad proyectada del Equipo de Desarrollo para el Sprint y el rendimiento pasado del Equipo de Desarrollo. El número de elementos de la Lista de Producto seleccionados para el Sprint depende únicamente del Equipo de Desarrollo. Solo el Equipo de Desarrollo puede evaluar qué es capaz de lograr durante el Sprint que comienza. Durante la Planificación del Sprint, el Equipo Scrum también define un Objetivo del Sprint (Sprint Goal). El Objetivo del Sprint debería lograrse durante el Sprint a través de la implementación de la Lista de Producto y proporciona una guía al equipo de desarrollo de por qué se está construyendo el incremento.
+
+2)¿Cómo se conseguirá hacer el trabajo necesario para entregar el Incremento? Los elementos de la Lista de Producto seleccionados para este Sprint, más el plan para terminarlos, recibe el nombre de Lista de Pendientes del Sprint (Sprint Backlog). Al finalizar la Planificación del Sprint, el Equipo de Desarrollo debería ser capaz de explicar al Dueño de Producto y al Scrum Master cómo pretende trabajar como un equipo autoorganizado para lograr el Objetivo del Sprint y crear el Incremento esperado.
+
+
+Objetivo del Sprint (Sprint Goal): entregables que nos indiquen
+
+Scrum Diario (Daily Scrum): misma hora y en el mismo lugar todos los días para reducir la complejidad. El Equipo de Desarrollo evalua el progreso hacia el Objetivo del Sprint y para evaluar qué tendencia sigue este progreso hacia la finalización del trabajo contenido en la Lista de Pendientes del Sprint.
+¿Qué hice ayer que ayudó al Equipo de Desarrollo a lograr el Objetivo del Sprint? ¿Qué haré hoy para eso? ¿Veo algún impedimento que evite que el Equipo de Desarrollo o yo logremos el Objetivo del Sprint?
+
+
+Revisión de Sprint (Sprint Review): El resultado es una Lista de Producto revisada que define los elementos de la Lista de Producto posibles para el siguiente Sprint. Es posible además que la Lista de
+Producto reciba un ajuste general para enfocarse en nuevas oportunidades.
+
+Retrospectiva de Sprint (Sprint Retrospective): para crear un plan de mejoras que sean abordadas durante el siguiente Sprint
+----------------------------------------
+
+artefactos:
+
+1-Lista de Producto (Product Backlog)
+lista de tareas: se pueden armar "Necesidades" / "Requerimientos"/ "Historias de Usuario" con el siguiente esquema: ¿Que quiero como rol de usuario? ¿para lograr que? ¿con que condiciones?. Se recomienda sobre las tareas criticas, no sobre la totalidad del Product Backlog   
+El Dueño de Producto es la única persona responsable de gestionarla,incluye:
+Expresar claramente los elementos de la Lista del Producto;
+Ordenar los elemento para alcanzar los objetivos y misiones de la mejor manera posible;
+Optimizar el valor del trabajo que el Equipo de Desarrollo realiza;
+Asegurar que la Lista del Producto es visible, transparente y clara para todos y que muestra aquello en lo que el equipo trabajará a continuación; y,
+Asegurar que el Equipo de Desarrollo entiende los elementos al nivel necesario
+https://www.youtube.com/watch?v=FJuq_lrM5Cc
+Requisitos del proyecto:descripciones genéricas de funcionalidades deseables, priorizadas según su retorno de inversión (ROI): los elementos que estarán mas arriba en el Product Backlog  son los que van a generar mayor retorno al negocio (estas son las que se deben detallar mas) La planificación se va completando (sumando mas items) conforme avanza el proyecto, nosotros vamos aprendiendo y a medida que conocemos mas el producto a desarrollar.
+
+2-Lista de Pendientes del Sprint (Sprint Backlog)predicción hecha por el Equipo de Desarrollo acerca de qué funcionalidad formará parte del próximo Incremento y del trabajo necesario para entregar esa funcionalidad en un Incremento “Terminado”.
+
+3-Incremento:suma de todos los elementos de la Lista de Producto completados durante un Sprint y el valor de los incrementos de todos los Sprints anteriores. Al final de un Sprint el nuevo Incremento debe estar “Terminado”, lo cual significa que está en condiciones de ser utilizado y que cumple la Definición de “Terminado” del Equipo Scrum. Un incremento es un cuerpo de trabajo inspeccionable y terminado que respalda el empirismo al final del Sprint. El incremento es un paso hacia una visión o meta. El incremento debe estar en condiciones de utilizarse sin importar si el Dueño de Producto decide liberarlo o no.
