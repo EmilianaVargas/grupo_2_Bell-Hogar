@@ -1,0 +1,22 @@
+/* paleta de colores: Gris oscuro: #637a7f Naranja: #aa622d Beige: #e4eabe Marrón oscuro: #8c827a Gris oscuro: #3f5952 Azul oscuro: #306670 Marrón claro: #c49e76 Verde musgo: #729486 Verde clarito: #b5c4b9 Violeta claro: #d2c8bf */
+
+*{
+  font-family: "Nunito Sans",sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #000;
+  background:#b5c4b9;
+  line-height: 1.65;
+}
+
+footer{
+  font-family:'Nunito', sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: #000;
+  background:#aa622d;
+  line-height: 1.65;
+}
+
+
+
