@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap');
+:root{
+  --gris-oscuro: #637a7f;
+  --naranja: #aa622d;
+  --beige: #e4eabe; 
+  --marrón-oscuro: #8c827a ;
+  --gris-oscuro: #3f5952; 
+  --azul-oscuro: #306670;
+  --marrón-claro: #c49e76; 
+  --verde-musgo: #729486; 
+  --verde-clarito: #b5c4b9; 
+  --violeta-claro: #d2c8bf;
+  --base-font-family:"Nunito Sans",sans-serif;
+  }
+*{
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+.header{
+  padding: 10px 15px;
+}
+ul li{
+  list-style: none;
+  margin: 0;
+}
+ul li a{
+  text-decoration: none;
+  color: black;
+}
+.logo{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.logo img{
+  width: 100%;
+}
+.buscar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+.buscar-input{
+  border: none;
+  display: block;
+} 
+.buscar-btn{
+  display: block;
+  height: 100%;
+  background-color: white;
+  border: none;
+  border-left: 1px solid grey;
+} 
+.navbar-toggler {
+  padding: 0; 
+  font-size: 20px;
+  border-radius: 20%;
+}
+.menu-md{
+  display: none;
+}
+.navbar {
+  display: block;
+  text-align: center;
+  border-radius: 25%;
+}
+.btn-toggle-navbar{
+  margin: 0 auto;
+}
+.footer{
+  text-align: center;
+  font-size: 15px;
+  background-color: #d9dcc8;
+}
+.contacto{
+  display: block;
+  padding: 5px;
+}
+.contacto ul{
+  padding: 0;
+}
+.suscribite{
+  padding: 5px;
+}
+.suscribite input{
+  border: 1px solid black;
+}
+.suscribite button{
+  border:none;
+  background-color: white;
+}
+.preguntas{
+  padding: 5px;
+}
+.preguntas ul{
+  padding: 0;
+}
+
+@media (min-width: 500px) {
+  .logo img{
+    width: 40%;
+  }
+  .menu-der{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 15px;
+    padding-bottom: 2%;
+    padding-right: 9%;
+  }
+  .menu-der li{
+    display: inline;
+    margin-left: 2%;
+  }
+  .buscar{
+    display: none;
+  }
+  .buscar-btn{
+    height: 20px;
+  }
+  .navbar{
+    display: none;
+  }
+  .menu-md{
+    display: block;
+    width: 100%;
+  }
+  .menu-md ul li input{
+    display: inline;
+  }
+  
+  .menu-md ul li button{
+    display: inline;
+  }
+  .menu-ppal{
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer{
+    padding-top: 2%;
+  }
+}
