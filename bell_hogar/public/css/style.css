@@ -144,4 +144,13 @@ ul li a{
   .footer{
     padding-top: 2%;
   }
+  .redes-icono{
+    font-size: 35px;
+  }
+  .fa-instagram{
+    color:#C13584;
+  }
+  .fa-whatsapp{
+    color: #25d366;
+  }
 }
