@@ -10,6 +10,8 @@
   --verde-musgo: #729486; 
   --verde-clarito: #b5c4b9; 
   --violeta-claro: #d2c8bf;
+  --amarillo: #ffd31d;
+  --gris-footer: #3f3f44;
   --base-font-family:"Nunito Sans",sans-serif;
 }
 *{
@@ -20,7 +22,7 @@
 
 /* header */
 .header{
-  padding: 10px 15px;
+  padding:0px;
 }
 ul li{
   list-style: none;
@@ -28,7 +30,7 @@ ul li{
 }
 ul li a{
   text-decoration: none;
-  color: black;
+  color: var(--gris-footer);
 }
 .logo{
   display: flex;
@@ -37,7 +39,7 @@ ul li a{
   align-items: center;
 }
 .logo img{
-  width: 100%;
+  width: 70%;
 }
 .buscar{
   display: flex;
@@ -46,17 +48,21 @@ ul li a{
   padding: 10px;
   margin-top: 2%;
   margin-bottom: 1%;
+  background-color: var(--gris-footer);
 }
 .buscar-input{
   border: none;
   display: block;
+  text-align: center;
 }
 .buscar-btn{
   display: block;
   height: 100%;
-  background-color: white;
+  background-color: var(--gris-footer);
   border: none;
-  border-left: 1px solid grey;
+}
+.buscar-btn i{
+  color: var(--amarillo);
 }
 .navbar-toggler {
   padding: 0;
@@ -64,10 +70,11 @@ ul li a{
   border-radius: 20%;
 }
 .navbar-toggler-icon{
-  background-color: var(--verde-clarito);
+  background-color: var(--gris-footer);
+  border: none;
 }
 .collapse ul li a{
-  color: var(--marrón-oscuro);
+  color: var(--gris-footer)
 }
 .menu-md{
   display: none;
@@ -93,11 +100,11 @@ ul li a{
   font-size: 2rem;
 }
 h5.rebaja{
-font-size: 5rem;
-color: var(--gris-oscuro);
-text-align: right;
-margin-bottom: 45%;
-margin-left: 20%;
+  font-size: 5rem;
+  color: var(--gris-oscuro);
+  text-align: right;
+  margin-bottom: 45%;
+  margin-left: 20%;
 }
 .card{
   border: none;
@@ -127,7 +134,7 @@ margin-left: 20%;
   font-size: 15px;
   margin-top: 30px;
   padding-top: 30px;
-  background-color: var(--verde-musgo);
+  background-color: var(--gris-footer);
   color: black;
 }
 .div.row.footer{
@@ -135,13 +142,16 @@ margin-left: 20%;
 }
 .contacto{
   display: block;
+  padding: 5px;
 }
 .contacto ul{
+  padding: 0;
   padding-left: 10px;
 }
 .h6{
-  font-size: 20px;
   padding-left: 5px;
+  font-weight: 1000;
+  color: white;
 }
 .suscribite{
   padding: 5px;
@@ -151,7 +161,8 @@ margin-left: 20%;
 }
 .suscribite button{
   border:none;
-  background-color: var(--beige);
+  background-color: var(--amarillo);
+  margin-top: 2%;
 }
 .preguntas{
   padding: 5px;
@@ -159,18 +170,39 @@ margin-left: 20%;
 .preguntas ul{
   padding: 0;
 }
+.redes-icono{
+  font-size: 35px;
+}
+.fa-instagram{
+  color:#C13584;
+}
+.fa-whatsapp{
+  color: #25d366;
+}
+.contacto li{
+  color:white
+}
+.suscribite li{
+  color:white
+}
+.preguntas li{
+  color:white
+}
+
+
 
 /* para desktop */
 @media (min-width: 500px) {
   .logo img{
-    width: 40%;
+    width: 25%;
+    align-self: center;
   }
   .menu-der{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
-    font-size: 15px;
+    /* font-size: 15px; */
     padding-bottom: 2%;
     padding-right: 0%;
   }
@@ -182,7 +214,8 @@ margin-left: 20%;
     display: none;
   }
   .buscar-btn{
-    height: 20px;
+    height: 25px;
+    background-color: var(--gris-footer);
   }
   .navbar{
     display: none;
@@ -194,39 +227,34 @@ margin-left: 20%;
   }
   .menu-md ul li input{
     display: inline;
-    background-color: var(--beige);
     padding-right: 0%;
   }
   .menu-md ul li button{
     display: inline;
     font-size: 15px;
-    background-color: var(--beige);
+  }
+  ul.menu-der li a{
+    color: black;
   }
   .menu-ppal{
     display: flex;
     justify-content: space-between;
-    background-color: white;
-    font-size: 15px;
-    padding-right: 0px;
+    background-color:var(--gris-footer);
+    /* font-size: 15px; */
+    padding:1%;
+  }
+  .menu-ppal li a {
+    color: white;
   }
   .menu-ppal .col-md-6 {
     padding-right: 0px;
   }
-  .contacto{
-    text-align: left;
-    padding-left: 25px;
-  }
   .footer{
     padding-top: 2%;
   }
-  .redes-icono{
-    font-size: 35px;
-  }
-  .fa-instagram{
-    color:#C13584;
-  }
-  .fa-whatsapp{
-    color: #25d366;
+  .contacto{
+    text-align: left;
+    padding-left: 25px;
   }
 }
 
