@@ -1,22 +1,250 @@
-/* paleta de colores: Gris oscuro: #637a7f Naranja: #aa622d Beige: #e4eabe Marrón oscuro: #8c827a Gris oscuro: #3f5952 Azul oscuro: #306670 Marrón claro: #c49e76 Verde musgo: #729486 Verde clarito: #b5c4b9 Violeta claro: #d2c8bf */
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap');
+:root{
+  --gris-oscuro: #637a7f;
+  --naranja: #aa622d;
+  --beige: #e4eabe; 
+  --marrón-oscuro: #8c827a ;
+  --gris-oscuro: #3f5952; 
+  --azul-oscuro: #306670;
+  --marrón-claro: #c49e76; 
+  --verde-musgo: #729486; 
+  --verde-clarito: #b5c4b9; 
+  --violeta-claro: #d2c8bf;
+  --base-font-family:"Nunito Sans",sans-serif;
+}
 *{
-  font-family: "Nunito Sans",sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #000;
-  background:#b5c4b9;
-  line-height: 1.65;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+/* HOME */
+
+/* header */
+.header{
+  padding: 10px 15px;
+}
+ul li{
+  list-style: none;
+  margin: 0;
+}
+ul li a{
+  text-decoration: none;
+  color: black;
+}
+.logo{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.logo img{
+  width: 100%;
+}
+.buscar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+.buscar-input{
+  border: none;
+  display: block;
+}
+.buscar-btn{
+  display: block;
+  height: 100%;
+  background-color: white;
+  border: none;
+  border-left: 1px solid grey;
+}
+.navbar-toggler {
+  padding: 0;
+  font-size: 20px;
+  border-radius: 20%;
+}
+.navbar-toggler-icon{
+  background-color: var(--verde-clarito);
+}
+.collapse ul li a{
+  color: var(--marrón-oscuro);
+}
+.menu-md{
+  display: none;
+}
+.navbar {
+  display: block;
+  text-align: center;
+  border-radius: 25%;
+}
+.btn-toggle-navbar{
+  margin: 0 auto;
 }
 
-footer{
-  font-family:'Nunito', sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  color: #000;
-  background:#aa622d;
-  line-height: 1.65;
+/* SECTION */
+.carousel .slide{
+  height: 30vh;
+}
+.carousel-item{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.carousel-caption {
+  font-size: 2rem;
+}
+h5.rebaja{
+font-size: 5rem;
+color: var(--gris-oscuro);
+text-align: right;
+margin-bottom: 45%;
+margin-left: 20%;
+}
+.card{
+  border: none;
+}
+.card-deck{
+  margin-bottom: 20px;
+  border: none;
+}
+.card-img-overlay{
+  border: none;
+}
+.card-title{
+  font-size: 30px;
+  color: var(--marrón-oscuro);
+  text-align: center;
+  margin-top: -15px;
+}
+
+/* .nuestraHistoria{
+  margin-bottom: 15px;
+} */
+
+
+/* FOOTER */
+.footer{
+  text-align: center;
+  font-size: 15px;
+  margin-top: 30px;
+  padding-top: 30px;
+  background-color: var(--verde-musgo);
+  color: black;
+}
+.div.row.footer{
+  padding-top: 30px;
+}
+.contacto{
+  display: block;
+}
+.contacto ul{
+  padding-left: 10px;
+}
+.h6{
+  font-size: 20px;
+  padding-left: 5px;
+}
+.suscribite{
+  padding: 5px;
+}
+.suscribite input{
+  border: 1px solid black;
+}
+.suscribite button{
+  border:none;
+  background-color: var(--beige);
+}
+.preguntas{
+  padding: 5px;
+}
+.preguntas ul{
+  padding: 0;
+}
+
+/* para desktop */
+@media (min-width: 500px) {
+  .logo img{
+    width: 40%;
+  }
+  .menu-der{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 15px;
+    padding-bottom: 2%;
+    padding-right: 0%;
+  }
+  .menu-der li{
+    display: inline;
+    margin-left: 2%;
+  }
+  .buscar{
+    display: none;
+  }
+  .buscar-btn{
+    height: 20px;
+  }
+  .navbar{
+    display: none;
+  }
+  .menu-md{
+    display: block;
+    width: 100%;
+    padding-right: 0%;
+  }
+  .menu-md ul li input{
+    display: inline;
+    background-color: var(--beige);
+    padding-right: 0%;
+  }
+  .menu-md ul li button{
+    display: inline;
+    font-size: 15px;
+    background-color: var(--beige);
+  }
+  .menu-ppal{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    font-size: 15px;
+    padding-right: 0px;
+  }
+  .menu-ppal .col-md-6 {
+    padding-right: 0px;
+  }
+  .contacto{
+    text-align: left;
+    padding-left: 25px;
+  }
+  .footer{
+    padding-top: 2%;
+  }
+  .redes-icono{
+    font-size: 35px;
+  }
+  .fa-instagram{
+    color:#C13584;
+  }
+  .fa-whatsapp{
+    color: #25d366;
+  }
 }
 
 
+/* formulario de registro - REGISTER */
 
+
+
+
+
+/* carrito - PRODUCTCART */
+
+
+
+
+/* detalle de producto - PRODUCTDETAIL*/
+
+
+
+
+/* formulario de carga de producto para administrador - PRODUCTADD*/
