@@ -260,9 +260,65 @@ h5.rebaja{
 
 
 /* formulario de registro - REGISTER */
+/* se aplica el ancho, margen centrado  borde de un pixel con redondeado, y rellenado
+ * a la izquierda y derecha */
+ #Contenedor{
+	width: 200px;
+	margin: 5px auto;
+	background-color: transparent;
+        border: 1px solid var(--gris-oscuro);
+	height: 190px;
+	border-radius:8px;
+	padding: 0px 9px 0px 9px;
+}
+
+/**
+ * Se aplica al contenedor madre un margen de tamaño 10px hacia la cabecera y pie,
+ * color de fuente blanco,un tamaño de fuente 50px y texto centrado. */
+ 
+.Icon{
+     margin-top: 10px;
+     margin-bottom:10px; 
+     color: black;
+     font-size: 50px;
+     text-align: center;
+}
+
+.btn-color{
+  background-color: var(--amarillo);
+}
+/* Estilos de Formulario de Registro de Usuario*/
+html, body {
+  min-height: 100vh;
+  margin: 0 auto;
+  font-size: 10px;
+}
+body {
+  font-family: var(--base-font-family);
+  font-weight: 300;
+  margin: 0 auto;
+  background-color: var(--light-gray);
+  padding-inline-start: 0px;
+}
+
+h3{
+  padding-top: 20px;
+  text-align: center;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
 
 
-
+input {
+  font-family: inherit;
+}
+.btn-primary {
+  background-color: var(--amarillo);
+  border-color: var(--gris-oscuro);
+}
 
 
 /* carrito - PRODUCTCART */

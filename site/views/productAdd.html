@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo producto</title>
+    <title>Registro Usuario</title>
     <link rel="shortcut icon" href="../public/images/Logo.png"img>
     
     <script src="https://kit.fontawesome.com/f29a46c1ae.js" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
                                 <li><a href="#">Sobre Nosotros</a></li>
                             </ul>
                             <ul class="" id="navbarToggleExternalContent">
-                                <li><a href="register.html">Iniciar sesión <i class="far fa-address-card"></i></a></li>
+                                <li><a href="login.html">Iniciar sesión <i class="far fa-address-card"></i></a></li>
                                 <li><a href="productCart.html">Carrito <i class="fas fa-shopping-basket"></i></a></li>
                             </ul>
                         </div>
@@ -45,7 +45,7 @@
                 </div>
                 <div class ="menu-md">
                     <ul class="menu-der col-md-12">
-                        <li><a href="register.html"><i class="far fa-address-card"></i> Iniciar sesión</a></li>
+                        <li><a href="login.html"><i class="far fa-address-card"></i> Iniciar sesión</a></li>
                         <li><a href="productCart.html"><i class="fas fa-shopping-basket"></i> Carrito</a></li>
                     </ul>
                     <ul class="menu-ppal col-md-12">
@@ -60,29 +60,36 @@
             </div>
         </header>
         <!-- HEADER -->
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        <!-- Inicio Formulario de Registro de productos-->
+        <div class ="container">
+            <div class="form-header" > 
+                 <h3 class="form-title" > <i class="fa fa-archive"></i> Carga de Nuevos Productos</h3></br>
+            </div>
+            <form action=" " method="get" >  
+                  <div class= "container">
+                          <label for="fname">Codigo del Producto :</label>
+                           <input type="text" class="form-control" required ></br> 
+                           <label for="fname">Nombre del Producto :</label>
+                           <input type="text" class="form-control" ></br> 
+                           <label for="fname">Precio :</label>
+                           <input type="text" class="form-control" ></br>
+                           <label for="fname">Descripción :</label>
+                           <textarea class="form-control"  rows="2"></textarea>
+                           <label for="fname">Categoria :</label>
+                           <input type="text" class="form-control" ></br> 
+                           <label for="fname">Especificaciones Técnicas :</label>
+                           <textarea class="form-control"   rows="2"></textarea></br>
+                  </div>
+
+                  <div class ="container-fluid col-md-6 col-lg-6> " >
+                    <button class="suscription-btn btn-color " style="width: 100%"  id="IngresoLog" type="submit">Adjuntar Imagenes</button>
+                    <button class="suscription-btn btn-color " style="width: 100%"  id="IngresoLog" type="submit">Adjuntar Videos</button>
+                    <button class="suscription-btn btn-color " style="width: 100%"  id="IngresoLog" type="submit">Guardar Registro</button>
+                 </div>
+         </form>
+     </div>    
+        <!-- Fin Formulario de Registro de productos -->
+
         <!-- FOOTER -->
         <footer>
             <div class="container">
