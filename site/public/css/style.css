@@ -39,7 +39,7 @@ ul li a{
   align-items: center;
 }
 .logo img{
-  width: 70%;
+  width: 100%;
 }
 .buscar{
   display: flex;
@@ -197,7 +197,7 @@ h5.rebaja{
 /* para desktop */
 @media (min-width: 500px) {
   .logo img{
-    width: 25%;
+    width: 33%;
     align-self: center;
   }
   .menu-der{
