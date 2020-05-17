@@ -258,23 +258,23 @@ h5.rebaja{
 }
 
 
-/* formulario de registro - REGISTER */
+/* FORMULARIOS*/
+
 /* se aplica el ancho, margen centrado  borde de un pixel con redondeado, y rellenado
  * a la izquierda y derecha */
  #Contenedor{
-	width: 200px;
+	width: 300px;
 	margin: 5px auto;
 	background-color: transparent;
-  border: 1px solid var(--gris-oscuro);
-	/* height: 190px; */
+        border: 1px solid var(--gris-oscuro);
+	height: 250px;
 	border-radius:8px;
 	padding: 0px 9px 0px 9px;
 }
 
-/**
- * Se aplica al contenedor madre un margen de tamaño 10px hacia la cabecera y pie,
- * color de fuente blanco,un tamaño de fuente 50px y texto centrado. */
- 
+/* Se aplica al contenedor madre un margen de tamaño 10px hacia la cabecera y pie,
+  color de fuente blanco,un tamaño de fuente 50px y texto centrado. */
+
 .Icon{
      margin-top: 10px;
      margin-bottom:10px; 
@@ -282,41 +282,53 @@ h5.rebaja{
      font-size: 50px;
      text-align: center;
 }
-.suscription-btn{
-  margin-bottom: 5px;
-}
+
 .btn-color{
   background-color: var(--amarillo);
+  font-size: 15px;
 }
 /* Estilos de Formulario de Registro de Usuario*/
-html, body {
+
+.form-style{
   min-height: 100vh;
   margin: 0 auto;
-  /* font-size: 10px; */
+  font-size: 10px;
 }
-body {
+.body-form {
   font-family: var(--base-font-family);
   font-weight: 300;
   margin: 0 auto;
   background-color: var(--light-gray);
   padding-inline-start: 0px;
+  /**/
+  font-size: 10px;
 }
-h3{
+.body-form-login {
+  font-family: var(--base-font-family);
+  font-weight: 200;
+  margin: 0 auto;
+  background-color: var(--light-gray);
+  padding-inline-start: 0px;
+  /**/
+  font-size: 8px;
+}
+.titulo-f{
   padding-top: 20px;
+  font-size: 20px;
   text-align: center;
+  font-family: var(--base-font-family);
+
 }
-a {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-}
-input {
-  font-family: inherit;
-}
+
+.etiqueta-f {
+  font-size: 15px;
+  font-family: var(--base-font-family);
+}*/
 .btn-primary {
   background-color: var(--amarillo);
   border-color: var(--gris-oscuro);
 }
+
 
 
 /* carrito - PRODUCTCART */
