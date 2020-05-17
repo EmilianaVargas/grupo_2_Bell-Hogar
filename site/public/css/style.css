@@ -179,6 +179,9 @@ h6{
 .fa-whatsapp{
   color: #25d366;
 }
+.fa-facebook{
+  color: #3b5998;
+}
 .contacto li{
   color:white
 }
@@ -188,7 +191,6 @@ h6{
 .preguntas li{
   color:white
 }
-
 
 
 /* para desktop */
@@ -326,8 +328,52 @@ input {
 
 
 /* detalle de producto - PRODUCTDETAIL*/
+.product-img{
+  width: 100%;
+  height: 100%;
+}
+.product-right{
+  padding-top: 3%;
+}
+.cart-btn a{
+  text-decoration: none;
+  color: var(--azul-oscuro);
+  font-weight: 750;
+}
+.especificaciones{
+  margin-top: 2%;
+}
+h5{
+  font-size: 15px;
+}
+.comentario, .especificacion{
+  font-size: 13px;
+}
+.puntuacion{
+  color: var(--amarillo);
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
 
-
+/* Vista Productos*/
+.view-products{
+  display: flex;
+  flex-wrap: wrap;
+}
+.view-product img {
+  width: 100%;
+  height: 100%;
+}
+.product-name{
+  text-align: center;
+  padding-top: 2%;
+}
+.product-price{
+  text-align: center;
+}
+.products-title{
+  text-align: center;
+}
 
 
 /* formulario de carga de producto para administrador - PRODUCTADD*/
