@@ -140,18 +140,16 @@ h5.rebaja{
 .div.row.footer{
   padding-top: 30px;
 }
+.footer-titulo{
+  font-weight: 1000;
+  color: white;
+}
 .contacto{
   display: block;
   padding: 5px;
 }
 .contacto ul{
   padding: 0;
-  padding-left: 10px;
-}
-h6{
-  padding-left: 5px;
-  font-weight: 1000;
-  color: white;
 }
 .suscribite{
   padding: 5px;
@@ -169,6 +167,9 @@ h6{
 }
 .preguntas ul{
   padding: 0;
+}
+.redes{
+  padding: 5px;
 }
 .redes-icono{
   font-size: 35px;
@@ -253,10 +254,6 @@ h6{
   }
   .footer{
     padding-top: 2%;
-  }
-  .contacto{
-    text-align: left;
-    padding-left: 25px;
   }
 }
 
@@ -367,9 +364,6 @@ h5{
 .product-name{
   text-align: center;
   padding-top: 2%;
-}
-.product-price{
-  text-align: center;
 }
 .products-title{
   text-align: center;
