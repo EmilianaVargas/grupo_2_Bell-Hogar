@@ -1,9 +1,24 @@
 var express = require('express');
 var router = express.Router();
+let indexController = require('../controllers/indexController');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// Ruta de inicio
+router.get('/', indexController.index);
+
+// Ruta de registro
+router.get('/register', indexController.register);
+
+// Ruta de login   (ver si la ruta debe ser register/login!!!!)
+router.get('/login', indexController.login);
+
+// Ruta de detalle de producto
+router.get('/productDetail', indexController.productDetail);
+
+// Ruta de carrito
+router.get('/productCart', indexController.productCart);
+
+// Ruta de administracion de producto - backend
+router.get('/productAdd', indexController.productAdd);
+
 
 module.exports = router;
