@@ -572,6 +572,9 @@ h5{
 .product-name a{
   color: var(--gris-footer);
 }
+.product-price{
+  text-align: center;
+}
 .products-title{
   text-align: center;
 }
