@@ -452,6 +452,8 @@ h5.card-title{
 #opciones_pagina {
   display: inline-block;
   width: 100%;
+  padding-bottom: 5px;
+  padding-top: 10px;
 }
 
 .continuebuypayment-btn {
@@ -463,7 +465,7 @@ h5.card-title{
 }
 
 .backcart-btn {
-  margin-left: 770px;
+  margin-left: 780px;
   padding: 5px;
   background-color: var(--amarillo);
   border: 1px solid grey;
@@ -471,6 +473,9 @@ h5.card-title{
 
 .pay-btn {
   background-color: var(--amarillo);
+  position: absolute;
+  left: 240px;
+  top: 575px;
 }
 
 .sucursal-btn, .address-btn, .cash-btn, .credit-btn, .dedit-btn, .pay-btn {
@@ -487,13 +492,22 @@ h5.card-title{
   width: 70%;
 }
 
+
+
 .pedido {
+  position: relative;
   box-sizing: border-box;
   float: right;
   overflow: hidden;
   width: 50%;
   /*background-color: lightslategray;*/
+  padding-bottom: 15.59%;
 }
+
+.totalToPay {
+  text-align: right;
+}
+
 
 #formularioPedido {
   position: relative;
