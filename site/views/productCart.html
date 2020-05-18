@@ -61,55 +61,60 @@
     <!-- HEADER -->
 
     <!--Comienzo código del carrito de compra-->
-    <div class ="container">
-        <div class="cart-header" >
-          <h3 class="cart-title" ><i class="fas fa-shopping-basket"></i><strong> Carrito de compra</strong></h3></br>
-        </div>
-        <!--SECTION-->
-        <section class="cart">
-        <ul>
-          <li>
-          <div class="productsCart">
-            <div id="productCart1">
-              <center>
-                <span><br>Mesa</span><br>
-                <p>Precio: $19.990,00</p>
-                <img width="15%" src="/images/mesa1.jpg" alt="producto-mesa">
-                <a href="/productDetail">Ver producto</a>
-                <button type="submit" class="deleteProduct-btn">Eliminar</button>
-              </center>
-            </div>
-            <div id="productCart2">
-              <center>
-                <span><br>Silla</span><br>
-                <p>Precio: $2.600,00</p>
-                <img width="15%" src="/images/silla-1-1.jpg" alt="producto-silla">
-                <a href="/productDetail">Ver producto</a>
-                <button type="submit" class="deleteProduct-btn">Eliminar</button>
-              </center>
-            </div>
-          </div>
-          </li>
-        </ul>
-          <div id="ticket" class="discountCart">
-            <center>
-              <h5>Usar cupón de descuento</h5>
-              <input id="textField" type="text" placeholder="Introduzca aquí el número" class ="ticket-input">
-              <button type="submit" class="discount-btn">Aplicar</button>
-            </center>
-          </div>
-
-          <div id="buttons_options">
-            <button type="submit" class="addproduct-btn"><a href="/productDetail">Agregar más productos</a></button>
-            <button type="submit" class="continuebuy-btn"><a href="/productCartPayment"><b>Continuar compra</b></a></button>
-          </div>
-
-          <div id="backButtonCart">
-            <button type="submit" class="back-btn">Volver a atrás</button>
-          </div>
-        </section>
-        <!--SECTION-->
+    <div class="cart-header col-12" >
+        <h3 class="cart-title" ><i class="fas fa-shopping-basket"></i><strong> Carrito de compra</strong></h3></br>
     </div>
+            <!--SECTION-->
+    <div class ="container productsCart">
+        <div class = "row">
+            <div class="products-cart col-12">
+                <center>
+                    <article class ="productCart">
+                        <div>
+                            <img class="cart-image col-md-4" src="/images/mesa1.jpg" alt="producto-mesa">
+                        </div>
+                        <div id="col-12">
+                            <span class="col-12"><br>Mesa</span><br>
+                            <p class="col-12">Precio: $19.990,00</p>
+                            <a class="see-product-cart col-12" href="/productDetail">Ver producto</a>
+                            <button type="submit" class="deleteProduct-btn">Eliminar</button>
+                        </div>
+                    </article>
+                    <article class ="productCart">
+                        <div>
+                            <img class="cart-image col-md-4" src="/images/silla-1-1.jpg" alt="producto-silla">
+                        </div>
+                        <div id="col-12">
+                            <span class="col-12"><br>Silla</span><br>
+                            <p class="col-12">Precio: $2.600,00</p>
+                            <a class="see-product-cart col-12" href="/productDetail">Ver producto</a>
+                            <button type="submit" class="deleteProduct-btn">Eliminar</button>
+                        </div>
+                    </article>
+                </div>
+            </center>
+            </div>
+            <div id="ticket" class="discountCart">
+                <center>
+                <h5 class="col-12">Usar cupón de descuento</h5>
+                <input class="col-10" id="textField" type="text" placeholder="Introduzca aquí su cupón" class ="ticket-input">
+                <button class="discount-btn col-3" type="submit" class="discount-btn">Aplicar</button>
+                </center>
+            </div>
+            <center>
+            <div class="col-12">
+                <div id="col-8 col-md-3">
+                    <button type="submit" class="cart-options"><a href="/productDetail">Agregar más productos</a></button>
+                </div>
+                <div id="col-8 col-md-3">
+                    <button type="submit" class="cart-options"><a href="/productCartPayment"><b>Continuar compra</b></a></button>
+                </div>
+                <div id="col-8 col-md-3">
+                    <button type="submit" class="cart-options">Volver a atrás</button>
+                </div>
+            </div>
+        </center>
+            <!--SECTION-->
 
     <!-- FOOTER -->
     <footer>
