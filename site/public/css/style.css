@@ -347,7 +347,7 @@ h5.rebaja{
   margin-top: 0px;
   position: relative;
   top: 5px;
-  left: 400px;
+  left: 435px;
 }
 
 #botones_opciones {
@@ -402,15 +402,24 @@ h5.rebaja{
 }
 
 #producto1 {
-  background-color: lightslategrey;
-  border: 0.5px solid gray;
+  /*background-color: lightslategrey;*/
+  /*border: 0.5px solid gray;*/
   display: block;
+  float: left;
+  width: 50%;
 }
 
 #producto2 {
-  background-color: lightgrey;
-  border: 0.5px solid gray;
+  /*background-color: lightgrey;*/
+  /*border: 0.5px solid gray;*/
   margin-top: 10px;
+  float: right;
+  width: 50%;
+}
+
+.productosCarro{
+  overflow: hidden;
+  padding-bottom: 50px;
 }
 
 
@@ -421,14 +430,16 @@ h5.rebaja{
   min-height: 0px;
   padding: 2%;
   overflow: hidden;
+  /*background-color: cadetblue;*/
 }
 
 .cartPayment-header {
   width: 100%;
-  height: 70px;
+  height: 10px;
   margin-top: 0px;
   position: relative;
-  bottom: 10px;
+  top: 5px;
+  left: 435px;
 }
 
 #opciones_pagina {
@@ -451,6 +462,10 @@ h5.rebaja{
   border: 1px solid grey;
 }
 
+.pay-btn {
+  background-color: var(--amarillo);
+}
+
 .sucursal-btn, .address-btn, .cash-btn, .credit-btn, .dedit-btn, .pay-btn {
   padding: 5px;
 }
@@ -458,7 +473,7 @@ h5.rebaja{
 .formCart{
   float: left;
   width: 50%;
-  background-color: grey;
+  /*background-color: grey;*/
 }
 
 .formCart input {
@@ -470,12 +485,13 @@ h5.rebaja{
   float: right;
   overflow: hidden;
   width: 50%;
-  background-color: lightslategray;
+  /*background-color: lightslategray;*/
 }
 
 #formularioPedido {
   position: relative;
   left: 30px;
+  padding-bottom: 15px;
 }
 
 .detalle_pedido {
