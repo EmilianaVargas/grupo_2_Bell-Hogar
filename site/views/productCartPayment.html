@@ -1,68 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pago de compra</title>
-  <link rel="shortcut icon" href="../public/images/Logo2.png">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="shortcut icon" href="/images/Logo2.png"img>
 
-  <script src="https://kit.fontawesome.com/f29a46c1ae.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="../public/css/style.css">
+    <script src="https://kit.fontawesome.com/f29a46c1ae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="container">
     <!-- HEADER -->
     <header class="header">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-12 logo">
-          <img src="/images/Logo.png" alt="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12 logo">
+                    <img src="/images/Logo.png" alt="">
+                </div>
+                <div class="buscar col-12 col-md-6">
+                    <input  type="text" placeholder="Buscar productos" class ="buscar-input">
+                    <button type="submit" class="buscar-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="btn-toggle-navbar">
+                    <nav class="navbar navbar-dark bg-ligth">
+                        <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </nav>
+                    <div class="collapse" id="navbarToggleExternalContent">
+                        <div class="p-1">
+                            <ul class="">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/productDetail">Productos</a></li>
+                                <li><a href="#">Sobre Nosotros</a></li>
+                            </ul>
+                            <ul class="" id="navbarToggleExternalContent">
+                                <li><a href="/login">Iniciar sesión <i class="far fa-address-card"></i></a></li>
+                                <li><a href="/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class ="menu-md">
+                    <ul class="menu-der col-md-12">
+                        <li><a href="/login"><i class="far fa-address-card"></i> Iniciar sesión</a></li>
+                        <li><a href="/productCart"><i class="fas fa-shopping-basket"></i> Carrito</a></li>
+                    </ul>
+                    <ul class="menu-ppal col-md-12">
+                        <li class="col-md-2"><a href="/">Home</a></li>
+                        <li class="col-md-2"><a href="/productDetail">Productos</a></li>
+                        <li class="col-md-2"><a href="#">Sobre Nosotros</a></li>
+                        <li class="col-md-6 text-right"><input type="text" placeholder="Buscar productos" class ="buscar-input">
+                            <button type="submit" class="buscar-btn"><i class="fas fa-search"></i></button></li>
+                        </ul>
+                    </div>
+              </div>
         </div>
-        <div class="buscar col-12 col-md-6">
-          <input  type="text" placeholder="Buscar productos" class ="buscar-input">
-          <button type="submit" class="buscar-btn"><i class="fas fa-search"></i></button>
-        </div>
-        <div class="btn-toggle-navbar">
-          <nav class="navbar navbar-dark bg-ligth">
-            <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </nav>
-          <div class="collapse" id="navbarToggleExternalContent">
-            <div class="p-1">
-              <ul class="">
-                <li><a href="/">Home</a></li>
-                <li><a href="/productDetail">Productos</a></li>
-                <li><a href="#">Sobre Nosotros</a></li>
-              </ul>
-              <ul class="" id="navbarToggleExternalContent">
-                <li><a href="/login">Iniciar sesión <i class="far fa-address-card"></i></a></li>
-                <li><a href="/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class ="menu-md">
-          <ul class="menu-der col-md-12">
-            <li><a href="/register"><i class="far fa-address-card"></i> Iniciar sesión</a></li>
-            <li><a href="/productCart"><i class="fas fa-shopping-basket"></i> Carrito</a></li>
-          </ul>
-          <ul class="menu-ppal col-md-12">
-            <li class="col-md-2"><a href="/">Home</a></li>
-            <li class="col-md-2"><a href="/poductDetail">Productos</a></li>
-            <li class="col-md-2"><a href="#">Sobre Nosotros</a></li>
-            <li class="col-md-6 text-right"><input type="text" placeholder="Buscar productos" class ="buscar-input">
-              <button type="submit" class="buscar-btn"><i class="fas fa-search"></i></button></li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </header>
     <!-- HEADER -->
 
     <!--Comienzo código del pago de carrito de compra-->
 
-    <div class="cart-header" >
+    <div class="cartPayment-header" >
         <h3>Finalizar compra</h3></br>
     </div>
 
@@ -75,8 +75,8 @@
           </div>
         </div>
 
-        <div class="form">
-        <form id="formulario" action="index.html" method="GET">
+        <div class="formCart">
+        <form id="formularioPedido" action="index.html" method="GET">
 
             <br><input type="checkbox" id="inicio_sesion" name="inicio_sesion">
             <label for="inicio_sesion" id="loginPay">Usar datos de inicio de sesión</label>

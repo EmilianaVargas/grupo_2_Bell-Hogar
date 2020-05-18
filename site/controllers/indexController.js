@@ -38,6 +38,10 @@ let indexController = {
     'productAdd': function(req,res){
         let productAddHTML = readHTML('productAdd');
             res.send(productAddHTML);
+    },
+    'productCartPayment': function(req,res){
+        let productCartPaymentHTML = readHTML('productCartPayment');
+            res.send(productCartPaymentHTML);
     }
 }
 

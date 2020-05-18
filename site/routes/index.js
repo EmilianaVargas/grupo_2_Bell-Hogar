@@ -20,5 +20,7 @@ router.get('/productCart', indexController.productCart);
 // Ruta de administracion de producto - backend
 router.get('/productAdd', indexController.productAdd);
 
+// Ruta de pago de carrito
+router.get('/productCartPayment', indexController.productCartPayment);
 
 module.exports = router;

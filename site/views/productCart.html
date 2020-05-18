@@ -44,7 +44,7 @@
                 </div>
                 <div class ="menu-md">
                     <ul class="menu-der col-md-12">
-                        <li><a href="/register"><i class="far fa-address-card"></i> Iniciar sesión</a></li>
+                        <li><a href="/login"><i class="far fa-address-card"></i> Iniciar sesión</a></li>
                         <li><a href="/productCart"><i class="fas fa-shopping-basket"></i> Carrito</a></li>
                     </ul>
                     <ul class="menu-ppal col-md-12">
@@ -67,50 +67,20 @@
         </div>
         <!--SECTION-->
         <section class="carrito">
-          <!-- <div id="productosAgregados" class="productoCarrito col-12 col-lg-4"> -->
-
-          <div class="col-6 col-sm-6 col-lg-3">
-              <section class="product-box">
-                  <a href="">
-                      <figure class="product-box_image">
-                          <img src="../public/images/silla.jpg" alt="imagen de producto silla">
-                      </figure>
-                      <article class="product-box_data">
-                          <h2>$6.770</h2>
-                          <span>40% OFF</span>
-                          <p>Silla</p>
-                          <i class="fas fa-truck"></i>
-                      </article>
-                  </a>
-              </section>
-          </div>
-
-          <div class="row">
-            <div class ="view-products">
-                <article class="view-product col-12 col-md-4 col-lg-3">
-                    <div>
-                       <img src="../public/images/sofa3.jpg" alt="">
-                       <h5 class="product-name">Sillón Verde</h5>
-                       <h5 class="product-price">$27.000</h5>
-                   </div>
-                </article>
-            </div>
-          </div>
-
            <div id="producto1">
             <center>
               <span><br>Mesa</span><br>
               <p>Precio: $19.990,00</p>
-              <img width="30%" src="../public/images/mesa1.jpg" alt="producto-mesa">
-              <a href="../views/productDetail.html">Ver producto</a>
+              <img width="30%" src="/images/mesa1.jpg" alt="producto-mesa">
+              <a href="/productDetail">Ver producto</a>
             </center>
           </div>
           <div id="producto2">
             <center>
               <span><br>Silla</span><br>
               <p>Precio: $2.600,00</p>
-              <img width="30%" src="../public/images/silla-1-1.jpg" alt="producto-silla">
-              <a href="../views/productDetail.html">Ver producto</a>
+              <img width="30%" src="/images/silla-1-1.jpg" alt="producto-silla">
+              <a href="/productDetail">Ver producto</a>
             </center>
          </div>
       </div>
@@ -125,7 +95,7 @@
 
           <div id="botones_opciones">
             <button type="submit" class="addproduct-btn">Agregar más productos</button>
-            <button type="submit" class="continuebuy-btn">Continuar compra</button>
+            <button type="submit" class="continuebuy-btn"><a href="/productCartPayment"><b>Continuar compra</b></a></button>
           </div>
 
           <div id="boton_atras">
