@@ -31,6 +31,10 @@ let indexController = {
         let productDetailHTML = readHTML('productDetail');
             res.send(productDetailHTML);
     },
+    'products': function(req,res){
+        let productsHTML = readHTML('products');
+            res.send(productsHTML);
+    },
     'productCart': function(req,res){
         let productCartHTML = readHTML('productCart');
             res.send(productCartHTML);

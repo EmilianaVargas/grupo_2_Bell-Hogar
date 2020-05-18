@@ -116,7 +116,14 @@ h5.rebaja{
 .card-img-overlay{
   border: none;
 }
-.card-title{
+h5.card-title{
+  font-size: 30px;
+  color: var(--marrón-oscuro);
+  text-align: center;
+  margin-top: -15px;
+}
+
+.card-title a{
   font-size: 30px;
   color: var(--marrón-oscuro);
   text-align: center;
@@ -547,6 +554,9 @@ h5{
 .product-name{
   text-align: center;
   padding-top: 2%;
+}
+.product-name a{
+  color: var(--gris-footer);
 }
 .products-title{
   text-align: center;

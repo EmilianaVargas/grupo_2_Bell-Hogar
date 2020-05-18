@@ -14,6 +14,9 @@ router.get('/login', indexController.login);
 // Ruta de detalle de producto
 router.get('/productDetail', indexController.productDetail);
 
+// Ruta de detalle de producto
+router.get('/products', indexController.products);
+
 // Ruta de carrito
 router.get('/productCart', indexController.productCart);
 
