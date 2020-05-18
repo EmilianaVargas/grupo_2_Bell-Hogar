@@ -57,96 +57,62 @@
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- HEADER -->
+    </header>
+    <!-- HEADER -->
 
-        <!--Comienzo código del carrito de compra-->
+    <!--Comienzo código del carrito de compra-->
     <div class ="container">
         <div class="cart-header" >
           <h3 class="cart-title" ><i class="fas fa-shopping-basket"></i><strong> Carrito de compra</strong></h3></br>
         </div>
         <!--SECTION-->
-        <section class="carrito">
-          <div class="productosCarro">
-          <div id="producto1">
-            <center>
-              <span><br>Mesa</span><br>
-              <p>Precio: $19.990,00</p>
-              <img width="30%" src="/images/mesa1.jpg" alt="producto-mesa">
-              <a href="/productDetail">Ver producto</a>
-            </center>
+        <section class="cart">
+        <ul>
+          <li>
+          <div class="productsCart">
+            <div id="productCart1">
+              <center>
+                <span><br>Mesa</span><br>
+                <p>Precio: $19.990,00</p>
+                <img width="15%" src="/images/mesa1.jpg" alt="producto-mesa">
+                <a href="/productDetail">Ver producto</a>
+                <button type="submit" class="deleteProduct-btn">Eliminar</button>
+              </center>
+            </div>
+            <div id="productCart2">
+              <center>
+                <span><br>Silla</span><br>
+                <p>Precio: $2.600,00</p>
+                <img width="15%" src="/images/silla-1-1.jpg" alt="producto-silla">
+                <a href="/productDetail">Ver producto</a>
+                <button type="submit" class="deleteProduct-btn">Eliminar</button>
+              </center>
+            </div>
           </div>
-          <div id="producto2">
-            <center>
-              <span><br>Silla</span><br>
-              <p>Precio: $2.600,00</p>
-              <img width="30%" src="/images/silla-1-1.jpg" alt="producto-silla">
-              <a href="/productDetail">Ver producto</a>
-            </center>
-         </div>
-      </div>
-
-          <div id="cupon" class="descuento">
+          </li>
+        </ul>
+          <div id="ticket" class="discountCart">
             <center>
               <h5>Usar cupón de descuento</h5>
-              <input id="campoTexto" type="text" placeholder="Introduzca aquí el número" class ="ticket-input">
+              <input id="textField" type="text" placeholder="Introduzca aquí el número" class ="ticket-input">
               <button type="submit" class="discount-btn">Aplicar</button>
             </center>
           </div>
 
-          <div id="botones_opciones">
+          <div id="buttons_options">
             <button type="submit" class="addproduct-btn"><a href="/productDetail">Agregar más productos</a></button>
             <button type="submit" class="continuebuy-btn"><a href="/productCartPayment"><b>Continuar compra</b></a></button>
           </div>
 
-          <div id="boton_atras">
+          <div id="backButtonCart">
             <button type="submit" class="back-btn">Volver a atrás</button>
           </div>
         </section>
         <!--SECTION-->
-      </div>
-      <!--
-      <h2 align="center">Productos en el carrito</h2>
-      <section>
-          <div id="productosAgregados" class="productoCarrito col-12 col-lg-4">
-            <center id="producto1">
-              <span><br>Mesa</span><br>
-              <img width="30%" src="../public/images/mesa1.jpg" alt="producto-mesa">
-              <a href="../views/productDetail.html">Ver producto</a>
-            </center>
-            <center id="producto2">
-              <span><br>Silla</span><br>
-              <img width="30%" src="../public/images/silla-1-1.jpg" alt="producto-silla">
-              <a href="../views/productDetail.html">Ver producto</a>
-            </center>
-            <!-- <center>
-              <span><br>Mesa y Sillas</span><br>
-              <img width="30%" src="../public/images/mesaysilla.jpg" alt="producto-mesa_y_silla">
-              <a href="../views/productDetail.html">Ver producto</a>
-            </center> -->
-         <!-- </div>
+    </div>
 
-          <div id="cupon" class="descuento">
-            <center>
-              <h5>Usar cupón de descuento</h5>
-              <input id="campoTexto" type="text" placeholder="Introduzca aquí el número" class ="ticket-input">
-              <button type="submit" class="discount-btn">Aplicar</button>
-            </center>
-          </div>
-
-          <div id="botones_opciones">
-            <button type="submit" class="addproduct-btn">Agregar más productos al carrito</button>
-            <button type="submit" class="continuebuy-btn">Continuar compra</button>
-          </div>
-
-          <div id="boton_atras">
-            <button type="submit" class="back-btn">Volver a atrás</button>
-          </div>
-      </section>-->
-      <!--SECTION-->
-
-        <!-- FOOTER -->
-        <footer>
+    <!-- FOOTER -->
+    <footer>
             <div class="container">
                 <div class="row footer">
                     <div class="contacto col-12 col-lg-3">
@@ -180,11 +146,11 @@
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- FOOTER -->
+    </footer>
+    <!-- FOOTER -->
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    </body>
-    </html>
+</body>
+</html>

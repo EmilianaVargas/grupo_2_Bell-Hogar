@@ -61,25 +61,24 @@
     <!-- HEADER -->
 
     <!--Comienzo código del pago de carrito de compra-->
-
     <div class="cartPayment-header" >
         <h3>Finalizar compra</h3></br>
     </div>
 
-    <section id="pago-carrito">
+    <section id="pay-cart">
 
         <div class="container">
-          <div id="opciones_pagina">
+          <div id="options_page">
             <button type="submit" class="continuebuypayment-btn"><a href="/productDetail">Continuar compra</a></button>
             <button type="submit" class="backcart-btn"><a href="/productCart">Volver atrás</a></button>
           </div>
         </div>
 
         <div class="formCart">
-        <form id="formularioPedido" action="index.html" method="GET">
+        <form id="formOrder" action="index.html" method="GET">
 
-            <br><input type="checkbox" id="inicio_sesion" name="inicio_sesion">
-            <label for="inicio_sesion" id="loginPay">Usar datos de inicio de sesión</label>
+            <br><input type="checkbox" id="init_sesion" name="init_sesion">
+            <label for="init_sesion" id="loginPay">Usar datos de inicio de sesión</label>
             <a href="login.html"></a>
 
             <br><label for="name">Nombre completo</label>
@@ -105,9 +104,9 @@
                 </div>
             </div>
 
-            <br><label for="metodo_pago">Método de pago</label>
+            <br><label for="payment_method">Método de pago</label>
             <div class="container">
-                <div id="opciones_pago">
+                <div id="payment_options">
                     <button type="submit" class="cash-btn">Efectivo</button>
                     <button type="submit" class="credit-btn">Tarjeta de crédito</button>
                     <button type="submit" class="dedit-btn">Tarjeta de débito</button>
@@ -117,33 +116,31 @@
         </form>
         </div>
 
-        <div class="pedido">  <!--row col-4 col-md-4-->
-         <div class="detalle_pedido">
+        <div class="order">  <!--row col-4 col-md-4-->
+         <div class="order_detail">
           <br><h3 id="detailCartProducts">Detalle del pedido</h3>
           <div>
             <ul>
               <li>
                 <div class="detail_products_cart">
-                  <div id="productoAgregado1">
+                  <div id="productAdded1">
                     <center>
                       <span><br>Mesa</span><br>
                       <p>Precio: $19.990,00</p>
                       <img width="30%" src="/images/mesa1.jpg" alt="producto-mesa">
-                      <a href="/productDetail">Ver producto</a>
-                      <button type="submit" class="deleteProduct-btn">Eliminar</button>
+                      <!-- <a href="/productDetail">Ver producto</a> -->
                     </center>
                   </div>
-                  <div id="productoAgregado2">
+                  <div id="productAdded2">
                     <center>
                       <span><br>Silla</span><br>
                       <p>Precio: $2.600,00</p>
                       <img width="30%" src="/images/silla-1-1.jpg" alt="producto-silla">
-                      <a href="/productDetail">Ver producto</a>
-                      <button type="submit" class="deleteProduct-btn">Eliminar</button>
+                      <!-- <a href="/productDetail">Ver producto</a> -->
                     </center>
                   </div>
                   <div class="totalToPay">
-                    <p><br>Subtotal: $22.590,00<br>Descuento: 20,00%<br>Total a pagar: $18.072,00</p><br>
+                    <p><br><u>Subtotal</u>: $22.590,00<br><u>Descuento</u>: 20,00%<br><u>Total a pagar</u>: $18.072,00</p><br>
                   </div>
                 </div>
               </li>
