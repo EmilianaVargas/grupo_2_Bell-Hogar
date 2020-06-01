@@ -606,11 +606,11 @@ h5{
   text-align: center;
   padding-top: 2%;
 }
-.product-name a{
-  color: var(--gris-footer);
-}
 .product-price{
   text-align: center;
+}
+.product-name a{
+  color: var(--gris-footer);
 }
 .products-title{
   text-align: center;
