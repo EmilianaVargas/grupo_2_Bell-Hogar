@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <!-- head -->
+  <%- include('./partials/head') %>
+  <body class="container">
+ <!-- header -->
+ <%- include('./partials/header') %>
+ <!-- SECTION -->
+ <section>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/images/Banner1.png" class="d-block w-100 " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="rebaja text-uppercase"></h5>
+          <p></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/livingCARRUSEL.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="rebaja text-uppercase"></h5>
+          <p></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/Banner2.png" class="d-block w-100 " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="rebaja text-uppercase"></h5>
+          <p></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/mesaCARRUSEL.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="rebaja text-uppercase"><br></h5>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+  </div>
+  <div class="card-deck">
+    <div class="card bg-ligth">
+      <img src="/images/sofa3.jpg" class="card-img" alt="...">
+      <div class="card-img-overlay">
+        <h5 class="card-title"><a href="/products">Sillones</a></h5>
+      </div>
+    </div>
+    <div class="card bg-ligth">
+      <img src="/images/sofa4.jpg" class="card-img" alt="...">
+      <div class="card-img-overlay">
+        <h5 class="card-title"><a href="/products">Muebles</a></h5>
+      </div>
+    </div>
+    <div class="card bg-ligth">
+      <img src="/images/butaca2.jpg" class="card-img" alt="...">
+      <div class="card-img-overlay">
+        <h5 class="card-title"><a href="/products">Sillas</a></h5>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SECTION -->
+<!-- footer -->
+<%- include('./partials/footer') %>
   </body>
 </html>
+  

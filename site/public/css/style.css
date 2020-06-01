@@ -273,8 +273,11 @@ h5.card-title{
 	width: 300px;
 	margin: 5px auto;
 	background-color: transparent;
-        border: 1px solid var(--gris-oscuro);
-	height: 250px;
+  border: 1px solid var(--gris-oscuro);
+  box-shadow: 2px 2px 10px #666;        /* Sombra normal */
+  box-shadow: 5px -5px 0 2px #444;      /* Sombra superior sin desenfoque */
+  box-shadow: 5px 5px 25px #222 inset;
+	height: 320px;
 	border-radius:8px;
 	padding: 0px 9px 0px 9px;
 }
@@ -303,20 +306,23 @@ h5.card-title{
 }
 .body-form {
   font-family: var(--base-font-family);
-  font-weight: 300;
-  margin: 0 auto;
-  background-color: var(--light-gray);
-  padding-inline-start: 0px;
-  /**/
-  font-size: 10px;
-}
-.body-form-login {
-  font-family: var(--base-font-family);
   font-weight: 200;
   margin: 0 auto;
-  background-color: var(--light-gray);
   padding-inline-start: 0px;
+  font-size: 10px;
   /**/
+    border: 1px solid #CED5D7;
+    border-radius: 6px;
+    padding: 25px 25px 20px;
+    background-color: whitesmoke;
+    box-shadow: 0px 5px 10px var(--gris-oscuro), 0 0 0 10px #EEF5F7 inset;
+ }
+.body-form-login {
+  font-family: var(--base-font-family);
+  font-weight: 150;
+  margin: 0 auto;
+  padding-inline-start: 0px;
+  /*box-shadow: 0px 5px 10px var(--gris-oscuro), 0 0 0 10px #EEF5F7 inset;*/
   font-size: 8px;
 }
 .titulo-f{
