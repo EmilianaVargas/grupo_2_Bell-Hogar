@@ -15,10 +15,10 @@ router.get('/:id', productsController.productDetail);
 router.post('/create', productsController.postProduct);
 
 // Ruta de edición de productos
-router.post('/:id/edit', productsController.editProduct);
+router.get('/:id/edit', productsController.editProduct);   
 
 // Ruta de envío de la edición
-router.put('/:id', productsController.putEditProduct);
+router.put('/:id/edit', productsController.putEditProduct);
 
 // Ruta para eliminar un producto
 router.delete('/:id', productsController.deleteProduct);

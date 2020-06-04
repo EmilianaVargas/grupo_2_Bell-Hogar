@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <!-- head -->
+  <%- include('./partials/head') %>
+  <body class="container">
+ <!-- header -->
+ <%- include('./partials/header') %>
+
+ <!-- header -->
+ <div class="container">
+     <div class="row">
+         <div class="edit-form-box col-8 col-md-12"> <!--No le presté mucha atención al responsive porque no creo que editen productos desde el cel-->
+            <h1>Editar Producto</h1>
+      <h4>Completa los siguientes datos del producto</h4>
+        <form class="" action="/products/:id/edit?_method=PUT" method="post">
+            <label for = "id"><h6>Código del Producto:</h6></label>
+                <input name="id" id="id" type="text" class="form-control" value=<%=product.id%> required></br> 
+            <label for = "nombre"><h6>Nombre del Producto:</h6></label>
+                <input name="nombre" id="nombre" type="text" class="form-control" value=<%=product.name%> required></br>
+            <label for = "descripcion"><h6>Descripción:</h6></label>
+                <input name="descripcion" id= "descripcion" type="text" class="form-control" value=<%=product.description%>></br>
+            <label for = "imagen"><h6>Imagen del Producto:</h6></label><br>
+                <input name="imagen" id="imagen" type="file" class="btn-color" value=<%=product.image%> accept=".jpg, .jpeg, .png" ><br><br>
+            <label for = "categoria"><h6>Categoria:</h6></label>
+                <input name="categoria" id= "categoria" type="text" class="form-control" value=<%=product.category%> required></br>
+            <label for = "colores"><h6>Colores:</h6></label><br>
+                <input name= "colores" id="colores" type="text" class="form-control" value=<%=product.colors%>></br>
+            <label for = "precio"><h6>Precio:</h6></label><br>
+                <input name="precio" id="precio" type="number" class="form-control" value=<%=product.price%> required></br>
+            <label for = "stock"><h6>Stock:</h6></label><br>
+                <input name="stock" id="stock" type="number" class="form-control" value=<%=product.stock%>></br>
+            <button class="suscription-btn btn-color "  id="IngresoLog" type="submit">Editar producto</button><br><br>
+            <button class="suscription-btn btn-color "  id="IngresoLog" type="reset">Borrar datos</button>
+        </form>
+         </div>
+     </div>
+ </div>
+      
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+  </body>
+</html>
+  

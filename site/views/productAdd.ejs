@@ -64,7 +64,7 @@
             <div class="form-header" > 
                  <h3 class="form-title titulo-f" > <i class="fa fa-user"></i> Carga de Nuevos Productos</h3></br>
             </div>
-            <form method="POST" action="/products/create">  
+            <form method="POST" action="/products/create"> <!-- agregar enctype al hacer el multer -->  
                       <label for = "id"><h6>Código del Producto:</h6></label>
                         <input name="id" id="id" type="text" class="form-control" required></br> 
                       <label for = "nombre"><h6>Nombre del Producto:</h6></label>

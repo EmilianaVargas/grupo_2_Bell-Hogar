@@ -15,7 +15,17 @@ function addProduct(nuevoProducto) {
     productosDB.push(nuevoProducto);
     saveJSONfile(productosDB);
 }
-  
+
+function productById(id){
+    let producto = null;
+    productosDB.forEach((prod, i) => {
+      if (prod["id"] == id) {
+         producto = prod;
+      }
+    });
+    return producto;
+}
+
 let productsController = {
     'products': function(req,res){
         res.render('products');
@@ -27,7 +37,7 @@ let productsController = {
         res.render('productDetail');
     },
     'postProduct': function(req,res){
-        //falta verificación de que el producto no exista previamente
+        //Falta verificación de que el producto no exista previamente
         let nuevoProducto = {
             id: req.body.id,
             name: req.body.nombre,
@@ -41,13 +51,29 @@ let productsController = {
             res.render('productAdd');
         },
     'editProduct': function(req,res){
-        res.render('productAdd');
+        let product = productById(req.params.id);
+        if(product != null){
+            return res.render('editProduct',{product})
+        } else {
+            return res.render('editProductError');
+        }
     },
     'putEditProduct': function(req,res){
-        res.render('products');
-    },
+        let product = productById(req.body.id);
+        let products = productosDB;
+        
+        if (product != null) {
+               product.name = req.body.nombre;
+   
+               products.map((prod) => {
+                     prod.name = product.name;
+               });
+            
+            saveJSONfile(products);
+            res.render('products');
+            }
+        },
     'deleteProduct': function(req,res){
-        res.render('products');
     }
 }
 
