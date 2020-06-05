@@ -605,7 +605,7 @@ h5{
 .product-name a{
   color: var(--gris-footer);
 }
-.product-price{
+.product-price-view{
   text-align: center;
 }
 .products-title{

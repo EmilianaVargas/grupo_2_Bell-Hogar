@@ -4,12 +4,12 @@ const path = require('path');
 // Lee el JSON de productos
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const productosDB = JSON.parse(fs.readFileSync(productsFilePath,'utf-8'));
-  
+
 // Guarda el json de productos
 function saveJSONfile(products) {
-fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 }
-   
+
 // Agrega un nuevo producto
 function addProduct(nuevoProducto) {
     productosDB.push(nuevoProducto);
@@ -19,9 +19,9 @@ function addProduct(nuevoProducto) {
 function productById(id){
     let producto = null;
     productosDB.forEach((prod, i) => {
-      if (prod["id"] == id) {
-         producto = prod;
-      }
+        if (prod["id"] == id) {
+            producto = prod;
+        }
     });
     return producto;
 }
@@ -46,10 +46,10 @@ let productsController = {
             colors:req.body.colores,
             price:req.body.precio,
             stock:req.body.stock
-            }
-            addProduct(nuevoProducto);
-            res.render('productAdd');
-        },
+        }
+        addProduct(nuevoProducto);
+        res.render('productAdd');
+    },
     'editProduct': function(req,res){
         let product = productById(req.params.id);
         if(product != null){
@@ -62,13 +62,34 @@ let productsController = {
         let product = productById(req.body.id);
         let products = productosDB;
         
-        
-    
-        saveJSONfile(products);
-        res.render('products');
-        
+        if (product != null) {
+            product.name = req.body.nombre;
+            
+            products.map((prod) => {
+                prod.name = product.name;
+            });
+            
+            saveJSONfile(products);
+            res.render('products');
+        }
     },
-    'deleteProduct': function(req,res){
+    'formuDelete':function(req,res){
+        let product = productById(req.params.id);
+        if(product != null){
+            return res.render('deleteProduct',{product});
+        } else {
+            return res.render('editProductError');
+        }
+    },
+    'delete': function(req,res){
+        let product = productById(req.body.id);
+        let nuevoArrayProductos = [];
+        let products = productosDB;
+        
+        nuevoArrayProductos = products.filter(prod => prod.id != product.id); //¿Por qué no pop?
+        saveJSONfile(nuevoArrayProductos);
+        //let mensaje = "El producto se eliminó con éxito de la lista.";
+        return res.render("products",{products});
     }
 }
 
