@@ -62,17 +62,12 @@ let productsController = {
         let product = productById(req.body.id);
         let products = productosDB;
         
-        if (product != null) {
-               product.name = req.body.nombre;
-   
-               products.map((prod) => {
-                     prod.name = product.name;
-               });
-            
-            saveJSONfile(products);
-            res.render('products');
-            }
-        },
+        
+    
+        saveJSONfile(products);
+        res.render('products');
+        
+    },
     'deleteProduct': function(req,res){
     }
 }
