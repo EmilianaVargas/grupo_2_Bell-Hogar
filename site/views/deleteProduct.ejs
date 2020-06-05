@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<!-- head -->
+<%- include('./partials/head') %>
+<body class="container">
+    <!-- header -->
+    <%- include('./partials/header') %>
+    
+    <!-- header -->
+    <div class="container">
+        <div class="row">
+            <div class="edit-form-box col-8 col-md-12"> 
+                <h1>Eliminar Producto</h1>
+                <h4>Completa los siguientes datos para confirmar el producto a eliminar</h4>
+                <form class="delete" action="/products/<%=product.id%>?_method=DELETE" method="post">
+                    <label for = "id"><h6>Código del Producto:</h6></label>
+                    <input name="id" id="id" type="text" class="form-control" value=<%=product.id%> required></br> 
+                    <label for = "nombre"><h6>Nombre del Producto:</h6></label>
+                    <input name="nombre" id="nombre" type="text" class="form-control" value=<%=product.name%> required></br>
+                    <button class="suscription-btn btn-color "  id="delete" type="submit">Eliminar producto</button><br><br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+</body>
+</html>
