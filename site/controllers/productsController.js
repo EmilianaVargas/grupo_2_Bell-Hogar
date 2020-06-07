@@ -45,7 +45,8 @@ let productsController = {
             category:req.body.categoria,
             colors:req.body.colores,
             price:req.body.precio,
-            stock:req.body.stock
+            stock:req.body.stock,
+            image:req.file.filename
         }
         addProduct(nuevoProducto);
         res.render('productAdd');
@@ -61,6 +62,7 @@ let productsController = {
     'putEditProduct': function(req,res){
         let product = productById(req.body.id);
         let products = productosDB;
+        
         
         if (product != null) {
             product.name = req.body.name;

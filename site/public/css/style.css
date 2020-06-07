@@ -276,7 +276,7 @@ h5.card-title{
   border: 1px solid var(--gris-oscuro);
   box-shadow: 2px 2px 10px #666;        /* Sombra normal */
   box-shadow: 5px -5px 0 2px #444;      /* Sombra superior sin desenfoque */
-  box-shadow: 5px 5px 25px #222 inset;
+  box-shadow: 5px 5px 25px beige inset;
 	height: 320px;
 	border-radius:8px;
 	padding: 0px 9px 0px 9px;
