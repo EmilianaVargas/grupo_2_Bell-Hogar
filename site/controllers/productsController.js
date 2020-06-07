@@ -17,13 +17,13 @@ function addProduct(nuevoProducto) {
 }
 
 function productById(id){
-    let producto = null;
+    let product = null;
     productosDB.forEach((prod, i) => {
         if (prod["id"] == id) {
-            producto = prod;
+            product = prod;
         }
     });
-    return producto;
+    return product;
 }
 
 let productsController = {
@@ -63,11 +63,22 @@ let productsController = {
         let products = productosDB;
         
         if (product != null) {
-            product.name = req.body.nombre;
+            product.name = req.body.name;
+            product.description = req.body.description;
+            product.category = req.body.category;
+            product.colors = req.body.colors;
+            product.price = req.body.price;
+            product.stock = req.body.stock;
             
             products.map((prod) => {
+                if(prod.id === product.id){
                 prod.name = product.name;
-            });
+                prod.description = product.description;
+                prod.category = product.category;
+                prod.colors = product.colors;
+                prod.price = product.price;
+                prod.stock = product.stock;
+            }});
             
             saveJSONfile(products);
             res.render('products');
