@@ -18,7 +18,7 @@ let indexController = {
     },
     'login': function(req,res){
         res.render('login');
-            res.send(loginHTML);
+            //res.send(loginHTML);
     },
     'productDetail': function(req,res){
         res.render('productDetail');

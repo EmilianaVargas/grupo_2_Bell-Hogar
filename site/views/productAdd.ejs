@@ -11,15 +11,15 @@
             <div class="form-header" > 
                  <h3 class="form-title titulo-f" > <i class="fa fa-user"></i> Carga de Nuevos Productos</h3></br>
             </div>
-            <form method="POST" action="/products/create"> <!-- agregar enctype al hacer el multer -->  
+            <form method="POST" action="/products/create" enctype="multipart/form-data" > <!-- agregar enctype al hacer el multer -->  
                       <label for = "id"><h6>Código del Producto:</h6></label>
                         <input name="id" id="id" type="text" class="form-control" required></br> 
                       <label for = "nombre"><h6>Nombre del Producto:</h6></label>
                         <input name="nombre" id="nombre" type="text" class="form-control" required></br>
                       <label for = "descripcion"><h6>Descripción:</h6></label>
                         <input name="descripcion" id= "descripcion" type="text" class="form-control"></br>
-                      <label for = "imagen"><h6>Imagen del Producto:</h6></label><br>
-                        <input name="imagen" id="imagen" type="file" class="btn-color "accept=".jpg, .jpeg, .png" ><br><br>
+                      <label for = "image"><h6>Imagen del Producto:</h6></label><br>
+                        <input name="image" id="image" type="file" class="btn-color "accept=".jpg, .jpeg, .png" ><br><br>
                       <label for = "categoria"><h6>Categoria:</h6></label>
                         <input name="categoria" id= "categoria" type="text" class="form-control" required></br>
                       <label for = "colores"><h6>Colores:</h6></label><br>
