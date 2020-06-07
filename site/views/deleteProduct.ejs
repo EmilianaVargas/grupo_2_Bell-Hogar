@@ -12,13 +12,13 @@
             <div class="edit-form-box col-8 col-md-12"> 
                 <h1>Eliminar Producto</h1>
                 <h4>¿Confirma que desea eliminar el siguiente producto?</h4>
-                <form class="delete" action="/products/<%=product.id%>?_method=DELETE" method="post">
+                <form class="delete" action="/products/:id/delete?_method=DELETE" method="post">
                     <label for = "id"><h6>Código del Producto:</h6></label>
                     <input name="id" id="id" type="text" class="form-control" value=<%=product.id%> required readonly="readonly"></br>
                     <label for = "id"><h6>Nombre del Producto:</h6></label>
                     <input name="id" id="id" type="text" class="form-control" value=<%=product.name%> required readonly="readonly"></br> 
                     <button class="suscription-btn btn-color "  id="delete" type="submit">Eliminar producto</button><br><br>
-                    <br><input type="button" onclick="history.back()" class="error-button" id="IngresoLog" name="volver atrás" value="Volver atrás">    
+                    <input type="button" onclick="history.back()" class="error-button" id="IngresoLog" name="volver atrás" value="Volver atrás">    
                 </form>
             </div>
         </div>

@@ -1,18 +1,5 @@
 [
  {
-<<<<<<< HEAD
-  "id": "59",
-  "image": "product_1.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
- },
- {
-  "id": "59",
-=======
   "id": 1,
   "name": "Varanus salvator",
   "description": "neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget",
@@ -26,131 +13,83 @@
   "id": 2,
   "name": "Heloderma horridum",
   "description": "sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_2.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Garden",
+  "colors": "Fuscia",
+  "price": 149.01,
+  "stock": 430
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 3,
   "name": "Salvadora hexalepis",
   "description": "risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_3.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Automotive",
+  "colors": "Red",
+  "price": 72578.74,
+  "stock": 99
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 4,
   "name": "Cervus unicolor",
   "description": "interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_4.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Clothing",
+  "colors": "Yellow",
+  "price": 95589.06,
+  "stock": 817
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 5,
   "name": "Cyrtodactylus louisiadensis",
   "description": "magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_5.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Movies",
+  "colors": "Green",
+  "price": 53830.28,
+  "stock": 386
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 6,
   "name": "Felis silvestris lybica",
   "description": "proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_6.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Books",
+  "colors": "Indigo",
+  "price": 18514.04,
+  "stock": 629
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 7,
   "name": "Gyps bengalensis",
   "description": "donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_7.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Grocery",
+  "colors": "Purple",
+  "price": 346.75,
+  "stock": 738
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 8,
   "name": "Sagittarius serpentarius",
   "description": "hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_8.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Home",
+  "colors": "Green",
+  "price": 925.65,
+  "stock": 815
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 9,
   "name": "Varanus salvator",
   "description": "duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_9.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Toys",
+  "colors": "Yellow",
+  "price": 13978.17,
+  "stock": 552
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 10,
   "name": "Ovis dalli stonei",
   "description": "posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis",
@@ -164,19 +103,13 @@
   "id": 11,
   "name": "Bison bison",
   "description": "libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_11.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Baby",
+  "colors": "Pink",
+  "price": 89183.56,
+  "stock": 309
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 12,
   "name": "Plectopterus gambensis",
   "description": "eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est",
@@ -190,531 +123,323 @@
   "id": 13,
   "name": "Boa caninus",
   "description": "nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_13.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Tools",
+  "colors": "Maroon",
+  "price": 35266.79,
+  "stock": 450
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 14,
   "name": "Tetracerus quadricornis",
   "description": "leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_14.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Baby",
+  "colors": "Purple",
+  "price": 24433.52,
+  "stock": 93
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 15,
   "name": "Uraeginthus granatina",
   "description": "pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_15.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Kids",
+  "colors": "Teal",
+  "price": 55518.34,
+  "stock": 755
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 16,
   "name": "Francolinus coqui",
   "description": "curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_16.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Electronics",
+  "colors": "Maroon",
+  "price": 97730.53,
+  "stock": 209
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 17,
   "name": "Mazama gouazoubira",
   "description": "nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_17.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Music",
+  "colors": "Turquoise",
+  "price": 14113.61,
+  "stock": 435
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 18,
   "name": "Papio ursinus",
   "description": "sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_18.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Electronics",
+  "colors": "Pink",
+  "price": 32297.18,
+  "stock": 473
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 19,
   "name": "Chlamydosaurus kingii",
   "description": "blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_19.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Movies",
+  "colors": "Aquamarine",
+  "price": 60030.7,
+  "stock": 751
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 20,
   "name": "Bettongia penicillata",
   "description": "elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus at diam nam tristique",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_20.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Books",
+  "colors": "Blue",
+  "price": 78537.2,
+  "stock": 47
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 21,
   "name": "Prionace glauca",
   "description": "eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_21.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Clothing",
+  "colors": "Turquoise",
+  "price": 48674.17,
+  "stock": 608
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 22,
   "name": "Gazella granti",
   "description": "aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_22.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Toys",
+  "colors": "Orange",
+  "price": 3394.55,
+  "stock": 35
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 23,
   "name": "Dromaeus novaehollandiae",
   "description": "quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_23.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Shoes",
+  "colors": "Mauv",
+  "price": 56160.49,
+  "stock": 543
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 24,
   "name": "Ovis ammon",
   "description": "purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_24.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Movies",
+  "colors": "Goldenrod",
+  "price": 14101.91,
+  "stock": 875
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 25,
   "name": "Bubo virginianus",
   "description": "vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_25.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Industrial",
+  "colors": "Teal",
+  "price": 17384.08,
+  "stock": 787
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 26,
   "name": "Phoenicopterus chilensis",
   "description": "sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_26.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Garden",
+  "colors": "Violet",
+  "price": 13430.76,
+  "stock": 648
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 27,
   "name": "Ctenophorus ornatus",
   "description": "urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_27.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Shoes",
+  "colors": "Teal",
+  "price": 10245.51,
+  "stock": 813
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 28,
   "name": "Laniarius ferrugineus",
   "description": "ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_28.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Grocery",
+  "colors": "Mauv",
+  "price": 38890.12,
+  "stock": 180
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 29,
   "name": "Actophilornis africanus",
   "description": "varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_29.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Industrial",
+  "colors": "Purple",
+  "price": 45594.69,
+  "stock": 794
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 30,
   "name": "Canis lupus lycaon",
   "description": "sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_30.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Outdoors",
+  "colors": "Yellow",
+  "price": 97675.77,
+  "stock": 483
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 31,
   "name": "Eunectes sp.",
   "description": "metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_31.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Computers",
+  "colors": "Pink",
+  "price": 92325.91,
+  "stock": 491
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 32,
   "name": "Myotis lucifugus",
   "description": "quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_32.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Sports",
+  "colors": "Yellow",
+  "price": 38440.93,
+  "stock": 782
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 33,
   "name": "Alcelaphus buselaphus cokii",
   "description": "magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_33.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Grocery",
+  "colors": "Yellow",
+  "price": 21381.45,
+  "stock": 542
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 34,
   "name": "Colaptes campestroides",
   "description": "maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_34.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Home",
+  "colors": "Maroon",
+  "price": 27412.78,
+  "stock": 870
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 35,
   "name": "Kobus defassa",
   "description": "eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_35.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Grocery",
+  "colors": "Teal",
+  "price": 17846.49,
+  "stock": 766
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 36,
   "name": "Cervus duvauceli",
   "description": "convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_36.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Electronics",
+  "colors": "Maroon",
+  "price": 66310.2,
+  "stock": 533
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 37,
   "name": "Certotrichas paena",
   "description": "nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_37.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Music",
+  "colors": "Maroon",
+  "price": 60743.51,
+  "stock": 923
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 38,
   "name": "Gyps bengalensis",
   "description": "ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_38.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Tools",
+  "colors": "Yellow",
+  "price": 63712.34,
+  "stock": 551
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 39,
   "name": "Tamandua tetradactyla",
   "description": "proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_39.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Baby",
+  "colors": "Teal",
+  "price": 77150,
+  "stock": 18
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 40,
   "name": "Pteronura brasiliensis",
   "description": "libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_40.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Kids",
+  "colors": "Indigo",
+  "price": 17531.71,
+  "stock": 665
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 41,
   "name": "Myotis lucifugus",
   "description": "integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_41.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Kids",
+  "colors": "Teal",
+  "price": 48637.47,
+  "stock": 986
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 42,
   "name": "Funambulus pennati",
   "description": "sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_42.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Electronics",
+  "colors": "Pink",
+  "price": 21827.65,
+  "stock": 660
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 43,
   "name": "Kobus vardonii vardoni",
   "description": "congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_43.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Automotive",
+  "colors": "Turquoise",
+  "price": 38589.81,
+  "stock": 748
  },
  {
-<<<<<<< HEAD
-  "id": "59",
-=======
   "id": 44,
   "name": "Nycticorax nycticorax",
   "description": "vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla",
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
   "image": "product_44.jpg",
-  "category": "CategoriaPrueba7",
-  "colors": "ColoresPrueba7",
-  "price": "7777700",
-  "stock": "70",
-  "description": "DescripcionPrueba7",
-  "name": "NombrePrueba7"
+  "category": "Jewelery",
+  "colors": "Goldenrod",
+  "price": 37096.55,
+  "stock": 616
  },
  {
-<<<<<<< HEAD
-  "id": "61",
-  "image": "product_45.jpg",
-  "category": "CategoriaPrueba8",
-  "colors": "ColoresPrueba8",
-  "price": "8000",
-  "stock": "70",
-  "description": "DescripcionPrueba8",
-  "name": "NombrePrueba8"
- },
- {
-  "id": "60",
-  "category": "CategoriaPrueba8",
-  "colors": "ColoresPrueba8",
-  "price": "7777700",
-  "stock": "9",
-  "description": "DescripcionPrueba8",
-  "name": "NombrePrueba8"
-=======
   "id": 45,
   "name": "Dasyurus maculatus",
   "description": "scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget",
@@ -723,16 +448,5 @@
   "colors": "Teal",
   "price": 69484.73,
   "stock": 338
- },
- {
-  "id": "888",
-  "name": "Sillon",
-  "description": "asd",
-  "category": "mueble",
-  "colors": "Azul",
-  "price": "1234",
-  "stock": "2",
-  "image": "Sillon - 8882020-.jpg"
->>>>>>> 638336ff8ca5b31455bd3d7f2a339f1c3b2b7cc3
  }
-]  
+]

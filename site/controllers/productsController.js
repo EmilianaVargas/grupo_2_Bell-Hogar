@@ -45,8 +45,7 @@ let productsController = {
             category:req.body.categoria,
             colors:req.body.colores,
             price:req.body.precio,
-            stock:req.body.stock,
-            image:req.file.filename
+            stock:req.body.stock
         }
         addProduct(nuevoProducto);
         res.render('productAdd');
@@ -99,10 +98,9 @@ let productsController = {
         let nuevoArrayProductos = [];
         let products = productosDB;
         
-        nuevoArrayProductos = products.filter(prod => prod.id != product.id); //¿Por qué no pop?
+        nuevoArrayProductos = products.filter(prod => prod.id != product.id);
         saveJSONfile(nuevoArrayProductos);
-        //let mensaje = "El producto se eliminó con éxito de la lista.";
-        return res.render("products",{products});
+        return res.render('products');
     }
 }
 

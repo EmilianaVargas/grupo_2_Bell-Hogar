@@ -569,10 +569,13 @@ h5.card-title{
 .product-right{
   padding-top: 3%;
 }
+.cart-btn{
+  background-color: var(--gris-footer);
+} 
 .cart-btn a{
   text-decoration: none;
-  color: var(--azul-oscuro);
-  font-weight: 750;
+  background-color: var(--gris-footer);
+  color: white;
 }
 .especificaciones{
   margin-top: 2%;
