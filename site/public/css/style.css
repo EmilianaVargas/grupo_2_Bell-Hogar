@@ -323,6 +323,9 @@ h5.card-title{
   padding-inline-start: 0px;
   font-size: 8px;
 }
+.form-title{
+  font-size: large;
+}
 .titulo-f{
   padding-top: 20px;
   font-size: 20px;
@@ -701,6 +704,9 @@ div.filaCarrito.row{
 
 
 /* detalle de producto - PRODUCTDETAIL*/
+.product-name-detail{
+  font-size: x-large;
+}
 .product-img{
   width: 100%;
   height: 100%;
@@ -747,13 +753,14 @@ h5{
 .product-name a{
   color: var(--gris-footer);
 }
-.product-price{
+.product-price-view{
   text-align: center;
 }
 .product-name a{
   color: var(--gris-footer);
 }
 .products-title{
+  font-size: x-large;
   text-align: center;
 }
 
