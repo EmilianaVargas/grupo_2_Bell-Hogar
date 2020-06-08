@@ -7,40 +7,40 @@
   <%- include('./partials/header') %>
   <!--Comienzo código del pago de carrito de compra-->
   <div class="cartPayment-header" >
-    <h3>Finalizar compra</h3></br>
+    <h3 class="fas fa-shopping-basket"> Finalizar compra</h3></br>
   </div>
-  
+
   <section id="pay-cart">
-    
+
     <div class="container">
       <div id="options_page">
-        <button type="submit" class="continuebuypayment-btn"><a href="/productDetail">Continuar compra</a></button>
+        <button type="submit" class="continuebuypayment-btn"><a href="/products/:id">Continuar compra</a></button>
         <button type="submit" class="backcart-btn"><a href="/productCart">Volver atrás</a></button>
       </div>
     </div>
-    
+
     <div class="formCart">
       <form id="formOrder" action="index.html" method="GET">
-        
+
         <br><input type="checkbox" id="init_sesion" name="init_sesion">
         <label for="init_sesion" id="loginPay">Usar datos de inicio de sesión</label>
         <a href="login.html"></a>
-        
+
         <br><label for="name">Nombre completo</label>
         <p><input type="text" id="name" name="nombre"></p>
-        
+
         <label for="email">Email</label>
         <p><input type="email" id="email" name="mail"></p>
-        
+
         <label for="tel">Número de teléfono</label>
         <p><input type="tel" id="tel" name="telefono"></p>
-        
+
         <label for="address">Dirección</label>
         <p><input type="text" id="address" name="direccion"></p>
-        
+
         <label for="dni">DNI</label>
         <p><input type="text" id="dni" name="DNI"></p>
-        
+
         <label for="metodo_entrega">Método de entrega</label>
         <div class="container">
           <div id="opciones_entrega">
@@ -48,7 +48,7 @@
             <button type="submit" class="address-btn">Envío a domicilio</button>
           </div>
         </div>
-        
+
         <br><label for="payment_method">Método de pago</label>
         <div class="container">
           <div id="payment_options">
@@ -57,10 +57,10 @@
             <button type="submit" class="dedit-btn">Tarjeta de débito</button>
           </div>
         </div>
-        
+
       </form>
     </div>
-    
+
     <div class="order">  <!--row col-4 col-md-4-->
       <div class="order_detail">
         <br><h3 id="detailCartProducts">Detalle del pedido</h3>
@@ -95,7 +95,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- footer -->
   <%- include('./partials/footer') %>
 </body>

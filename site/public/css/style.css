@@ -340,7 +340,36 @@ h5.card-title{
 }
 
 
-/* Carrito - PRODUCTCART */
+/* Carrito para Mobile Small - PRODUCTCART */
+
+@media (max-width: 345px){
+  .cart-title{
+    display: flex;
+    flex-grow: 0.25;
+    flex-wrap: wrap;
+  }
+  .cart-image{
+    margin-top: 30px;
+  }
+  #icon-cart-mobile{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    margin-top: 10px;
+  }
+}
+
+/* Carrito para Mobile - PRODUCTCART */
+
+@media (max-width: 499px){
+  .cart-mobile{
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .cart-desktop{
+    display: none;
+  }
 
 .cart {
   width: 100%;
@@ -396,6 +425,8 @@ h5.card-title{
 
 .discount-btn{
   margin-top: 3px;
+  justify-content: center;
+  align-items: center;
 }
 
 .ticket-input {
@@ -452,10 +483,78 @@ h5.card-title{
 .back-btn:hover, .continuebuy-btn:hover, .discount-btn:hover, .addproduct-btn:hover {
   text-decoration: underline;
 }
+}
+
+/*Carrito para Tablet y Desktop - PRODUCTCART*/
+
+@media (min-width: 500px){
+.cart-desktop{
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cart-mobile{
+  display: none;
+}
+
+div.filaCarrito.row{
+  align-items: center;
+}
+.cart-title2{
+  margin-left: 10%;
+  font-size: x-large;
+}
+.cart-menu-first-row{
+  display:flex;
+  flex-wrap: wrap;
+  margin-top: 2%;
+  background-color:var(--gris-footer);
+}
+.cart-menu-title{
+  color:var(--gris-oscuro);
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+.cart-menu-price{
+  font-size: 17px;
+  color:var(--gris-footer);
+  text-align: center;
+  align-content: center;
+  margin-top:1%;
+}
+.cart-menu-price a{
+  color: black;
+}
+.total-price{
+  border: 1px solid var(--gris-footer);
+}
+.cart-footer{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2%;
+}
+.cart-buttons{
+  margin-left: 6%;
+  border: none;
+  background-color: var(--gris-footer);
+  color: white;
+}
+
+.cart-buttons a{
+  text-decoration: none;
+  color: white;
+}
+
+.cart-image{
+  height: 20vh;
+}
+}
 
 
-/* Pago carrito - PRODUCTCARTPAYMENT */
+/* Pago carrito de compras para Desktop- PRODUCTCARTPAYMENT */
 
+@media (min-width: 500px){
 #pay-cart {
   width: 100%;
   min-height: 0px;
@@ -480,23 +579,23 @@ h5.card-title{
 }
 
 .continuebuypayment-btn {
+  border: none;
+  background-color: var(--gris-footer);
   margin-left: 5px;
   margin-top: 5px;
   padding: 5px;
-  background-color: var(--amarillo);
-  border: 1px solid grey;
 }
 
 .backcart-btn {
+  border: none;
+  background-color: var(--gris-footer);
   margin-left: 780px;
   padding: 5px;
-  background-color: var(--amarillo);
-  border: 1px solid grey;
 }
 
 .backcart-btn a, .continuebuypayment-btn a{
   text-decoration: none;
-  color: black;
+  color:white;
 }
 
 .pay-btn {
@@ -559,6 +658,7 @@ h5.card-title{
   top: 400px;
   left: 280px;
 }
+}
 
 
 /* detalle de producto - PRODUCTDETAIL*/
@@ -571,7 +671,7 @@ h5.card-title{
 }
 .cart-btn{
   background-color: var(--gris-footer);
-} 
+}
 .cart-btn a{
   text-decoration: none;
   background-color: var(--gris-footer);
