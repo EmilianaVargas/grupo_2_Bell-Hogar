@@ -661,6 +661,45 @@ div.filaCarrito.row{
 }
 
 
+/* Pago carrito de compras para Mobile- PRODUCTCARTPAYMENT */
+
+@media (max-width: 499px){
+  .pay-btn{
+    background-color: var(--amarillo);
+  }
+
+  #pay-cart {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .order{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .continuebuypayment-btn {
+    border: none;
+    background-color: var(--gris-footer);
+  }
+
+  .backcart-btn {
+    border: none;
+    background-color: var(--gris-footer);
+  }
+
+  .backcart-btn a, .continuebuypayment-btn a{
+    text-decoration: none;
+    color:white;
+  }
+
+  #productAdded2{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  }
+
+
 /* detalle de producto - PRODUCTDETAIL*/
 .product-img{
   width: 100%;
