@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<!-- head -->
+<%- include('./partials/head') %>
+<body class="container">
+  <!-- header -->
+  <%- include('./partials/header') %>
+  <!--Comienzo código del pago de carrito de compra-->
+  <div class="cartPayment-header" >
+    <h3 class="fas fa-shopping-basket"> Finalizar compra</h3></br>
+  </div>
+
+  <section id="pay-cart">
+
+    <div class="container">
+      <div id="options_page">
+        <button type="submit" class="continuebuypayment-btn"><a href="/products/:id">Continuar compra</a></button>
+        <button type="submit" class="backcart-btn"><a href="/productCart">Volver atrás</a></button>
+      </div>
+    </div>
+
+    <div class="formCart">
+      <form id="formOrder" action="index.html" method="GET">
+
+        <br><input type="checkbox" id="init_sesion" name="init_sesion">
+        <label for="init_sesion" id="loginPay">Usar datos de inicio de sesión</label>
+        <a href="login.html"></a>
+
+        <br><label for="name">Nombre completo</label>
+        <p><input type="text" id="name" name="nombre"></p>
+
+        <label for="email">Email</label>
+        <p><input type="email" id="email" name="mail"></p>
+
+        <label for="tel">Número de teléfono</label>
+        <p><input type="tel" id="tel" name="telefono"></p>
+
+        <label for="address">Dirección</label>
+        <p><input type="text" id="address" name="direccion"></p>
+
+        <label for="dni">DNI</label>
+        <p><input type="text" id="dni" name="DNI"></p>
+
+        <label for="metodo_entrega">Método de entrega</label>
+        <div class="container">
+          <div id="opciones_entrega">
+            <button type="submit" class="sucursal-btn">Retiro en sucursal</button>
+            <button type="submit" class="address-btn">Envío a domicilio</button>
+          </div>
+        </div>
+
+        <br><label for="payment_method">Método de pago</label>
+        <div class="container">
+          <div id="payment_options">
+            <button type="submit" class="cash-btn">Efectivo</button>
+            <button type="submit" class="credit-btn">Tarjeta de crédito</button>
+            <button type="submit" class="dedit-btn">Tarjeta de débito</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="order">  <!--row col-4 col-md-4-->
+      <div class="order_detail">
+        <br><h3 id="detailCartProducts">Detalle del pedido</h3>
+        <div>
+          <ul>
+            <li>
+              <div class="detail_products_cart">
+                <div id="productAdded1">
+                  <center>
+                    <span><br>Mesa</span><br>
+                    <p>Precio: $19.990,00</p>
+                    <img width="30%" src="/images/mesa1.jpg" alt="producto-mesa">
+                    <!-- <a href="/productDetail">Ver producto</a> -->
+                  </center>
+                </div>
+                <div id="productAdded2">
+                  <center>
+                    <span><br>Silla</span><br>
+                    <p>Precio: $2.600,00</p>
+                    <img width="30%" src="/images/silla-1-1.jpg" alt="producto-silla">
+                    <!-- <a href="/productDetail">Ver producto</a> -->
+                  </center>
+                </div>
+                <div class="totalToPay">
+                  <p><br><u>Subtotal</u>: $22.590,00<br><u>Descuento</u>: 20,00%<br><u>Total a pagar</u>: $18.072,00</p><br>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button type="submit" class="pay-btn">Pagar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <%- include('./partials/footer') %>
+</body>
+</html>
