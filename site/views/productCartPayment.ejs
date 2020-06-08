@@ -1,196 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finalizar compra</title>
-    <link rel="shortcut icon" href="/images/Logo2.png"img>
-
-    <script src="https://kit.fontawesome.com/f29a46c1ae.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+<!-- head -->
+<%- include('./partials/head') %>
 <body class="container">
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-12 logo">
-                    <img src="/images/Logo.png" alt="">
-                </div>
-                <div class="buscar col-12 col-md-6">
-                    <input  type="text" placeholder="Buscar productos" class ="buscar-input">
-                    <button type="submit" class="buscar-btn"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="btn-toggle-navbar">
-                    <nav class="navbar navbar-dark bg-ligth">
-                        <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </nav>
-                    <div class="collapse" id="navbarToggleExternalContent">
-                        <div class="p-1">
-                            <ul class="">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/products">Productos</a></li>
-                                <li><a href="#">Sobre Nosotros</a></li>
-                            </ul>
-                            <ul class="" id="navbarToggleExternalContent">
-                                <li><a href="/login">Iniciar sesión <i class="far fa-address-card"></i></a></li>
-                                <li><a href="/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class ="menu-md">
-                    <ul class="menu-der col-md-12">
-                        <li><a href="/login"><i class="far fa-address-card"></i> Iniciar sesión</a></li>
-                        <li><a href="/productCart"><i class="fas fa-shopping-basket"></i> Carrito</a></li>
-                    </ul>
-                    <ul class="menu-ppal col-md-12">
-                        <li class="col-md-2"><a href="/">Home</a></li>
-                        <li class="col-md-2"><a href="/products">Productos</a></li>
-                        <li class="col-md-2"><a href="#">Sobre Nosotros</a></li>
-                        <li class="col-md-6 text-right"><input type="text" placeholder="Buscar productos" class ="buscar-input">
-                            <button type="submit" class="buscar-btn"><i class="fas fa-search"></i></button></li>
-                        </ul>
-                    </div>
-              </div>
-        </div>
-    </header>
-    <!-- HEADER -->
+  <!-- header -->
+  <%- include('./partials/header') %>
+  <!--Comienzo código del pago de carrito de compra-->
+  <div class="cartPayment-header" >
+    <h3 class="fas fa-shopping-basket"> Finalizar compra</h3></br>
+  </div>
 
-    <!--Comienzo código del pago de carrito de compra-->
-    <div class="cartPayment-header" >
-        <h3>Finalizar compra</h3></br>
-    </div>
+  <section id="pay-cart">
 
-    <section id="pay-cart">
-
-        <div class="container">
-          <div id="options_page">
-            <button type="submit" class="continuebuypayment-btn"><a href="/productDetail">Continuar compra</a></button>
-            <button type="submit" class="backcart-btn"><a href="/productCart">Volver atrás</a></button>
-          </div>
-        </div>
-
-        <div class="formCart">
-        <form id="formOrder" action="index.html" method="GET">
-
-            <br><input type="checkbox" id="init_sesion" name="init_sesion">
-            <label for="init_sesion" id="loginPay">Usar datos de inicio de sesión</label>
-            <a href="login.html"></a>
-
-            <br><label for="name">Nombre completo</label>
-            <p><input type="text" id="name" name="nombre"></p>
-
-            <label for="email">Email</label>
-            <p><input type="email" id="email" name="mail"></p>
-
-            <label for="tel">Número de teléfono</label>
-            <p><input type="tel" id="tel" name="telefono"></p>
-
-            <label for="address">Dirección</label>
-            <p><input type="text" id="address" name="direccion"></p>
-
-            <label for="dni">DNI</label>
-            <p><input type="text" id="dni" name="DNI"></p>
-
-            <label for="metodo_entrega">Método de entrega</label>
-            <div class="container">
-                <div id="opciones_entrega">
-                    <button type="submit" class="sucursal-btn">Retiro en sucursal</button>
-                    <button type="submit" class="address-btn">Envío a domicilio</button>
-                </div>
-            </div>
-
-            <br><label for="payment_method">Método de pago</label>
-            <div class="container">
-                <div id="payment_options">
-                    <button type="submit" class="cash-btn">Efectivo</button>
-                    <button type="submit" class="credit-btn">Tarjeta de crédito</button>
-                    <button type="submit" class="dedit-btn">Tarjeta de débito</button>
-                </div>
-            </div>
-
-        </form>
-        </div>
-
-        <div class="order">  <!--row col-4 col-md-4-->
-         <div class="order_detail">
-          <br><h3 id="detailCartProducts">Detalle del pedido</h3>
-          <div>
-            <ul>
-              <li>
-                <div class="detail_products_cart">
-                  <div id="productAdded1">
-                    <center>
-                      <span><br>Mesa</span><br>
-                      <p>Precio: $19.990,00</p>
-                      <img width="30%" src="/images/mesa1.jpg" alt="producto-mesa">
-                      <!-- <a href="/productDetail">Ver producto</a> -->
-                    </center>
-                  </div>
-                  <div id="productAdded2">
-                    <center>
-                      <span><br>Silla</span><br>
-                      <p>Precio: $2.600,00</p>
-                      <img width="30%" src="/images/silla-1-1.jpg" alt="producto-silla">
-                      <!-- <a href="/productDetail">Ver producto</a> -->
-                    </center>
-                  </div>
-                  <div class="totalToPay">
-                    <p><br><u>Subtotal</u>: $22.590,00<br><u>Descuento</u>: 20,00%<br><u>Total a pagar</u>: $18.072,00</p><br>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-            <button type="submit" class="pay-btn">Pagar</button>
-         </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
     <div class="container">
-      <div class="row footer">
-        <div class="contacto col-12 col-lg-3">
-          <ul>
-            <h6 class="footer-titulo">Contacto</h6>
-            <li>Dirección</li>
-            <li>Teléfono</li>
-            <li>Mail</li>
-          </ul>
-        </div>
-        <div class="suscribite col-12 col-lg-3">
-          <h6 class="footer-titulo">Suscribite a nuestro newsletter para recibir las mejores ofertas</h6>
-          <input  type="email" placeholder=" Tu mail">
-          <button type="submit" class="suscripcipn-btn">Suscribirme</button>
-        </div>
-        <div class="preguntas col-12 col-lg-3">
-          <ul>
-            <h6 class="footer-titulo">Preguntas frecuentes</h6>
-            <li>¿Cómo comprar?</li>
-            <li>Medios de pago</li>
-            <li>Envíos</li>
-          </ul>
-        </div>
-        <div class="redes col-12 col-lg-3">
-          <ul>
-            <h6>Seguinos en las redes sociales</h6>
-            <a href=""><i class="fab fa-instagram redes-icono"></i></a>
-            <a href=""><i class="fab fa-facebook redes-icono"></i></a>
-            <a href=""><i class="fab fa-whatsapp redes-icono"></i></a>
-          </ul>
-        </div>
+      <div id="options_page">
+        <button type="submit" class="continuebuypayment-btn"><a href="/products/:id">Continuar compra</a></button>
+        <button type="submit" class="backcart-btn"><a href="/productCart">Volver atrás</a></button>
       </div>
     </div>
-    </footer>
-    <!-- FOOTER -->
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <div class="formCart">
+      <form id="formOrder" action="index.html" method="GET">
+
+        <br><input type="checkbox" id="init_sesion" name="init_sesion">
+        <label for="init_sesion" id="loginPay">Usar datos de inicio de sesión</label>
+        <a href="login.html"></a>
+
+        <br><label for="name">Nombre completo</label>
+        <p><input type="text" id="name" name="nombre"></p>
+
+        <label for="email">Email</label>
+        <p><input type="email" id="email" name="mail"></p>
+
+        <label for="tel">Número de teléfono</label>
+        <p><input type="tel" id="tel" name="telefono"></p>
+
+        <label for="address">Dirección</label>
+        <p><input type="text" id="address" name="direccion"></p>
+
+        <label for="dni">DNI</label>
+        <p><input type="text" id="dni" name="DNI"></p>
+
+        <label for="metodo_entrega">Método de entrega</label>
+        <div class="container">
+          <div id="opciones_entrega">
+            <button type="submit" class="sucursal-btn">Retiro en sucursal</button>
+            <button type="submit" class="address-btn">Envío a domicilio</button>
+          </div>
+        </div>
+
+        <br><label for="payment_method">Método de pago</label>
+        <div class="container">
+          <div id="payment_options">
+            <button type="submit" class="cash-btn">Efectivo</button>
+            <button type="submit" class="credit-btn">Tarjeta de crédito</button>
+            <button type="submit" class="dedit-btn">Tarjeta de débito</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="order">  <!--row col-4 col-md-4-->
+      <div class="order_detail">
+        <br><h3 id="detailCartProducts">Detalle del pedido</h3>
+        <div>
+          <ul>
+            <li>
+              <div class="detail_products_cart">
+                <div id="productAdded1">
+                  <center>
+                    <span><br>Mesa</span><br>
+                    <p>Precio: $19.990,00</p>
+                    <img width="30%" src="/images/mesa1.jpg" alt="producto-mesa">
+                    <!-- <a href="/productDetail">Ver producto</a> -->
+                  </center>
+                </div>
+                <div id="productAdded2">
+                  <center>
+                    <span><br>Silla</span><br>
+                    <p>Precio: $2.600,00</p>
+                    <img width="30%" src="/images/silla-1-1.jpg" alt="producto-silla">
+                    <!-- <a href="/productDetail">Ver producto</a> -->
+                  </center>
+                </div>
+                <div class="totalToPay">
+                  <p><br><u>Subtotal</u>: $22.590,00<br><u>Descuento</u>: 20,00%<br><u>Total a pagar</u>: $18.072,00</p><br>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button type="submit" class="pay-btn">Pagar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <%- include('./partials/footer') %>
 </body>
 </html>
