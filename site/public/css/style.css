@@ -708,8 +708,11 @@ h5{
 .product-name a{
   color: var(--gris-footer);
 }
-.product-price-view{
+.product-price{
   text-align: center;
+}
+.product-name a{
+  color: var(--gris-footer);
 }
 .products-title{
   text-align: center;
