@@ -6,7 +6,7 @@ Vargas, Emiliana
 Jiménez, Sorany  
 Correas, Federico  
 
-SPRINT 1
+SPRINT 1  
 HERRAMIENTA UTILIZADA:
 reetro.io
 
