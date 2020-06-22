@@ -27,7 +27,6 @@ ACCIONES A TOMAR
 •	Programar presentaciones parciales por videollamadas que permitan tener contacto con el desarrollo del trabajo.-
 
 SPRINT 2
-
 HERRAMIENTA UTILIZADA:
 Estrella de Mar.-
 
