@@ -13,13 +13,6 @@ let indexController = {
     'index': function(req,res){
             res.render('index');
     },
-    'register': function(req,res){
-        res.render('register');
-    },
-    'login': function(req,res){
-        res.render('login');
-            //res.send(loginHTML);
-    },
     'productDetail': function(req,res){
         res.render('productDetail');
     },
