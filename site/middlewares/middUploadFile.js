@@ -4,7 +4,7 @@ const path = require('path');
 // Start File uploads config ---------------------------------------------------------
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-     cb(null, 'public/images/avatars')
+     cb(null, 'public/images/users')
   },
   filename: function (req, file, cb) {
     let fechaActual = new Date();
@@ -32,7 +32,7 @@ let uploadFile = {
     upload(req, res, function(err){ // invocamos la función upload de multer para subir el archivo de avatar
       if(err) {
         console.log(err);
-//        return res.render("productAdd", {title: err});
+        return res.render("/users/register", {title: err});
       } else { next(); } // todo salió bien, continuamos al próximo middleware
     });
   }
