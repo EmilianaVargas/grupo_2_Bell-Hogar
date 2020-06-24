@@ -31,16 +31,6 @@ function searchByEmail(email){
 
         next();
     },
-    /*  loginUserValidation:[
-         check('password')
-            .exists().withMessage('Password no definido.')
-            .trim()
-            .isLength({min: 8}).withMessage('Error: contraseña debe tener al menos 8 caracteres.'),
-         check('email')
-            .exists().withMessage('Email no definido.')
-            .isEmail().withMessage('Error: email inválido.')
-            .normalizeEmail(),
-      ],*/
       registerUserValidation: [
          check('id')
             .exists().withMessage('DNI no definido.')

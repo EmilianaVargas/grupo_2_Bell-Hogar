@@ -21,6 +21,16 @@ router.post('/login', [
   check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')
 ],usersController.postLogin);
 
+// Ruta de creación de usuarios
+router.get('/success', function(req,res){
+  if(req.session.usuarioLogueado == undefined){
+      res.send("No estás logueado");
+  } else {
+      res.send("El usuario logueado es " + req.session.usuarioLogueado.nombre + " y su email es " + req.session.usuarioLogueado.email)
+  }
+});
+
+
 // Ruta de registro
 // router.get('/register', usersController.register);
 

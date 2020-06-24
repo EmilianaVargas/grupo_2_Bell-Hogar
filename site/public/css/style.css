@@ -267,8 +267,7 @@ h5.card-title{
 /* se aplica el ancho, margen centrado  borde de un pixel con redondeado, y rellenado
  * a la izquierda y derecha */
  .form-login{
-   margin: 0 auto;
-  width: 40%;
+  margin: 0 auto;
   border: 1px solid var(--gris-oscuro);
   padding: 2%;
   box-shadow: 2px 2px 10px #666;        

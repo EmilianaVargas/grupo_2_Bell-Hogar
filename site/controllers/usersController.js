@@ -39,7 +39,7 @@ let usersController = {
                 category: "user",
                 image: req.file.filename,
                 domicilio: req.body.domicilio
-            }
+            }   
             addUser(nuevoUsuario);
             return res.render('index');
         }else{
@@ -54,17 +54,21 @@ let usersController = {
         if (errors.isEmpty()){
             for(var i = 0; i < users.length; i++){
                 if(users[i].email == req.body.email){
-                    var usuarioPorLoguearse = users[i];
+                    if(req.body.password == users[i].password){
+                        var usuarioPorLoguearse = users[i];   
+                        break;
+                    }
                 }
-            }
+            } 
             if(usuarioPorLoguearse == undefined){
                 res.render('login', {errors:errors});
             } else {
                 req.session.usuarioLogueado = usuarioPorLoguearse;
-                res.render('index',{usuarioPorLoguearse: usuarioPorLoguearse})
+                res.render('index');
                 
                 if(req.body.recordame != undefined){ //los checkbox si no están tildados son undefined
-                    res.cookies('recordame', usuarioPorLoguearse.email, {maxAge: 90000000000000000});
+                    let expiracion = new Date(Date.now() + 900000);
+                    res.cookies('recordame', usuarioPorLoguearse.email, {expires: expiracion});
                     
                 }
             }
