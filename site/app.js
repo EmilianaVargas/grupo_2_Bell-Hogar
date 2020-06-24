@@ -29,7 +29,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
-//app.use(middRecordame);
+app.use(middRecordame);
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);

@@ -61,19 +61,16 @@ let usersController = {
                 }
             } 
             if(usuarioPorLoguearse == undefined){
-                res.render('login', {errors:errors});
+                res.render('login', {errors:errors.errors});
             } else {
                 req.session.usuarioLogueado = usuarioPorLoguearse;
-                res.render('index');
-                
                 if(req.body.recordame != undefined){ //los checkbox si no están tildados son undefined
-                    let expiracion = new Date(Date.now() + 900000);
-                    res.cookies('recordame', usuarioPorLoguearse.email, {expires: expiracion});
-                    
+                    res.cookie('recordame', usuarioPorLoguearse.email, {maxAge: 999999999999999999999999999999999999999999});  
                 }
+                res.render('index'); 
             }
         } else {
-            res.render('login', {errors: errors})
+            res.render('login', {errors: errors.errors})
         }
     }
 }

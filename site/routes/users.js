@@ -4,6 +4,7 @@ let usersController = require('../controllers/usersController');
 const {check, validationResult,body } = require('express-validator');
 const middUploadFile = require('../middlewares/middUploadFile');
 const middUsers = require('../middlewares/middUsers');
+const middRecordame = require('../middlewares/middRecordame');
 
 // Ruta de login
 router.get('/login', usersController.login);
@@ -21,12 +22,12 @@ router.post('/login', [
   check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')
 ],usersController.postLogin);
 
-// Ruta de creación de usuarios
-router.get('/success', function(req,res){
+// Ruta de check
+router.get('/success', middRecordame, function(req,res){
   if(req.session.usuarioLogueado == undefined){
       res.send("No estás logueado");
   } else {
-      res.send("El usuario logueado es " + req.session.usuarioLogueado.nombre + " y su email es " + req.session.usuarioLogueado.email)
+      res.send("El usuario logueado es " + req.session.usuarioLogueado.nombre + " y su email es " + req.session.usuarioLogueado.email);
   }
 });
 
