@@ -65,9 +65,10 @@ let usersController = {
             } else {
                 req.session.usuarioLogueado = usuarioPorLoguearse;
                 if(req.body.recordame != undefined){ //los checkbox si no están tildados son undefined
-                    res.cookie('recordame', usuarioPorLoguearse.email, {maxAge: 999999999999999999999999999999999999999999});  
+                    let expiracion = new Date(Date.now() + 900000);
+                    res.cookie('recordame', usuarioPorLoguearse.email, {expires: expiracion});  
                 }
-                res.render('index'); 
+                res.render('index',{usuario: req.session.usuarioLogueado}); 
             }
         } else {
             res.render('login', {errors: errors.errors})
