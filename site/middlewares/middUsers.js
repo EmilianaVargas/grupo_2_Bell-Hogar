@@ -27,7 +27,8 @@ function searchByEmail(email){
 }
 
    let middUsers = {
-    middNext: function(req, res, next){
+      middNext: function(req, res, next){
+
         next();
     },
     /*  loginUserValidation:[

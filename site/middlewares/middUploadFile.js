@@ -16,6 +16,8 @@ var upload = multer({
   storage: storage,
   fileFilter: function (req, file, callback) {
     var ext = path.extname(file.originalname);
+    ext = ext.toLowerCase(); //para convertir a minuscula extension de image en mayuscula
+
     if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') {
         return callback(new Error('El avatar sólo puede ser imagen JPG, PNG, JPEG.'))
       }
@@ -32,7 +34,7 @@ let uploadFile = {
     upload(req, res, function(err){ // invocamos la función upload de multer para subir el archivo de avatar
       if(err) {
         console.log(err);
-        return res.render("/users/register", {title: err});
+        return res.render("users/register", {errors: err});
       } else { next(); } // todo salió bien, continuamos al próximo middleware
     });
   }
