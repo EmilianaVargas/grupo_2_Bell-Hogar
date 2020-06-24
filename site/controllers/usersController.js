@@ -71,7 +71,7 @@ let usersController = {
         } else {
             res.render('login', {errors: errors})
         }
-}
+    }
 }
 
 module.exports = usersController;

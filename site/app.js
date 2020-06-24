@@ -11,7 +11,6 @@ let middRecordame = require('./middlewares/middRecordame');
 var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
-// const middRecordame = require('./middlewares/middRecordame');
 
 var app = express();
 
