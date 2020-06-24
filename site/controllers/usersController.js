@@ -68,10 +68,17 @@ let usersController = {
                     let expiracion = new Date(Date.now() + 900000);
                     res.cookie('recordame', usuarioPorLoguearse.email, {expires: expiracion});  
                 }
-                res.render('index',{usuario: req.session.usuarioLogueado}); 
+                res.render('index', {usuario: usuarioPorLoguearse}); 
             }
         } else {
             res.render('login', {errors: errors.errors})
+        }
+    },
+    'profile': function(req,res){
+        if(req.session.usuarioLogueado != undefined){
+            res.render('profile',{usuario: req.session.usuarioLogueado})
+        } else {
+            res.render('error-invitados')
         }
     }
 }

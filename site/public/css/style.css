@@ -771,6 +771,22 @@ h5{
   text-align: center;
 }
 
+/*perfil de usuario*/
+.profile-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.profile-card{
+  border: 4px solid var(--gris-footer);
+  padding: 2%;
+}
+
+.profile-text{
+  font-size: 30px;
+}
+
 /*editProductError*/
 .edit-error-box{
   border: 2px solid var(--gris-footer);

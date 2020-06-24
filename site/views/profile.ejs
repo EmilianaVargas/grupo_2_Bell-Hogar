@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- head -->
+  <%- include('./partials/head') %>
+  
+<!-- header -->
+<%- include('./partials/header') %>
+  
+<body>
+    <div class="cointainer profile-container col-12">
+        <div class="row col-6">
+            <div class="profile-card col-12">
+                <ul class="col-12">
+                    <li class="profile-text">Nombre de usuario: <%= usuario.nombre %></li>
+                    <li class="profile-text">Email: <%= usuario.email %></li>
+                    <li class="profile-text">Contraseña: <%= usuario.password %></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!-- footer -->
+<%- include('./partials/footer') %>
+</body>
+</html>

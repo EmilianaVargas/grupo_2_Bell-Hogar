@@ -26,15 +26,16 @@ function productById(id){
     return product;
 }
 
+
 let productsController = {
     'products': function(req,res){
-        res.render('products');
+        res.render('products',{usuario: req.session.usuarioLogueado});
     },
     'createProduct': function(req,res){
         res.render('productAdd');
     },
     'productDetail': function(req,res){
-        res.render('productDetail');
+        res.render('productDetail',{usuario: req.session.usuarioLogueado});
     },
     'postProduct': function(req,res){
         //Falta verificación de que el producto no exista previamente

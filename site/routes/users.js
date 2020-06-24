@@ -4,15 +4,21 @@ let usersController = require('../controllers/usersController');
 const {check, validationResult,body } = require('express-validator');
 const middUploadFile = require('../middlewares/middUploadFile');
 const middUsers = require('../middlewares/middUsers');
+const middLogueados = require('../middlewares/middUsuariosLogueados')
+const middInvitados = require('../middlewares/middInvitado')
 
 // Ruta de login
-router.get('/login', usersController.login);
+router.get('/login',middLogueados, usersController.login);
+
+
+// Ruta de login
+router.get('/profile',middInvitados, usersController.profile);
 
 // Ruta de listado de usuarios
 router.get('/', usersController.users);
 
 // Ruta de creación de usuarios
-router.get('/register', usersController.register);
+router.get('/register', middInvitados, usersController.register);
 router.post('/create', middUsers.registerUserValidation, middUploadFile.uploadFile, usersController.postregister);
 
 // Ruta de login post
