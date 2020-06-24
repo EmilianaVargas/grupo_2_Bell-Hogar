@@ -64,7 +64,7 @@ let usersController = {
                 res.render('index',{usuarioPorLoguearse: usuarioPorLoguearse})
                 
                 if(req.body.recordame != undefined){ //los checkbox si no están tildados son undefined
-                    res.cookie('recordame', usuarioPorLoguearse.email, {maxAge: 90000000000000000});
+                    res.cookies('recordame', usuarioPorLoguearse.email, {maxAge: 90000000000000000});
                     
                 }
             }
