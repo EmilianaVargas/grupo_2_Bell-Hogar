@@ -55,7 +55,7 @@ let usersController = {
             mensaje = "¡El usuario se creó exitosamente!";
             return res.render('login',{mensaje: mensaje, status: "success", nuevoUsuario: nuevoUsuario.nombre + nuevoUsuario.apellido});
         }else{
-            return res.render('users/register', {errors: "Error al crear el usuario: " + errors.errors, status: "error", nuevoUsuario: undefined } );
+            return res.render('users/register', {errors:errors.errors, status: "error", nuevoUsuario: undefined } );
         }
     },
     'login': function(req,res){
@@ -88,11 +88,20 @@ let usersController = {
     },
     'profile': function(req,res){
         if(req.session.usuarioLogueado != undefined){
-            res.render('profile',{usuario: req.session.usuarioLogueado})
+            res.render('users/profile',{usuario: req.session.usuarioLogueado})
         } else {
             res.render('error-invitados')
         }
-    }
+    },
+    'logout': (req,res) => {
+        req.session.destroy(function(){
+           if (req.cookies.recordame != undefined) {
+              res.clearCookie("recordame"); 
+           };
+           let mensaje = "Se cerró la sesión exitosamente";
+           return res.render("login",{mensaje, status: "success", usuario: undefined});
+        });
+     },
 }
 
 module.exports = usersController;

@@ -1,12 +1,23 @@
 [
-    {
-        "id":1,
-        "nombre":"Bilal Atur",
-        "telefono":"2615916559",
-        "email":"bilalatur2@gmail.com",
-        "password":"pruebalogin",
-        "category":"user",
-        "image":"",
-        "domicilio":"0328 Farmco Terrace"
-    }
+ {
+  "id": 1,
+  "nombre": "Bilal Atur",
+  "telefono": "2615916559",
+  "email": "bilalatur2@gmail.com",
+  "password": "pruebalogin",
+  "category": "user",
+  "image": "",
+  "domicilio": "0328 Farmco Terrace"
+ },
+ {
+  "id": "32572009",
+  "nombre": "Emiliana",
+  "apellido": "Vargas",
+  "telefono": "156514456",
+  "email": "abc@abc.com",
+  "password": "$2b$10$FxCMEQGTdAVvuJSIcNYro.URmjzmSpAhFFW0VHCgUlcoRvsoVzBM.",
+  "category": "user",
+  "image": "Emiliana - 325720092020-.JPG",
+  "domicilio": "mendoza"
+ }
 ]

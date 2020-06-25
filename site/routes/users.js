@@ -19,7 +19,7 @@ router.get('/', usersController.users);
 
 // Ruta de creación de usuarios
 router.get('/register', middLogueados, usersController.register);
-router.post('/create', middUsers.registerUserValidation, middUploadFile.uploadFile, usersController.postregister);
+router.post('/create', middUploadFile.uploadFile, middUsers.registerUserValidation, usersController.postregister);
 
 // Ruta de login post
 router.post('/login', [
@@ -36,9 +36,8 @@ router.get('/success', function(req,res){
   }
 });
 
-
-// Ruta de registro
-// router.get('/register', usersController.register);
+// Ruta de logout
+router.post('/logout', usersController.logout);
 
 module.exports = router;
 
