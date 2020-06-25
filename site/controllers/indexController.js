@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+
 let indexController = {
     'index': function(req,res){
         res.render('index',{usuario: req.session.usuarioLogueado});

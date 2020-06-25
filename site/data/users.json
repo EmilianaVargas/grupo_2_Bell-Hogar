@@ -10,6 +10,17 @@
   "domicilio": "0328 Farmco Terrace"
  },
  {
+  "id": "2",
+  "nombre": "Admin",
+  "apellido": "Admin",
+  "telefono": "-",
+  "email": "-",
+  "password": "admin",
+  "category": "admin",
+  "image": "-",
+  "domicilio": "-"
+ },
+ {
   "id": "32572009",
   "nombre": "Emiliana",
   "apellido": "Vargas",

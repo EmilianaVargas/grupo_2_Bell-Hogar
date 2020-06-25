@@ -35,7 +35,7 @@ function searchByEmail(email){
          check('id')
             .exists().withMessage('DNI no definido.')
             .trim()
-            .isNumeric({min: 8}).withMessage('Error: No es un DNI válido.'),
+            .isNumeric({min: 7}).withMessage('Error: No es un DNI válido.'),
          check('nombre')
             .exists().withMessage('Nombre no definido.')
             .trim()

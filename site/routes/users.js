@@ -11,7 +11,7 @@ const middInvitados = require('../middlewares/middInvitado')
 router.get('/login',middLogueados, usersController.login);
 
 
-// Ruta de login
+// Ruta de profile
 router.get('/profile',middInvitados, usersController.profile);
 
 // Ruta de listado de usuarios

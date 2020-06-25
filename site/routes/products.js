@@ -8,12 +8,11 @@ router.get('/', productsController.products);
 
 // Ruta de creación de productos
 router.get('/create', productsController.createProduct);
+// Ruta de post de creación de producto
+router.post('/create', middUploadFile.uploadFile, productsController.postProduct);
 
 // Ruta de producto particular
 router.get('/:id', productsController.productDetail);
-
-// Ruta de creación de producto
-router.post('/create', middUploadFile.uploadFile, productsController.postProduct);
 
 // Ruta de edición de productos
 router.get('/:id/edit', productsController.editProduct);   
