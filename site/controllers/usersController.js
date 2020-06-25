@@ -53,13 +53,13 @@ let usersController = {
             let mensaje = null;
             addUser(nuevoUsuario);
             mensaje = "¡El usuario se creó exitosamente!";
-            return res.render('login',{mensaje: mensaje, status: "success", nuevoUsuario: nuevoUsuario.nombre + nuevoUsuario.apellido});
+            return res.render('users/login',{mensaje: mensaje, status: "success", nuevoUsuario: nuevoUsuario.nombre + nuevoUsuario.apellido});
         }else{
             return res.render('users/register', {errors:errors.errors, status: "error", nuevoUsuario: undefined } );
         }
     },
     'login': function(req,res){
-        res.render('login');
+        res.render('users/login');
     },
     'postLogin': function(req,res){
         let errors = validationResult(req);
@@ -73,7 +73,7 @@ let usersController = {
                 }
             }
             if(usuarioPorLoguearse == undefined){
-                res.render('login', {errors:errors.errors});
+                res.render('users/login', {errors:errors.errors});
             } else {
                 req.session.usuarioLogueado = usuarioPorLoguearse;
                 if(req.body.recordame != undefined){ //los checkbox si no están tildados son undefined
@@ -83,7 +83,7 @@ let usersController = {
                 res.render('index', {usuario: usuarioPorLoguearse});
             }
         } else {
-            res.render('login', {errors: errors.errors})
+            res.render('users/login', {errors: errors.errors})
         }
     },
     'profile': function(req,res){
@@ -99,7 +99,7 @@ let usersController = {
               res.clearCookie("recordame"); 
            };
            let mensaje = "Se cerró la sesión exitosamente";
-           return res.render("login",{mensaje, status: "success", usuario: undefined});
+           return res.render("users/login",{mensaje, status: "success", usuario: undefined});
         });
      },
 }
