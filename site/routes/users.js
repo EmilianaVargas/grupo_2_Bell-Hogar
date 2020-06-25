@@ -18,7 +18,7 @@ router.get('/profile',middInvitados, usersController.profile);
 router.get('/', usersController.users);
 
 // Ruta de creación de usuarios
-router.get('/register', middInvitados, usersController.register);
+router.get('/register', middLogueados, usersController.register);
 router.post('/create', middUsers.registerUserValidation, middUploadFile.uploadFile, usersController.postregister);
 
 // Ruta de login post
