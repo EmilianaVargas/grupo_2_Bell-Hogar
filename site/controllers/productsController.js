@@ -29,7 +29,7 @@ function productById(id){
 
 let productsController = {
     'products': function(req,res){
-        res.render('products',{usuario: req.session.usuarioLogueado});
+        res.render('products',{usuario: req.session.usuarioLogueado, products: productosDB});
     },
     'createProduct': function(req,res){
         res.render('productAdd');
