@@ -35,8 +35,13 @@ let productsController = {
         res.render('productAdd');
     },
     'productDetail': function(req,res){
-        res.render('productDetail',{usuario: req.session.usuarioLogueado});
-    },
+        let product = productById(req.params.id);
+        if (req.session.usuarioLogueado == undefined) {
+           return res.render('productDetail', {product, usuario: undefined});
+        }else{
+           return res.render('productDetail', {product, usuario: req.session.usuarioLogueado});
+        }
+     },
     'postProduct': function(req,res){
         //Falta verificación de que el producto no exista previamente
         let nuevoProducto = {
