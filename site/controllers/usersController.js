@@ -65,11 +65,9 @@ let usersController = {
         let errors = validationResult(req);
         if (errors.isEmpty()){
             for(var i = 0; i < usuariosDB.length; i++){
-                if(usuariosDB[i].email == req.body.email){
-                    if(req.body.password == usuariosDB[i].password){
+                if(usuariosDB[i].email == req.body.email && bcrypt.compareSync(req.body.password,usuariosDB[i].password)){
                         var usuarioPorLoguearse = usuariosDB[i];
                         break;
-                    }
                 }
             }
             if(usuarioPorLoguearse == undefined){
