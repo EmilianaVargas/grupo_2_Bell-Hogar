@@ -56,7 +56,31 @@ STOP OF (Para de Hacer)
 •	Llegar a la entrega del sprint con las pruebas de las partes en fecha tope.-
 
 
+SPRINT 3 y 4
+HERRAMIENTA UTILIZADA:
+Estrella de Mar.-
 
+START DOING (Comenzar a Hacer)
+•	Mayor participación INDIVIDUAL en Trello como herramienta de seguimiento de todos los integrantes
+•	Uso de herramienta GitKraken
+•	Repasar responsive de todas las vistas nuevas implementadas o modificadas
+
+MORE OF (Mas de)
+•	Practicas que permitan mantener al dia los temas teóricos de clase e implementación en el proyecto.-
+
+KEEP DOING (Mantenerse Haciendo)
+•	Mantener la positiva predisposición para sumar ideas y colaboración.-
+•	Destacar la participación de compañeros que asumen roles importantes en el desarrollo de los trabajos
+•	Continuar utilizando Whatsapp como herramienta que permita mantener contacto constante y citar las reuniones puntuales para documentar las dudas que se van presentando.-
+•	Promover la motivación y espíritu de camaradería dentro del grupo.
+•	Programar presentaciones parciales por videollamadas que permitan tener contacto con el desarrollo del trabajo del compañero.-
+
+LESS OF (Menos de)
+•	Demorarnos con el inicio del Sprint, lograr la version estable al menos un dia antes del vencimiento de la presentacion.-
+
+STOP OF (Parar de Hacer)
+•	Programar pruebas de las funcionalidades desarrolladas muy cercanas a fecha tope
+•	Utilizar clases con nombres que puedan ser repetidas en los estilos de la e-commerce.-
 
 
 
