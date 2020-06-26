@@ -1,24 +1,15 @@
 [
  {
-  "id": 1,
-  "nombre": "Bilal Atur",
-  "telefono": "2615916559",
-  "email": "bilalatur2@gmail.com",
-  "password": "pruebalogin",
-  "category": "user",
-  "image": "",
-  "domicilio": "0328 Farmco Terrace"
- },
- {
-  "id": "2",
+  "id": "1",
   "nombre": "Admin",
   "apellido": "Admin",
   "telefono": "-",
-  "email": "-",
-  "password": "admin",
+  "email": "admin@bell.hogar",
+  "password": "$2b$10$K731/tDXVyq4cG1enM.ZleTecsN.pOVvd3ZNvLYfkK0P5Zhaywrpa",
   "category": "admin",
   "image": "-",
-  "domicilio": "-"
+  "domicilio": "-",
+  "admin": "admin"
  },
  {
   "id": "32572009",
@@ -29,7 +20,8 @@
   "password": "$2b$10$FxCMEQGTdAVvuJSIcNYro.URmjzmSpAhFFW0VHCgUlcoRvsoVzBM.",
   "category": "user",
   "image": "Emiliana - 325720092020-.JPG",
-  "domicilio": "mendoza"
+  "domicilio": "mendoza",
+  "admin": "undefined"
  },
  {
   "id": "33333333",
@@ -40,7 +32,8 @@
   "password": "$2b$10$K731/tDXVyq4cG1enM.ZleTecsN.pOVvd3ZNvLYfkK0P5Zhaywrpa",
   "category": "user",
   "image": "prueba 3 - 333333332020-.jpg",
-  "domicilio": "mendoza"
+  "domicilio": "mendoza",
+  "admin": "undefined"
  },
  {
   "id": "44444444",
@@ -51,6 +44,7 @@
   "password": "$2b$10$5Fguf1R2XZTCJL7Qk7/AeuouEw7o3jbTk6BHOoo71sXwdXvHjCf7e",
   "category": "user",
   "image": "prueba4 - 444444442020-.jpeg",
-  "domicilio": "prueba4"
+  "domicilio": "prueba4",
+  "admin": "undefined"
  }
 ]

@@ -11,8 +11,16 @@
         <div class="row col-6">
             <div class="profile-card col-12">
                 <ul class="col-12">
-                    <li class="profile-text">Nombre de usuario: <%= usuario.nombre %></li>
-                    <li class="profile-text">Email: <%= usuario.email %></li>
+                    <% if (usuario.admin == 'undefined') { %>
+                        <li class="profile-text">Nombre de usuario: <%= usuario.nombre %></li>
+                        <li class="profile-text">Email: <%= usuario.email %></li>
+                        <% } else { %>
+                            <li class="profile-text">Nombre de usuario: <%= usuario.nombre %></li>
+                            <li class="profile-text">Email: <%= usuario.email %></li>
+                            <br><input type="button" Onclick="location.href='/products/create'" class="error-button" name="login" value="Agregar Productos"><br><br>
+                            <input type="button" Onclick="location.href='/products'" class="error-button" name="login" value="Editar Productos"><br><br>
+                            <input type="button" Onclick="location.href='/products'" class="error-button" name="login" value="Eliminar Productos"> 
+                         <% } %>  
                 </ul>
                 <br>
                 <form class="" action="/users/logout" method="POST">

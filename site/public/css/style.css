@@ -134,6 +134,9 @@ h5.card-title{
 
 /* FOOTER */
 .footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   text-align: center;
   font-size: 15px;
   margin-top: 30px;
@@ -149,11 +152,10 @@ h5.card-title{
   color: white;
 }
 .contacto{
-  display: block;
   padding: 5px;
 }
-.contacto ul{
-  padding: 0;
+.contacto-lista{
+  padding: 0px;
 }
 .suscribite{
   padding: 5px;
@@ -174,6 +176,9 @@ h5.card-title{
 }
 .redes{
   padding: 5px;
+}
+.redes-lista{
+  padding: 0px;
 }
 .redes-icono{
   font-size: 35px;
@@ -745,6 +750,10 @@ h5{
 }
 
 /* Vista Productos*/
+.product-title-admin{
+  margin-left: 2%;
+  font-size: 23px;
+}
 .view-products{
   display: flex;
   flex-wrap: wrap;

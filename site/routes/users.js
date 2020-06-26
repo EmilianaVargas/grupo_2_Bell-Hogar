@@ -7,6 +7,7 @@ const middUsers = require('../middlewares/middUsers');
 const middLogueados = require('../middlewares/middUsuariosLogueados')
 const middInvitados = require('../middlewares/middInvitado')
 
+
 // Ruta de login
 router.get('/login',middLogueados, usersController.login);
 

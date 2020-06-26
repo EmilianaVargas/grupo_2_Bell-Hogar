@@ -7,6 +7,11 @@
     <%- include('./partials/header') %>
     <!-- Products -->
     <h1 class="products-title">Todos los productos</h1>
+    <% if (usuario == undefined) { %>
+        <% } else if (usuario.admin == 'undefined') { %>
+             <% } else { %>
+                <br><h4 class="product-title-admin col-12">Seleccione el producto que desea editar o eliminar</h4>
+                <% } %>
     <div class="container">
         <div class="row">
             <div class ="view-products">

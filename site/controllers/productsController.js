@@ -32,7 +32,7 @@ let productsController = {
         res.render('products',{usuario: req.session.usuarioLogueado, products: productosDB});
     },
     'createProduct': function(req,res){
-        res.render('productAdd');
+        res.render('productAdd',{usuario: req.session.usuarioLogueado});
     },
     'productDetail': function(req,res){
         let product = productById(req.params.id);
@@ -61,7 +61,7 @@ let productsController = {
         if(product != null){
             return res.render('editProduct',{product})
         } else {
-            return res.render('editProductError');
+            return res.render('editProductError',{usuario: req.session.usuarioLogueado});
         }
     },
     'putEditProduct': function(req,res){
@@ -94,7 +94,7 @@ let productsController = {
     'formuDelete':function(req,res){
         let product = productById(req.params.id);
         if(product != null){
-            return res.render('deleteProduct',{product});
+            return res.render('deleteProduct',{product,usuario: req.session.usuarioLogueado});
         } else {
             return res.render('editProductError');
         }
