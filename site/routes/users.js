@@ -15,8 +15,6 @@ router.get('/login',middLogueados, usersController.login);
 // Ruta de profile
 router.get('/profile',middInvitados, usersController.profile);
 
-// Ruta de listado de usuarios
-router.get('/', usersController.users);
 
 // Ruta de creación de usuarios
 router.get('/register', middLogueados, usersController.register);
