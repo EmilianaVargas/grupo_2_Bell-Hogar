@@ -812,4 +812,11 @@ h5{
   color: white;
 }
 
-/* formulario de carga de producto para administrador - PRODUCTADD*/
+/* Prueba hover */
+.li-menu {
+  transition: opacity 0.2s;
+}
+
+.sibling-fade:hover .li-menu:not(:hover) {
+  opacity: 0.5;
+}

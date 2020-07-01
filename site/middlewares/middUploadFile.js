@@ -4,7 +4,7 @@ const path = require('path');
 // Start File uploads config ---------------------------------------------------------
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-     cb(null, 'public/images/users')
+    cb(null, path.dirname('public/images/avatars'))
   },
   filename: function (req, file, cb) {
     let fechaActual = new Date();
