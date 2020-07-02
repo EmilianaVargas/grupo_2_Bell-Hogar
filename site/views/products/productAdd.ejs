@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <!-- head -->
-  <%- include('./partials/head') %>
+  <%- include('../partials/head') %>
   <body class="container">
  <!-- header -->
- <%- include('./partials/header') %>
+ <%- include('../partials/header') %>
 
         <!-- Inicio Formulario de Registro de productos-->
         <div class ="container body-form">
@@ -20,8 +20,30 @@
                         <input name="descripcion" id= "descripcion" type="text" class="form-control"></br>
                       <label for = "image"><h6>Imagen del Producto:</h6></label><br>
                         <input name="image" id="image" type="file" class="btn-color "accept=".jpg, .jpeg, .png" ><br><br>
-                      <label for = "categoria"><h6>Categoria:</h6></label>
-                        <input name="categoria" id= "categoria" type="text" class="form-control" required></br>
+                      <!-- <label for = "categoria"><h6>Categoria:</h6></label>
+                        <select name="categoria" id= "categoria" type="text" class="form-control" required></br>
+                          <% for (let i=0; i<categories.length; i++){ %>
+                            <option value="<%= categories[i].id %>">
+                              <%= categories[i].name %> 
+                            </option>
+                          <% } %> 
+                        </select> 
+                        <label for = "subCategory"><h6>Subcategoria:</h6></label>
+                        <select name="subCategory" id= "subCategory" type="text" class="form-control" required></br>
+                          <% for (let i=0; i<subCategory.length; i++){ %>
+                            <option value="<%= subCategory[i].id %>">
+                              <%= subCategory[i].name %> 
+                            </option>
+                          <% } %> 
+                        </select> 
+                        <label for = "marca"><h6>Marca:</h6></label>
+                        <select name="marca" id= "marca" type="text" class="form-control" required></br>
+                          <% for (let i=0; i<marca.length; i++){ %>
+                            <option value="<%= marca[i].id %>">
+                              <%= marca[i].name %> 
+                            </option>
+                          <% } %> 
+                        </select>  -->
                       <label for = "colores"><h6>Colores:</h6></label><br>
                         <input name= "colores" id="colores" type="text" class="form-control"></br>
                       <label for = "precio"><h6>Precio:</h6></label><br>
@@ -38,6 +60,6 @@
         <!-- Fin Formulario de Registro de productos -->
 
         <!-- footer -->
-        <%- include('./partials/footer') %>    
+        <%- include('../partials/footer') %>    
     </body>
 </html>

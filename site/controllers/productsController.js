@@ -36,18 +36,20 @@ let productsController = {
     'createProduct': function(req,res){
         /*
         db.Category.findAll()
-        .then(function(categorias){
-            return res.render('productAdd',{categorias:categorias})
-        })
+        .then(function(categories){
+            return res.render('products/productAdd',{categories:categories})
+        }),
+        db.subCategory.findAll()
+        .then(function(subCategory){
+            return res.render('products/productAdd',{subCategory:subCategory})
+        }),
         db.Marca.findAll()
         .then(function(marcas){
-            return res.render('productAdd',{marcas:marcas})
+            return res.render('products/productAdd',{marcas:marcas})
         })
 */
 
-
-
-        res.render('productAdd',{usuario: req.session.usuarioLogueado});
+        res.render('products/productAdd',{usuario: req.session.usuarioLogueado});
     },
     'productDetail': function(req,res){
         /*
