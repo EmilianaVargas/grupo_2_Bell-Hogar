@@ -6,21 +6,22 @@ const middUploadFile = require('../middlewares/middUploadFile');
 // Ruta de listado de productos
 router.get('/', productsController.products);
 
-// Ruta de creación de productos
+// Ruta GET - Creación de productos
 router.get('/create', productsController.createProduct);
-// Ruta de post de creación de producto
+// Ruta POST - Guardado de creación de producto
 router.post('/create', middUploadFile.uploadFile, productsController.postProduct);
 
-// Ruta de producto particular
+// Ruta de producto clickeado - Detalle
 router.get('/:id', productsController.productDetail);
 
-// Ruta de edición de productos
-router.get('/:id/edit', productsController.editProduct);   
+// Ruta de producto buscado - Buscar
+//router.get('/:id', productsController.productDetail);
 
-// Ruta de envío de la edición
+// Rutas de Actualización de productos
+router.get('/:id/edit', productsController.editProduct);   
 router.put('/:id/edit', productsController.putEditProduct);
 
-// Ruta para eliminar un producto
+// Rutas para eliminar un producto 
 router.get('/:id/delete', productsController.formuDelete);
 router.delete('/:id', productsController.delete);
 

@@ -31,7 +31,13 @@ function productById(id){
 
 let productsController = {
     'products': function(req,res){
-        res.render('products',{usuario: req.session.usuarioLogueado, products: productosDB});
+        /*
+        db.Producto.findAll()
+        .then(function(producto){
+            res.render('products/products',{usuario: req.session.usuarioLogueado, producto})
+        })
+        */
+        res.render('products/products',{usuario: req.session.usuarioLogueado, products: productosDB});
     },
     'createProduct': function(req,res){
         /*
@@ -52,21 +58,38 @@ let productsController = {
         res.render('products/productAdd',{usuario: req.session.usuarioLogueado});
     },
     'productDetail': function(req,res){
-        /*
-        db.Producto.findByPk(req.params.id)
+        /* 
+        db.Producto.findByPk(req.params.id,{
+            include:[{association:"productCategory"},{association:'productMarca'}]
+        })
             .then(function(producto){
-            res.render('productDetail',{producto:producto})
+                if (req.session.usuarioLogueado == undefined) {
+                    return res.render('products/productDetail', {producto, usuario: undefined});
+                 }else{
+                    return res.render('products/productDetail', {producto, usuario: req.session.usuarioLogueado});
+                 }
         })
 */
-        
         let product = productById(req.params.id);
         if (req.session.usuarioLogueado == undefined) {
-           return res.render('productDetail', {product, usuario: undefined});
+           return res.render('products/productDetail', {product, usuario: undefined});
         }else{
-           return res.render('productDetail', {product, usuario: req.session.usuarioLogueado});
+           return res.render('products/productDetail', {product, usuario: req.session.usuarioLogueado});
         }
      },
     'postProduct': function(req,res){
+        /*  
+        db.Producto.create({
+            name: req.body.nombre,
+            description: req.body.descripcion,
+            category_id:req.body.categoria,
+            subCategory_id:req.body.subCategory,
+            marca_id:req.body.marca,
+            unit_price:req.body.precio,
+            stock:req.body.stock
+        });
+        res.redirect('products/products');*/
+
         //Falta verificación de que el producto no exista previamente
         let nuevoProducto = {
             id: req.body.id,
@@ -78,17 +101,49 @@ let productsController = {
             stock:req.body.stock
         }
         addProduct(nuevoProducto);
-        res.render('productAdd');
+        res.render('products/products');
     },
     'editProduct': function(req,res){
+/* ver nombre de variable "products" o "producto" segun vista o bs respectivamente
+        let pedidoProducto=db.Producto.findByPk(req.params.id);
+        let pedidoCategory=db.Category.findAll();
+        let pedidoSubcategory=db.subCategory.findAll();
+        let pedidoMarca=db.Marca.findAll();
+
+        Promise.all([pedidoProducto, pedidoCategory,pedidoSubcategory,pedidoMarca])
+        .then(function([producto,categories,subCategory,marcas]){
+            if(producto != null){
+                return res.render('products/editProduct',{producto,categories,subCategory,marcas})
+            } else {
+                return res.render('products/editProductError',{usuario: req.session.usuarioLogueado});
+            }
+        }),
+      */
+
         let product = productById(req.params.id);
         if(product != null){
-            return res.render('editProduct',{product})
+            return res.render('products/editProduct',{product})
         } else {
-            return res.render('editProductError',{usuario: req.session.usuarioLogueado});
+            return res.render('products/editProductError',{usuario: req.session.usuarioLogueado});
         }
     },
     'putEditProduct': function(req,res){
+        /*
+       db.Producto.update({
+        name: req.body.nombre,
+        description: req.body.descripcion,
+        category_id:req.body.categoria,
+        subCategory_id:req.body.subCategory,
+        marca_id:req.body.marca,
+        unit_price:req.body.precio,
+        stock:req.body.stock
+        }, {
+            where:{
+                id: req.params.id
+                }
+            });
+        res.redirect('products/products' + req.params.id);
+        */
         let product = productById(req.body.id);
         let products = productosDB;
         
@@ -112,25 +167,32 @@ let productsController = {
             }});
             
             saveJSONfile(products);
-            res.render('products');
+            res.render('products/products');
         }
     },
     'formuDelete':function(req,res){
         let product = productById(req.params.id);
         if(product != null){
-            return res.render('deleteProduct',{product,usuario: req.session.usuarioLogueado});
+            return res.render('products/deleteProduct',{product,usuario: req.session.usuarioLogueado});
         } else {
-            return res.render('editProductError');
+            return res.render('products/editProductError');
         }
     },
     'delete': function(req,res){
+        /* primero eliminar toda la info de tablas asociadas
+       db.Producto.destroy({
+            where:{id= req.params.id}
+        });
+        res.redirect('products/products');
+        };
+*/
         let product = productById(req.body.id);
         let nuevoArrayProductos = [];
         let products = productosDB;
         
         nuevoArrayProductos = products.filter(prod => prod.id != product.id);
         saveJSONfile(nuevoArrayProductos);
-        return res.render('products');
+        return res.render('products/products');
     }
 }
 

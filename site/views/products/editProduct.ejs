@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <!-- head -->
-  <%- include('./partials/head') %>
+  <%- include('../partials/head') %>
   <body class="container">
  <!-- header -->
- <%- include('./partials/header') %>
+ <%- include('../partials/header') %>
 
  <!-- header -->
  <div class="container">
@@ -21,23 +21,50 @@
                 <input name="description" id= "description" type="text" class="form-control" value=<%=product.description%>></br>
             <label for = "image"><h6>Imagen del Producto:</h6></label><br>
                 <input name="image" id="image" type="file" class="btn-color" value=<%=product.image%> accept=".jpg, .jpeg, .png" ><br><br>
-            <label for = "category"><h6>Categoria:</h6></label>
-                <input name="category" id= "category" type="text" class="form-control" value=<%=product.category%> required></br>
+            <!-- <label for = "category"><h6>Categoria:</h6></label>
+                <select name="category" id= "category" type="text" class="form-control" required></br>
+                    <% for (let i=0; i<categories.length; i++){ %>
+                        <% if (categories[i].id == producto.category_id){ %>
+                            <option value="<%= categories[i].id %>" selected>
+                                <%= categories[i].name %> 
+                            </option>
+                        <% } else{ %>
+                            <option value="<%= categories[i].id %>" selected>
+                                <%= categories[i].name %> 
+                            </option>
+                        <% }  %> 
+                    <% }  %> 
+                </select> 
+  
+            <label for = "marca"><h6>Marca:</h6></label>
+                <select name="marca" id= "marca" type="text" class="form-control" required></br>
+                    <% for (let i=0; i<marca.length; i++){ %>
+                        <% if (marca[i].id == producto.marca_id){ %>
+                    <option value="<%= marca[i].id %>" selected >
+                        <%= marca[i].name %> 
+                    </option>
+                    <% } else{ %>
+                        <option value="<%= marca[i].id %>" selected >
+                            <%= marca[i].name %> 
+                        </option>
+                    <% } %> 
+                 </select> -->
+
             <label for = "colors"><h6>Colores:</h6></label><br>
                 <input name= "colors" id="colors" type="text" class="form-control" value=<%=product.colors%>></br>
             <label for = "price"><h6>Precio:</h6></label><br>
                 <input name="price" id="price" type="text" class="form-control" value=<%=product.price%> required></br>
             <label for = "stock"><h6>Stock:</h6></label><br>
                 <input name="stock" id="stock" type="text" class="form-control" value=<%=product.stock%>></br>
-            <button class="suscription-btn btn-color "  id="IngresoLog" type="submit">Editar producto</button><br><br>
-            <button class="suscription-btn btn-color "  id="IngresoLog" type="reset">Borrar datos</button>
+            <button class="suscription-btn btn-color "  id="editarProducto" type="submit">Confirmar edicion</button><br><br>
+            <button class="suscription-btn btn-color "  id="borrarProducto" type="reset">Borrarlo</button>
         </form>
          </div>
      </div>
  </div>
       
     <!-- footer -->
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
   </body>
 </html>
   

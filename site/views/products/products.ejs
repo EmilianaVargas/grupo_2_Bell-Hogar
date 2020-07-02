@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <!-- head -->
-<%- include('./partials/head') %>
+<%- include('../partials/head') %>
 <body class="container">
     <!-- header -->
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
     <!-- Products -->
-    <h1 class="products-title">Todos los productos</h1>
+    <h1 class="products-title">Nuestros productos</h1>
     <% if (usuario == undefined) { %>
         <% } else if (usuario.admin == 'undefined') { %>
              <% } else { %>
@@ -30,6 +30,6 @@
             
             <!-- Products --> 
             <!-- footer -->
-            <%- include('./partials/footer') %>    
+            <%- include('../partials/footer') %>    
         </body>
         </html>
