@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+let db=require('../database/models');
+const sequelize = db.sequelize;
 
 // Lee el JSON de productos
 const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -32,9 +34,29 @@ let productsController = {
         res.render('products',{usuario: req.session.usuarioLogueado, products: productosDB});
     },
     'createProduct': function(req,res){
+        /*
+        db.Category.findAll()
+        .then(function(categorias){
+            return res.render('productAdd',{categorias:categorias})
+        })
+        db.Marca.findAll()
+        .then(function(marcas){
+            return res.render('productAdd',{marcas:marcas})
+        })
+*/
+
+
+
         res.render('productAdd',{usuario: req.session.usuarioLogueado});
     },
     'productDetail': function(req,res){
+        /*
+        db.Producto.findByPk(req.params.id)
+            .then(function(producto){
+            res.render('productDetail',{producto:producto})
+        })
+*/
+        
         let product = productById(req.params.id);
         if (req.session.usuarioLogueado == undefined) {
            return res.render('productDetail', {product, usuario: undefined});

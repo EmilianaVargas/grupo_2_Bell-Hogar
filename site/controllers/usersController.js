@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt=require('bcrypt');
 const {check, validationResult,body } = require('express-validator');
+let db=require('../database/models');
+const sequelize = db.sequelize;
 
 // Lee el JSON de usuarios
 const usersFilePath = path.join(__dirname, '../data/users.json');
@@ -39,6 +41,37 @@ let usersController = {
 
       // Si todo está bien, procedemos a guardar el nuevo usuario (ver de enviar a perfil de usuario!!!)
       if(errors.errors.length == 0){ //sin error
+
+/*        db.Usuarios.findOrCreate({
+                    where: { email: req.body.email },
+                    defaults: {
+                        first_name: req.body.nombre,
+                        last_name: req.body.apellido,
+                        phone: req.body.telefono,
+                        email: req.body.email,
+                        password_id: bcrypt.hashSync(req.body.password, 10),
+                        is_admin: "false",
+                        image: req.file.filename,
+                        adress_id: req.body.domicilio,
+                        payment_id:null
+                    }
+                })
+                .then(([usuarios, creacion]) => {
+                    if (!creacion) {
+                        res.render('users/login', { errors: [{ msg: 'Usuario ya existente'}] })
+                    } else {
+                        res.redirect('/users/login')
+                        //si va por render:
+                        //mensaje = "¡El usuario se creó exitosamente!";
+                        //return res.render('users/login',{mensaje: mensaje, status: "success", nuevoUsuario: nuevoUsuario.nombre + nuevoUsuario.apellido});
+                    }
+
+                })
+        } else {
+            res.render('users/register', {errors: errors.errors })
+        }
+    },
+*/
             let nuevoUsuario= {
                 id: req.body.id,
                 nombre: req.body.nombre,
@@ -64,6 +97,29 @@ let usersController = {
     'postLogin': function(req,res){
         let errors = validationResult(req);
         if (errors.isEmpty()){
+            /*
+           db.Usuario.findOne({
+               where: {
+                   email: req.body.email
+                } 
+            }).then((usuarioPorLoguearse) => {
+            if (usuarioPorLoguearse != null) {
+                if (bcrypt.compareSync(req.body.password, usuarioPorLoguearse.password)) {
+                    req.session.usuarioLogueado = usuarioPorLoguearse;
+                        if(req.body.recordame != undefined){ //los checkbox si no están tildados son undefined
+                            let expiracion = new Date(Date.now() + 900000);
+                            res.cookie('recordame', usuarioPorLoguearse.email, {expires: expiracion});
+                        };
+                    res.render('index', {usuario: usuarioPorLoguearse});
+                }else {
+                    res.render('users/login', {errors: errors.errors})
+                };
+            };
+            }).catch(function(error){
+                console.log(error);
+                });
+
+            */
             for(var i = 0; i < usuariosDB.length; i++){
                 if(usuariosDB[i].email == req.body.email && bcrypt.compareSync(req.body.password,usuariosDB[i].password)){
                         var usuarioPorLoguearse = usuariosDB[i];
