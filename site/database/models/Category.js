@@ -13,14 +13,27 @@ module.exports = (sequelize, dataTypes) => {
         },
         product_id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
         },
+        subcategory_id: {
+            type: dataTypes.INTEGER,
+        }
     }
     let config = {
         tableName: "categories", //el mismo nombre en el modelo
         timestamps: false
     }
     const Category = sequelize.define(alias,cols,config)
+
+    Category.associate = function(models){
+        Category.hasMany(models.Producto, {
+            alias: "productCategory",
+            foreignKey: "product_id"
+        }),
+        Category.hasMany(models.Subcategory,{
+            alias:"subcategory",
+            foreignKey: "subcategory_id"
+        })
+    }
+
     return Category;
 }

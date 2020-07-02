@@ -16,8 +16,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         user_id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
         },
     }
     let config = {
@@ -25,5 +23,15 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const Adress = sequelize.define(alias,cols,config)
+
+    
+    Adress.associate = function(models){
+        Adress.hasMany(models.Usuario, {
+            alias: "userAddresses",
+            foreignKey: "user_id"
+        })
+    }
+
+
     return Adress;
 }

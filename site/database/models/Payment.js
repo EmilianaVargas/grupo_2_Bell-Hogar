@@ -13,8 +13,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         user_id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
         },
     }
     let config = {
@@ -22,5 +20,15 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const Payment = sequelize.define(alias,cols,config)
+
+    
+    Payment.associate = function(models){
+        Payment.hasMany(models.Usuario, {
+            alias: "userPayments",
+            foreignKey: "user_id"
+        })
+    }
+
+
     return Payment;
 }

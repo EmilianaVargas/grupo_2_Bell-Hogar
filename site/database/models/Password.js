@@ -13,14 +13,21 @@ module.exports = (sequelize, dataTypes) => {
         },
         user_id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
+        }
     }
     let config = {
         tableName: "passwords", //el mismo nombre en el modelo
         timestamps: false
     }
     const Password = sequelize.define(alias,cols,config)
+
+    Password.associate = function(models){
+        Password.belongsTo(models.Usuario, {
+            alias: "userPassword",
+            foreignKey: "user_id"
+        })
+    }
+
+
     return Password;
 }

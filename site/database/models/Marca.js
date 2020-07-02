@@ -16,8 +16,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         product_id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
         },
     }
     let config = {
@@ -25,5 +23,13 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const Marca = sequelize.define(alias,cols,config)
+
+    Marca.associate = function(models){
+        Marca.hasMany(models.Producto, {
+            alias: "productMarca",
+            foreignKey: "product_id"
+        })
+    }
+
     return Marca;
 }

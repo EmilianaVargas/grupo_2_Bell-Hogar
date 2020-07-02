@@ -37,18 +37,34 @@ module.exports = (sequelize, dataTypes) => {
         },
         password_id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
         },
         adress_id: {type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
+        },
+        payment_id: {type: dataTypes.INTEGER,
         } 
     }
     let config = {
         tableName: "usuarios", //el mismo nombre en el modelo
         timestamps: false
     }
+
     const Usuario = sequelize.define(alias,cols,config)
+
+    Usuario.associate = function(models){
+        Usuario.belongsTo(models.Password, {
+            alias: "userPassword",
+            foreignKey: "user_id"
+        }),
+        Usuario.belongsTo(models.Adress,{
+            alias: "userAddresses",
+            foreignKey: "adress_id"
+        }),
+        Usuario.belongsTo(models.Payment,{
+            alias: "userPayments",
+            foreignKey: "payment_id"
+        })
+    }
+
+
     return Usuario;
 }

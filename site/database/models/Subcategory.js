@@ -13,8 +13,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         category_id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
         },
     }
     let config = {
@@ -22,5 +20,13 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const SubCategory = sequelize.define(alias,cols,config)
+
+    SubCategory.associate = function(models){
+        SubCategory.belongsTo(models.Category, {
+            alias: "subcategory",
+            foreignKey: "category_id"
+        })
+    }
+
     return SubCategory;
 }

@@ -46,12 +46,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         category_id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
         },
         marca_id: {type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
         } 
     }
     let config = {
@@ -59,5 +55,18 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const Producto = sequelize.define(alias,cols,config)
+
+    Producto.associate = function(models){
+        Producto.belongsTo(models.Category, {
+            alias: "productCategory",
+            foreignKey: "category_id"
+        }),
+        Producto.belongsTo(models.Marca,{
+            alias: "productMarca",
+            foreignKey: "marca_id"
+        })
+    }
+
+
     return Producto;
 }
