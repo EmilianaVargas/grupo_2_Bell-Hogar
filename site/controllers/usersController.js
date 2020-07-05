@@ -3,7 +3,6 @@ const path = require('path');
 const bcrypt=require('bcrypt');
 const {check, validationResult,body } = require('express-validator');
 let db=require('../database/models');
-const sequelize = db.sequelize;
 
 // Lee el JSON de usuarios
 const usersFilePath = path.join(__dirname, '../data/users.json');
@@ -97,11 +96,11 @@ let usersController = {
     'postLogin': function(req,res){
         let errors = validationResult(req);
         if (errors.isEmpty()){
-            /*
-           db.Usuario.findOne({
+
+           db.User.findOne({
                where: {
                    email: req.body.email
-                } 
+                },
             }).then((usuarioPorLoguearse) => {
             if (usuarioPorLoguearse != null) {
                 if (bcrypt.compareSync(req.body.password, usuarioPorLoguearse.password)) {
@@ -114,30 +113,12 @@ let usersController = {
                 }else {
                     res.render('users/login', {errors: errors.errors})
                 };
+            } else {
+                res.render('users/register', { errors: [{ msg: 'El usuario no existe, favor de registrarse'}] })
             };
             }).catch(function(error){
                 console.log(error);
-                });
-
-            */
-            for(var i = 0; i < usuariosDB.length; i++){
-                if(usuariosDB[i].email == req.body.email && bcrypt.compareSync(req.body.password,usuariosDB[i].password)){
-                        var usuarioPorLoguearse = usuariosDB[i];
-                        break;
-                }
-            }
-            if(usuarioPorLoguearse == undefined){
-                res.render('users/login', {errors:errors.errors});
-            } else {
-                req.session.usuarioLogueado = usuarioPorLoguearse;
-                if(req.body.recordame != undefined){ //los checkbox si no están tildados son undefined
-                    let expiracion = new Date(Date.now() + 900000);
-                    res.cookie('recordame', usuarioPorLoguearse.email, {expires: expiracion});
-                }
-                res.render('index', {usuario: usuarioPorLoguearse});
-            }
-        } else {
-            res.render('users/login', {errors: errors.errors})
+            });
         }
     },
     'profile': function(req,res){

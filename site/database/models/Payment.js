@@ -1,7 +1,7 @@
 const config = require("../config/config");
 
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Payments";
+    let alias = "Payment";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         card_number: {
-            type: dataTypes.VARCHAR(30)
+            type: dataTypes.STRING
         },
         user_id: {
             type: dataTypes.INTEGER,
@@ -23,8 +23,8 @@ module.exports = (sequelize, dataTypes) => {
 
     
     Payment.associate = function(models){
-        Payment.hasMany(models.Usuario, {
-            alias: "userPayments",
+        Payment.belongsTo(models.User, {
+            alias: "userPayment",
             foreignKey: "user_id"
         })
     }

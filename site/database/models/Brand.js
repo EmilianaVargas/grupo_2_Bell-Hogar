@@ -1,7 +1,7 @@
 const config = require("../config/config");
 
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Marcas";
+    let alias = "Brand";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -9,27 +9,27 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         name: {
-            type: dataTypes.CHAR(30)
+            type: dataTypes.STRING
         },
         contact: {
-            type: dataTypes.DOUBLE(30)
+            type: dataTypes.DOUBLE
         },
         product_id: {
             type: dataTypes.INTEGER,
         },
     }
     let config = {
-        tableName: "marcas", //el mismo nombre en el modelo
+        tableName: "brands", //el mismo nombre en el modelo
         timestamps: false
     }
-    const Marca = sequelize.define(alias,cols,config)
+    const Brand = sequelize.define(alias,cols,config)
 
-    Marca.associate = function(models){
-        Marca.hasMany(models.Producto, {
-            alias: "productMarca",
+    Brand.associate = function(models){
+        Brand.hasMany(models.Product, {
+            alias: "productBrand",
             foreignKey: "product_id"
         })
     }
 
-    return Marca;
+    return Brand;
 }
