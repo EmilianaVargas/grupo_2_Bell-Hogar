@@ -80,16 +80,35 @@ CREATE TABLE IF NOT EXISTS `users` (
   `first_name` char(20) NOT NULL,
   `last_name` char(20) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `dni_cuit` double NOT NULL,
+  `dni_cuit` double DEFAULT NULL,
   `is_admin` char(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `image` varchar(45) NOT NULL,
+  `image` varchar(45) DEFAULT NULL,
   `phone` double DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `address_id` int(11) NOT NULL,
-  `payment_id` int(11) NOT NULL
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `address_id` int(11) DEFAULT NULL,
+  `payment_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- RELACIONES PARA LA TABLA `users`:
+--   `address_id`
+--       `addresses` -> `id`
+--   `payment_id`
+--       `payments` -> `id`
+--
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `dni_cuit`, `is_admin`, `image`, `phone`, `created_at`, `updated_at`, `password`, `address_id`, `payment_id`) VALUES
+(1, 'admin', 'admin', 'admin@admin.com', 12345678, 'true', 'a', 44444444, '2020-07-06 01:01:01', '2020-07-06 01:01:01', '$2b$10$5Fguf1R2XZTCJL7Qk7/AeuouEw7o3jbTk6BHOoo71sXwdXvHjCf7e', NULL, NULL),
+(2, 'emiliana', 'vargas', 'emiliana@abc.com', NULL, 'false', NULL, 99999999, NULL, NULL, '$2b$10$djprOAo.LxwuX0zG1PTCL.QxyXPDydTN7HLgdnnXVcuJGdI21HAlO', NULL, NULL),
+(3, 'prueba3', 'prueba3', 'prueba3@abc.com', 33333333, 'false', NULL, 33333333, NULL, NULL, '$2b$10$K731/tDXVyq4cG1enM.ZleTecsN.pOVvd3ZNvLYfkK0P5Zhaywrpa', NULL, NULL),
+(4, 'prueba4', 'prueba4', 'prueba4@abc.com', 44444444, 'false', NULL, 44444444, NULL, NULL, '$2b$10$5Fguf1R2XZTCJL7Qk7/AeuouEw7o3jbTk6BHOoo71sXwdXvHjCf7e', NULL, NULL),
+(5, 'prueba9', 'prueba9', 'prueba9@abc.com', 99999999, 'false', NULL, 99999999, NULL, NULL, '$2b$10$djprOAo.LxwuX0zG1PTCL.QxyXPDydTN7HLgdnnXVcuJGdI21HAlO', NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -100,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 ALTER TABLE `addresses`
   ADD PRIMARY KEY (`id`);
-  -- ADD KEY `fk_addresses_idx` (`user_id`);
+  ADD KEY `fk_addresses_idx` (`user_id`);
 
 --
 -- Indices de la tabla `payments`
@@ -108,6 +127,12 @@ ALTER TABLE `addresses`
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_payments_idx` (`user_id`);
+
+--
+-- Indices de la tabla `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `users`
