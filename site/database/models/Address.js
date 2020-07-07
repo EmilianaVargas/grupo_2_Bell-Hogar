@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
         },
     }
     let config = {
-        tableName: "addresses", //el mismo nombre en el modelo
+        tableName: "address", //el mismo nombre en el modelo
         timestamps: false
     }
     const Address = sequelize.define(alias,cols,config);
