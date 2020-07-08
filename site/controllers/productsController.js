@@ -32,7 +32,9 @@ function productById(id){
 let productsController = {
     'products': function(req,res){
         /*
-        db.Producto.findAll()
+        db.Producto.findAll({
+            include:[{association:"productCategory"},{association:"productBrand"}]
+        })
         .then(function(producto){
             res.render('products/products',{usuario: req.session.usuarioLogueado, producto})
         })

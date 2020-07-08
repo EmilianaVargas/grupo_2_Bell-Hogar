@@ -2,7 +2,7 @@ function logueadosMidd(req,res,next){
     if(req.session.usuarioLogueado == undefined){
         next();
     } else {
-        res.render('error-logueados')
+        res.render('users/error-logueados')
     }
 }
 

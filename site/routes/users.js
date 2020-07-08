@@ -8,19 +8,8 @@ const middLogueados = require('../middlewares/middUsuariosLogueados')
 const middInvitados = require('../middlewares/middInvitado')
 
 
-// Ruta de login
+// Rutas de login
 router.get('/login',middLogueados, usersController.login);
-
-
-// Ruta de profile
-router.get('/profile',middInvitados, usersController.profile);
-
-
-// Ruta de creación de usuarios
-router.get('/register', middLogueados, usersController.register);
-router.post('/create', middUploadFile.uploadFile, middUsers.registerUserValidation, usersController.postregister);
-
-// Ruta de login post
 router.post('/login', [
   check('email').isEmail().withMessage('- Email inválido'),
   check('password').isLength({min: 8}).withMessage('- La contraseña debe tener al menos 8 caracteres')
@@ -35,8 +24,33 @@ router.get('/success', function(req,res){
   }
 });
 
+
+// Ruta de profile
+router.get('/profile',middInvitados, usersController.profile);
+
+
+// Rutas de creación de usuario
+router.get('/register', middLogueados, usersController.register);
+router.post('/create', middUploadFile.uploadFile, middUsers.registerUserValidation, usersController.postregister);
+
+// Rutas de edición de usuario
+router.get('/update', middUsers.registerUserValidation, usersController.edit);
+router.put('/update', usersController.update);
+
+router.get('/editAvatar',middInvitados, usersController.editAvatar);
+// router.put('/update', usersController.updateAvatar);
+
+router.get('/editPassword', middInvitados, usersController.editPassword);
+// router.put('/update', usersController.updatePassword);
+
 // Ruta de logout
 router.post('/logout', usersController.logout);
+
+// Rutas de eliminación de usuario
+//router.get('/delete', middLogueados, usersController.register);
+//router.delete('/delete', middUploadFile.uploadFile, middUsers.registerUserValidation, usersController.postregister);
+
+
 
 module.exports = router;
 

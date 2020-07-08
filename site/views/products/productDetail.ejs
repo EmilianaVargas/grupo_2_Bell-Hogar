@@ -44,7 +44,7 @@
                 </div>
                 <button type="submit" class="cart-btn"><a href="/productCart">Agregar al carrito</a></button><br><br>
                 <% if (usuario == undefined) { %>
-                    <% } else if (usuario.admin == 'undefined') { %>
+                    <% } else if (usuario.is_admin == false) { %>
                          <% } else { %>
                             <form action="">
                                 <input type="button" Onclick="location.href='/products/<%= product.id %>/edit '" class="error-button" name="edit" value="Editar Producto"><br><br>

@@ -8,7 +8,7 @@
     <!-- Products -->
     <h1 class="products-title">Nuestros productos</h1>
     <% if (usuario == undefined) { %>
-        <% } else if (usuario.admin == 'undefined') { %>
+        <% } else if (usuario.is_admin == false) { %>
              <% } else { %>
                 <br><h4 class="product-title-admin col-12">Seleccione el producto que desea editar o eliminar</h4>
                 <% } %>
@@ -20,7 +20,7 @@
                     <div>
                         <img src="images/sofa3.jpg " alt="">
                         <h5 class="product-name"><a href="/products/<%= product.id %> "><%= product.name %> </a></h5>
-                        <h5 class="product-price-view">$<%= product.price %> </h5>
+                        <h5 class="product-price-view">$<%= product.price %> </h5> <!-- categoria y marca?? -->
                     </div>
                 </article>
                 <% }); %>                
