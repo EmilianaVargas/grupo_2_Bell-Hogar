@@ -9,43 +9,43 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         name: {
-            type: dataTypes.CHAR(30)
+            type: dataTypes.STRING
         },
         category: {
-            type: dataTypes.CHAR(30)
+            type: dataTypes.STRING
         }, 
         subCategory: {
-            type: dataTypes.CHAR(30)
+            type: dataTypes.STRING
         },
         brand: {
-            type: dataTypes.CHAR(30)
+            type: dataTypes.STRING
         }, 
         description: {
-            type: dataTypes.CHAR(200)
+            type: dataTypes.STRING
         },
         price: {
-            type: dataTypes.CURRENCY()
+            type: dataTypes.DECIMAL
         },
         image1: {
-            type: dataTypes.VARCHAR(30)
+            type: dataTypes.STRING
         },
         image2: {
-            type: dataTypes.VARCHAR(30)
+            type: dataTypes.STRING
         },
         image3: {
-            type: dataTypes.VARCHAR(30)
+            type: dataTypes.STRING
         },
         image4: {
-            type: dataTypes.VARCHAR(30)
+            type: dataTypes.STRING
         },
         stock: {
-            type: dataTypes.DOUBLE(15)
+            type: dataTypes.DOUBLE
         },
         created_at: {
-            type: dataTypes.DATE() 
+            type: dataTypes.DATE 
         },
         updated_at: {
-            type: dataTypes.DATE()
+            type: dataTypes.DATE
         }
     }
     let config = {
