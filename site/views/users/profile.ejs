@@ -14,12 +14,12 @@
                     <% if (usuario.is_admin == false) { %>
                         <li class="profile-text">Nombre de usuario: <%= usuario.first_name %></li>
                         <li class="profile-text">Email: <%= usuario.email %></li>
-                        <li class="profile-text">Avatar: <img class="col-md-2 col-lg-2" src="/images/users/<%=usuario.image %>"></li>
+                        <li class="profile-text">Avatar: <img class="col-md-2 col-lg-2" src="/images/avatars/<%=usuario.image %>"></li>
                         <input type="button" Onclick="location.href='/users/update'" class="editarPerfil" name="editarPerfil" value="Editar Perfil"><br><br>
                         <% } else { %>
                             <li class="profile-text">Nombre de usuario: <%= usuario.first_name %></li>
                             <li class="profile-text">Email: <%= usuario.email %></li>
-                            <li class="profile-text">Avatar: <img class="col-md-2 col-lg-2" src="/images/users/<%=usuario.image %>"></li>
+                            <li class="profile-text">Avatar: <img class="col-md-2 col-lg-2" src="/images/avatars/<%=usuario.image %>"></li>
                             <br><input type="button" Onclick= "location.href= '/products/create'" class="error-button" name="login" value="Agregar Productos"><br><br>
                             <input type="button" Onclick="location.href='/products'" class="error-button" name="login" value="Editar Productos"><br><br>
                             <input type="button" Onclick="location.href='/products'" class="error-button" name="login" value="Eliminar Productos"> 

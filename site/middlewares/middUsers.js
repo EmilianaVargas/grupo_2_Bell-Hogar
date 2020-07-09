@@ -2,30 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const {check, validationResult, body} = require('express-validator');
 
-// Lee el JSON de usuarios
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const usuariosDB = JSON.parse(fs.readFileSync(usersFilePath,'utf-8'));
-
-function usersById(id){
-    let usuario = null;
-    usuariosDB.forEach((usu, i) => {
-        if (usu["id"] == id) {
-            usuario = usu;
-        }
-    });
-    return usuario;
-}
-
-function searchByEmail(email){
-    let usuario = null;
-    usuariosDB.forEach((usu, i) => {
-        if (usu["email"] == email) {
-            usuario = usu;
-        }
-    });
-    return usuario;
-}
-
    let middUsers = {
       middNext: function(req, res, next){
 
@@ -51,6 +27,10 @@ function searchByEmail(email){
          check('domicilio')
             .exists().withMessage('Domicilio no definido.')
             .trim(),
+         check('codigoPostal')
+            .exists()
+            .trim()
+            .isNumeric().withMessage('Error: No es un codigo postal válido.'),
          check('password')
             .exists().withMessage('Password no definido.')
             .trim()
@@ -66,22 +46,6 @@ function searchByEmail(email){
                   return false;
                }
             }).withMessage('Error: Ambos campos de contraseña deben ser iguales.'),
-         body('id').custom(function(id){
-                let exist = usersById(id);
-                if (exist == null) {
-                   return true;
-                }else{
-                   return false;
-                }
-             }).withMessage('Error: DNI ya registrado.'),
-         body('email').custom(function(email){
-            let exist = searchByEmail(email);
-            if (exist == null) {
-               return true;
-            }else{
-               return false;
-            }
-         }).withMessage('Error: Email ya registrado.'),
       ],
    }
 

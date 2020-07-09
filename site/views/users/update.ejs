@@ -33,26 +33,34 @@
                 <input type="text" class="form-control" id="nombre" name ="nombre" value= "<%= usuario.first_name %>" ></br>
                 <label for = "apellido"><h6>Apellido:</h6></label>
                 <input type="text" class="form-control" id="apellido" name ="apellido" value= "<%= usuario.last_name %>" ></br>
+                <label for = "id"><h6>Dni :</h6></label>
+                <input type="text" class="form-control" id="id" name ="id" value= "<%= usuario.dni_cuit %>"></br> 
                 <label for = "telefono"><h6>Teléfono :</h6></label>
                 <input type="text" class="form-control" id="telefono" name="telefono" value= "<%= usuario.phone %>" ></br>
                 <label for = "domicilio"><h6>Domicilio :</h6></label>
                 <input type="text" class="form-control" id="domicilio" name="domicilio" value= "<%= usuario.address_id %>" ></br>
+                <div class="row">
+                    <div class="col-12 col-md-2">
+                        <label for = "codigoPostal"><h6>Código Postal :</h6></label>
+                        <input  type="number" class="form-control" id="codigoPostal" name="codigoPostal"></br>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <label for = "localidad"><h6>Localidad :</h6></label>
+                        <input type="text" class="form-control" id="localidad" name="localidad"></br>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <label for = "provincia"><h6>Provincia :</h6></label>
+                        <input type="text" class="form-control" id="provincia" name="provincia"></br>
+                    </div>
+                </div>
+
                 <label for = "email"><h6>Email :</h6></label> <br>
                 <input type="email" class="form-control" id="email" name="email" value= "<%= usuario.email %>" readonly="readonly">
                 <br>
                 <button class="suscription-btn btn-color "  id="update" type="submit">Actualizar</button>
                 <button class="suscription-btn btn-color "   id="borrar" type="reset">Borrar</button>
             </form>
-            <form  class="" action="" method="GET">
-                <ul>
-                    <li class="profile-text"><h5>¿Queres actualizar tu imagen de perfil?:</h5> <img class="col-md-2 col-lg-2" src="/images/users/<%=usuario.image %>"></li>
-                        <input type="button" Onclick="location.href='/users/editAvatar'" class="editarPerfil" name="editarAvatar" value="Editar Avatar"><br><br>
-                    <li class="profile-text"><h5>¿Queres actualizar tu password?:</h5> </li>
-                        <input type="button" Onclick="location.href='/users/editPassword'" class="editarPerfil" name="editarPassword" value="Editar Password"><br><br>
-                </ul>
-            </form>
         </div>
-    </div>    
-  
+    </div>
 
 <%- include('../partials/footer') %>

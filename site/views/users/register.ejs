@@ -31,7 +31,7 @@
         <div class="form-header" > 
             <h1 class="form-title titulo-f" > <i class="fa fa-user"></i> Formulario de Registro</h1></br>
             
-            <form action="/users/create" method="POST" autocomplete="off" enctype="multipart/form-data" >  
+            <form action="/users/create" method="POST" enctype="multipart/form-data" >  
                 <label for = "id"><h6>Dni :</h6></label>
                 <input type="text" class="form-control" id="id" name ="id"></br> 
                 <label for = "nombre"><h6>Nombre :</h6></label>
@@ -39,11 +39,34 @@
                 <label for = "apellido"><h6>Apellido:</h6></label>
                 <input type="text" class="form-control" id="apellido" name ="apellido"></br>
                 <label for = "telefono"><h6>Teléfono :</h6></label>
-                <input type="text" class="form-control" id="telefono" name="telefono"></br>
+                <input type="number" class="form-control" id="telefono" name="telefono"></br>
                 <label for = "domicilio"><h6>Domicilio :</h6></label>
                 <input type="text" class="form-control" id="domicilio" name="domicilio"></br>
+                <div class="row">
+                    <div class="col-12 col-md-2">
+                        <label for = "codigoPostal"><h6>Código Postal :</h6></label>
+                        <input  type="number" class="form-control" id="codigoPostal" name="codigoPostal"></br>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <label for = "localidad"><h6>Localidad :</h6></label>
+                        <input type="text" class="form-control" id="localidad" name="localidad"></br>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <label for = "provincia"><h6>Provincia :</h6></label>
+                        <select name="provincia" id= "provincia" type="text" class="form-control" required></br>
+                          <% for (let i=0; i<states.length; i++){ %>
+                            <option value="<%= states[i].id %>">
+                              <%= states[i].name %>
+                            </option>
+                          <% } %>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
                 <label for = "image"><h6>Imagen de Perfil :</h6></label><br>
-                <input type="file" name="image" class="btn-color "accept=".jpg, .jpeg, .png"><br>
+                <input type="file" name="image" accept=".jpg, .jpeg, .png"><br>
                 <br>
                 <label for = "email"><h6>Email :</h6></label> <br>
                 <input type="email" class="form-control" id="email" name="email">

@@ -6,11 +6,13 @@ let db = require('../database/models');
 
 let usersController = {
     'register': function(req,res){
-        return res.render("users/register");
+        db.State.findAll().then((states)=>{
+            return res.render("users/register",{states} );
+        });
     },
     'postregister': function(req,res){
         let errors = validationResult(req); // validar variable errors
-            if (typeof req.file == undefined) { // validar imagen avatar
+        if (typeof req.file == undefined) { // validar imagen avatar
             let nuevoError = {
                 value: '',
                 msg: 'Error: es obligatorio subir una imagen de perfil (jpg, jpeg o png).',
@@ -21,6 +23,7 @@ let usersController = {
             };
       // Si todo está bien, procedemos a guardar el nuevo usuario (ver de enviar a perfil de usuario!!!)
             if(errors.errors.length == 0){ //sin error
+                let avatarToCreate = req.file == undefined ? "random_profile.jpg" : req.file.filename;
                 db.User.findOrCreate({
                     where: { email: req.body.email },
                     defaults: {
@@ -30,7 +33,7 @@ let usersController = {
                         email: req.body.email,
                         password: bcrypt.hashSync(req.body.password, 10),
                         is_admin: false,
-                        image: req.file.filename,
+                        image: avatarToCreate,
                         address_id:null,
                         payment_id:null
                     }
@@ -46,7 +49,9 @@ let usersController = {
                     console.log(err);
                 })
             } else {
-            res.render('users/register', {errors: errors.errors })
+                db.State.findAll().then((states)=>{
+                    return res.render("users/register",{states, errors: errors.errors} );
+                });
             }
         },
     'login': function(req,res){
@@ -77,7 +82,9 @@ let usersController = {
             }).catch(function(error){
                 console.log(error);
             });
-        }
+        }else {
+            res.render('users/login', {errors: errors.errors})
+        };
     },
     'profile': function(req,res){
         if(req.session.usuarioLogueado != undefined){
@@ -95,17 +102,7 @@ let usersController = {
     },
     'update':function(req,res){
         let errors = validationResult(req); // validar variable errors
-        // if (typeof req.file == undefined) { // validar imagen avatar
-        //     let nuevoError = {
-        //         value: '',
-        //         msg: 'Error: es obligatorio subir una imagen de perfil (jpg, jpeg o png).',
-        //         param: 'image',
-        //         location: 'files'
-        //     }
-        //     errors.errors.push(nuevoError);
-        //     };
         if(errors.errors.length == 0){ //sin error procedemos a guardar el usuario editado
-            console.log("edit");
             db.User.update({
                 first_name: req.body.nombre,
                 last_name: req.body.apellido,
@@ -116,7 +113,6 @@ let usersController = {
                     }
                 })
                 .then((updatedUser) => {
-                    console.log("edit: " + updatedUser);
                     return res.redirect("profile");
                 }).catch(function(err){
                         console.log('error en catch en:' + err);
@@ -126,24 +122,10 @@ let usersController = {
             res.render('users/update', {errors: errors.errors })
         };
     },
-    'editAvatar': function(req,res){
-        return res.render("users/editAvatar");
-    },
-    // 'updateAvatar': function(req,res){
-        
-    // },
-    'editPassword': function(req,res){
-        return res.render("users/editPassword");
-    },
-    // 'updatePassword': function(req,res){
-       
-    // },
-
-
     'logout': (req,res) => {
         req.session.destroy(function(){
            if (req.cookies.recordame != undefined) {
-              res.clearCookie("recordame"); 
+              res.clearCookie("recordame");
            };
            let mensaje = "Se cerró la sesión exitosamente";
            return res.render("users/login",{mensaje, status: "success", usuario: undefined});

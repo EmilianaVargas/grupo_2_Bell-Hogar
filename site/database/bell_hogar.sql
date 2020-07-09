@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-07-2020 a las 21:16:37
+-- Tiempo de generación: 09-07-2020 a las 08:16:22
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -24,22 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `addresses`
+-- Estructura de tabla para la tabla `address`
 --
 
-CREATE TABLE IF NOT EXISTS `addresses` (
+CREATE TABLE `address` (
   `id` int(11) NOT NULL,
-  `address` varchar(30) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `zip_code` int(10) NOT NULL,
+  `locality` varchar(100) NOT NULL,
+  `state_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `payments`
+-- Estructura de tabla para la tabla `payment`
 --
 
-CREATE TABLE IF NOT EXISTS `payments` (
+CREATE TABLE `payment` (
   `id` int(11) NOT NULL,
   `card_number` varchar(30) NOT NULL,
   `user_id` int(11) NOT NULL
@@ -51,23 +54,42 @@ CREATE TABLE IF NOT EXISTS `payments` (
 -- Estructura de tabla para la tabla `products`
 --
 
-CREATE TABLE IF NOT EXISTS `products` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `category_id` VARCHAR(45) NULL,
-  `subcategory_id` VARCHAR(45) NULL,
-  `brand_id` VARCHAR(45) NULL,
-  `description` VARCHAR(255) NULL,
-  `technical_specifications` VARCHAR(255) NULL,
-  `color` VARCHAR(255) NULL,
-  `unit_price` DOUBLE NOT NULL,
-  `image1` VARCHAR(45) NULL,
-  `image2` VARCHAR(45) NULL,
-  `image3` VARCHAR(45) NULL,
-  `image4` VARCHAR(45) NULL,
-  `stock` DOUBLE NOT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `category` varchar(45) DEFAULT NULL,
+  `subcategory` varchar(45) DEFAULT NULL,
+  `brand` varchar(45) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `technical_specifications` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
+  `unit_price` double NOT NULL,
+  `image1` varchar(45) DEFAULT NULL,
+  `image2` varchar(45) DEFAULT NULL,
+  `image3` varchar(45) DEFAULT NULL,
+  `image4` varchar(45) DEFAULT NULL,
+  `stock` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `states`
+--
+
+CREATE TABLE `states` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `states`
+--
+
+INSERT INTO `states` (`id`, `name`) VALUES
+(1, 'Mendoza'),
+(2, 'San Juan '),
+(3, 'San Luis');
 
 -- --------------------------------------------------------
 
@@ -75,13 +97,13 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `first_name` char(20) NOT NULL,
   `last_name` char(20) NOT NULL,
   `email` varchar(30) NOT NULL,
   `dni_cuit` double DEFAULT NULL,
-  `is_admin` char(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `is_admin` tinyint(1) NOT NULL,
   `image` varchar(45) DEFAULT NULL,
   `phone` double DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
@@ -92,39 +114,30 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELACIONES PARA LA TABLA `users`:
---   `address_id`
---       `addresses` -> `id`
---   `payment_id`
---       `payments` -> `id`
---
-
---
 -- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `dni_cuit`, `is_admin`, `image`, `phone`, `created_at`, `updated_at`, `password`, `address_id`, `payment_id`) VALUES
-(1, 'admin', 'admin', 'admin@admin.com', 12345678, 'true', 'a', 44444444, '2020-07-06 01:01:01', '2020-07-06 01:01:01', '$2b$10$5Fguf1R2XZTCJL7Qk7/AeuouEw7o3jbTk6BHOoo71sXwdXvHjCf7e', NULL, NULL),
-(2, 'emiliana', 'vargas', 'emiliana@abc.com', NULL, 'false', NULL, 99999999, NULL, NULL, '$2b$10$djprOAo.LxwuX0zG1PTCL.QxyXPDydTN7HLgdnnXVcuJGdI21HAlO', NULL, NULL),
-(3, 'prueba3', 'prueba3', 'prueba3@abc.com', 33333333, 'false', NULL, 33333333, NULL, NULL, '$2b$10$K731/tDXVyq4cG1enM.ZleTecsN.pOVvd3ZNvLYfkK0P5Zhaywrpa', NULL, NULL),
-(4, 'prueba4', 'prueba4', 'prueba4@abc.com', 44444444, 'false', NULL, 44444444, NULL, NULL, '$2b$10$5Fguf1R2XZTCJL7Qk7/AeuouEw7o3jbTk6BHOoo71sXwdXvHjCf7e', NULL, NULL),
-(5, 'prueba9', 'prueba9', 'prueba9@abc.com', 99999999, 'false', NULL, 99999999, NULL, NULL, '$2b$10$djprOAo.LxwuX0zG1PTCL.QxyXPDydTN7HLgdnnXVcuJGdI21HAlO', NULL, NULL);
+(1, 'admin', 'admin', 'admin@admin.com', 12345678, 1, 'random_profile.jpg', 44444444, '2020-07-06 01:01:01', '2020-07-06 01:01:01', '$2b$10$5Fguf1R2XZTCJL7Qk7/AeuouEw7o3jbTk6BHOoo71sXwdXvHjCf7e', NULL, NULL),
+(2, 'emiliana', 'vargas', 'emiliana@abc.com', NULL, 0, 'random_profile.jpg', 99999999, NULL, NULL, '$2b$10$djprOAo.LxwuX0zG1PTCL.QxyXPDydTN7HLgdnnXVcuJGdI21HAlO', NULL, NULL),
+(3, 'ac prueba3', 'ac prueba3', 'prueba3@abc.com', 33333333, 0, 'random_profile.jpg', 33333333, NULL, NULL, '$2b$10$K731/tDXVyq4cG1enM.ZleTecsN.pOVvd3ZNvLYfkK0P5Zhaywrpa', NULL, NULL);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `addresses`
+-- Indices de la tabla `address`
 --
-ALTER TABLE `addresses`
-  ADD PRIMARY KEY (`id`);
-  ADD KEY `fk_addresses_idx` (`user_id`);
+ALTER TABLE `address`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_addresses` (`user_id`),
+  ADD KEY `fk_address_state_idx` (`state_id`);
 
 --
--- Indices de la tabla `payments`
+-- Indices de la tabla `payment`
 --
-ALTER TABLE `payments`
+ALTER TABLE `payment`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_payments_idx` (`user_id`);
 
@@ -135,10 +148,17 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `states`
+--
+ALTER TABLE `states`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_UNIQUE` (`id`),
   ADD UNIQUE KEY `email_UNIQUE` (`email`),
   ADD KEY `fk_address_idx` (`address_id`),
   ADD KEY `fk_payments_idx` (`payment_id`);
@@ -148,39 +168,46 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT de la tabla `payments`
+-- AUTO_INCREMENT de la tabla `payment`
 --
-ALTER TABLE `payments`
+ALTER TABLE `payment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `products`
+--
+ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `addresses`
+-- Filtros para la tabla `address`
 --
-ALTER TABLE `addresses`
+ALTER TABLE `address`
+  ADD CONSTRAINT `fk_address_state` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_addresses` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `payments`
+-- Filtros para la tabla `payment`
 --
-ALTER TABLE `payments`
+ALTER TABLE `payment`
   ADD CONSTRAINT `fk_payments` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `fk_users_2` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_users_3` FOREIGN KEY (`payment_id`) REFERENCES `payments` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_users_2` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_users_3` FOREIGN KEY (`payment_id`) REFERENCES `payment` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

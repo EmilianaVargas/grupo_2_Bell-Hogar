@@ -37,12 +37,6 @@ router.post('/create', middUploadFile.uploadFile, middUsers.registerUserValidati
 router.get('/update', middUsers.registerUserValidation, usersController.edit);
 router.put('/update', usersController.update);
 
-router.get('/editAvatar',middInvitados, usersController.editAvatar);
-// router.put('/update', usersController.updateAvatar);
-
-router.get('/editPassword', middInvitados, usersController.editPassword);
-// router.put('/update', usersController.updatePassword);
-
 // Ruta de logout
 router.post('/logout', usersController.logout);
 
