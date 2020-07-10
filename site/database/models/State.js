@@ -16,16 +16,16 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "states", //el mismo nombre en el modelo
         timestamps: false
     }
-    const States = sequelize.define(alias,cols,config);
+    const State = sequelize.define(alias,cols,config);
 
     
-    // States.associate = function(models){
-    //     States.HasMany(models.Address,{
-    //         alias: "stateAddresses",
-    //         foreignKey: "addres_id"
-    //     })
-    // }
+    State.associate = function(models){
+        State.hasMany(models.Address,{
+            alias: "addresses",
+            foreignKey: "state_id"
+        })
+    }
 
 
-    return States;
+    return State;
 }

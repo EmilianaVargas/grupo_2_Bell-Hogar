@@ -24,13 +24,13 @@ const {check, validationResult, body} = require('express-validator');
             .exists().withMessage('Telefono no definido.')
             .trim()
             .isNumeric().withMessage('Error: No es un telefono válido.'),
-         check('domicilio')
-            .exists().withMessage('Domicilio no definido.')
-            .trim(),
-         check('codigoPostal')
-            .exists()
-            .trim()
-            .isNumeric().withMessage('Error: No es un codigo postal válido.'),
+         // check('domicilio')
+         //    .exists().withMessage('Domicilio no definido.')
+         //    .trim(),
+         // check('codigoPostal')
+         //    .exists()
+         //    .trim()
+         //    .isNumeric().withMessage('Error: No es un codigo postal válido.'),
          check('password')
             .exists().withMessage('Password no definido.')
             .trim()

@@ -34,26 +34,9 @@
                 <label for = "apellido"><h6>Apellido:</h6></label>
                 <input type="text" class="form-control" id="apellido" name ="apellido" value= "<%= usuario.last_name %>" ></br>
                 <label for = "id"><h6>Dni :</h6></label>
-                <input type="text" class="form-control" id="id" name ="id" value= "<%= usuario.dni_cuit %>"></br> 
+                <input type="number" class="form-control" id="id" name ="id" value= "<%= usuario.dni_cuit %>"></br> 
                 <label for = "telefono"><h6>Teléfono :</h6></label>
-                <input type="text" class="form-control" id="telefono" name="telefono" value= "<%= usuario.phone %>" ></br>
-                <label for = "domicilio"><h6>Domicilio :</h6></label>
-                <input type="text" class="form-control" id="domicilio" name="domicilio" value= "<%= usuario.address_id %>" ></br>
-                <div class="row">
-                    <div class="col-12 col-md-2">
-                        <label for = "codigoPostal"><h6>Código Postal :</h6></label>
-                        <input  type="number" class="form-control" id="codigoPostal" name="codigoPostal"></br>
-                    </div>
-                    <div class="col-12 col-md-5">
-                        <label for = "localidad"><h6>Localidad :</h6></label>
-                        <input type="text" class="form-control" id="localidad" name="localidad"></br>
-                    </div>
-                    <div class="col-12 col-md-5">
-                        <label for = "provincia"><h6>Provincia :</h6></label>
-                        <input type="text" class="form-control" id="provincia" name="provincia"></br>
-                    </div>
-                </div>
-
+                <input type="number" class="form-control" id="telefono" name="telefono" value= "<%= usuario.phone %>" ></br>
                 <label for = "email"><h6>Email :</h6></label> <br>
                 <input type="email" class="form-control" id="email" name="email" value= "<%= usuario.email %>" readonly="readonly">
                 <br>

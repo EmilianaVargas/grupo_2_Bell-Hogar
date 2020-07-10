@@ -6,9 +6,9 @@ let db = require('../database/models');
 
 let usersController = {
     'register': function(req,res){
-        db.State.findAll().then((states)=>{
-            return res.render("users/register",{states} );
-        });
+        //db.State.findAll().then((states)=>{
+            return res.render("users/register" );
+       // });
     },
     'postregister': function(req,res){
         let errors = validationResult(req); // validar variable errors
@@ -27,6 +27,7 @@ let usersController = {
                 db.User.findOrCreate({
                     where: { email: req.body.email },
                     defaults: {
+                        dni_cuit:req.body.id,
                         first_name: req.body.nombre,
                         last_name: req.body.apellido,
                         phone: req.body.telefono,
@@ -34,24 +35,24 @@ let usersController = {
                         password: bcrypt.hashSync(req.body.password, 10),
                         is_admin: false,
                         image: avatarToCreate,
-                        address_id:null,
-                        payment_id:null
+                        //address_id:null,
+                        //payment_id:null
                     }
                 })
                 .then(([usuario, creacion]) => {
                     if (!creacion) {
-                        res.render('users/login', { errors: [{ msg: 'Usuario ya existente'}] })
+                        res.render('users/login', { errors:errors.errors })
                     } else {
-                        mensaje = "¡El usuario se creó exitosamente!";
+                        mensaje = "¡El usuario se creó exitosamente! Ingresa nuevamente tu email y contraseña para continuar";
                         return res.render('users/login',{mensaje: mensaje, status: "success", usuario});
                     }
                 }).catch(function(err){
                     console.log(err);
                 })
             } else {
-                db.State.findAll().then((states)=>{
-                    return res.render("users/register",{states, errors: errors.errors} );
-                });
+                //db.State.findAll().then((states)=>{
+                    return res.render("users/register",{errors: errors.errors} );
+                //});
             }
         },
     'login': function(req,res){
@@ -77,7 +78,9 @@ let usersController = {
                     res.render('users/login', {errors: errors.errors})
                 };
             } else {
-                res.render('users/register', { errors: [{ msg: 'El usuario no existe, favor de registrarse'}] })
+                //db.State.findAll().then((states)=>{
+                    return res.render("users/register",{errors: [{ msg: 'El usuario no existe, favor de registrarse'}]} );
+                //});
             };
             }).catch(function(error){
                 console.log(error);
@@ -104,6 +107,7 @@ let usersController = {
         let errors = validationResult(req); // validar variable errors
         if(errors.errors.length == 0){ //sin error procedemos a guardar el usuario editado
             db.User.update({
+                dni_cuit:req.body.id,
                 first_name: req.body.nombre,
                 last_name: req.body.apellido,
                 phone: req.body.telefono,
@@ -114,6 +118,7 @@ let usersController = {
                 })
                 .then((updatedUser) => {
                     return res.redirect("profile");
+                    //return res.render("profile",{usuario:updatedUser}); //esta renderizacion falla siempre!
                 }).catch(function(err){
                         console.log('error en catch en:' + err);
                 })

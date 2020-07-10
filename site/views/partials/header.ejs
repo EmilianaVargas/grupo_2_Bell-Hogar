@@ -18,16 +18,16 @@
             <div class="p-1">
               <ul class="">
                 <li><a href="/">Home</a></li>
-                <li><a href="/products">Productos</a></li>
+                <li><a href="/products/products">Productos</a></li>
                 <li><a href="#">Sobre Nosotros</a></li>
               </ul>
               <ul class="" id="navbarToggleExternalContent">
                 <% if(typeof usuario == 'undefined'){ %>
                   <li><a href="/users/login">Iniciar sesión <i class="far fa-address-card"></i></a></li>
-                  <li><a href="/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
+                  <li><a href="/carts/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
                <% } else { %>
                   <li><a href="/users/profile"><%= usuario.first_name %><i class="far fa-address-card"></i></a></li>
-                  <li><a href="/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
+                  <li><a href="/carts/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
                <% } %>
               </ul>
             </div>
@@ -37,15 +37,15 @@
           <ul class="menu-der col-md-12">
             <% if(typeof usuario == 'undefined'){ %>
               <li><a href="/users/login">Iniciar sesión <i class="far fa-address-card"></i></a></li>
-              <li><a href="/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
+              <li><a href="/carts/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
            <% } else { %>
               <li><a href="/users/profile"><%= usuario.first_name %> <i class="far fa-address-card"></i></a></li>
-              <li><a href="/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
+              <li><a href="/carts/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
            <% } %>
           </ul>
           <ul class="menu-ppal col-md-12 sibling-fade">
             <li class="col-md-2 li-menu"><a href="/">Home</a></li>
-            <li class="col-md-2 li-menu"><a href="/products">Productos</a></li>
+            <li class="col-md-2 li-menu"><a href="/products/products">Productos</a></li>
             <li class="col-md-2 li-menu"><a href="#">Sobre Nosotros</a></li>
             <li class="col-md-6 text-right"><input type="text" placeholder="Buscar productos" class ="buscar-input">
               <button type="submit" class="buscar-btn"><i class="fas fa-search"></i></button></li>

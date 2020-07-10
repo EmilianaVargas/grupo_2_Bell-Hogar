@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
+
 <!-- head -->
-<%- include('./partials/head') %>
+<%- include('../partials/head') %>
 <body class="container">
   <!-- header -->
-  <%- include('./partials/header') %>
+  <%- include('../partials/header') %>
   <!--Comienzo código del pago de carrito de compra-->
   <div class="cartPayment-header" >
     <h3 class="fas fa-shopping-basket"> Finalizar compra</h3></br>
@@ -14,40 +13,51 @@
 
     <div class="container">
       <div id="options_page">
-        <button type="submit" class="continuebuypayment-btn"><a href="/products/:id">Continuar compra</a></button>
+        <!-- <button type="submit" class="continuebuypayment-btn"><a href="/products/:id">Continuar compra</a></button> -->
         <button type="submit" class="backcart-btn"><a href="/productCart">Volver atrás</a></button>
       </div>
     </div>
 
-    <div class="formCart">
-      <form id="formOrder" action="index.html" method="GET">
+    <div class="formCart col-12 col-md-6">
+      <ul class="">
+            <li class="">Nombre de usuario: <%= usuario.first_name %></li>
+            <li class="">Apellido: <%= usuario.last_name %></li>
+            <li class="">DNI o CUIT: <%= usuario.dni_cuit %></li>
+            <li class="">Teléfono: <%= usuario.phone %></li>
+            <li class="">Email: <%= usuario.email %></li>
+      </ul>
+      <br>
 
-        <br><input type="checkbox" id="init_sesion" name="init_sesion">
-        <label for="init_sesion" id="loginPay">Usar datos de inicio de sesión</label>
-        <a href="login.html"></a>
 
-        <br><label for="name">Nombre completo</label>
-        <p><input type="text" id="name" name="nombre"></p>
-
-        <label for="email">Email</label>
-        <p><input type="email" id="email" name="mail"></p>
-
-        <label for="tel">Número de teléfono</label>
-        <p><input type="tel" id="tel" name="telefono"></p>
-
-        <label for="address">Dirección</label>
-        <p><input type="text" id="address" name="direccion"></p>
-
-        <label for="dni">DNI</label>
-        <p><input type="text" id="dni" name="DNI"></p>
 
         <label for="method_delivery">Método de entrega</label>
         <div class="container">
           <div id="options_delivery">
-            <button type="submit" class="sucursal-btn">Retiro en sucursal</button>
-            <button type="submit" class="address-btn">Envío a domicilio</button>
+            <button type="button" class="sucursal-btn">Retiro en sucursal</button>
+            <button type="button" class="address-btn" onclick="location.href='/carts/addressCart'" >Envío a domicilio</button>
           </div>
         </div>
+
+        <%if (typeof(status) != "undefined"){
+          if(status == "success"){ %>
+              <div class="alert alert-success" role="alert">
+                  <%=mensaje%>
+              </div>
+          <% }
+      }%>
+  
+      <% if (typeof errors != 'undefined') { %>
+          <div class="alert alert-danger" role="alert">
+              <p>¡Error al cargar el domicilio!</p>
+              <ul>
+                  <% for( let i = 0; i < errors.length; i++ ) { %>
+                      <li>
+                          <%= errors[i].msg %>
+                      </li>
+                  <% } %>
+              </ul>
+          </div>
+      <% } %>
 
         <br><label for="payment_method">Método de pago</label>
         <div class="container">
@@ -58,7 +68,6 @@
           </div>
         </div>
 
-      </form>
     </div>
 
     <div class="order">  <!--row col-4 col-md-4-->
@@ -97,6 +106,4 @@
   </section>
 
   <!-- footer -->
-  <%- include('./partials/footer') %>
-</body>
-</html>
+  <%- include('../partials/footer') %>
