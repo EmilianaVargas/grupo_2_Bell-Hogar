@@ -113,19 +113,18 @@ h5.rebaja{
 .card-img-overlay{
   border: none;
 }
-h5.card-title{
+
+.card-img-overlay h5{
+  background-color: var(--gris-footer);
   font-size: 30px;
-  color: var(--marrón-oscuro);
   text-align: center;
-  margin-top: -15px;
+  margin-top: 50px;
 }
 
-.card-title a{
-  font-size: 30px;
-  color: var(--marrón-oscuro);
-  text-align: center;
-  margin-top: -15px;
+.card-img-overlay a{
+  color: white;
 }
+
 
 /* .nuestraHistoria{
   margin-bottom: 15px;
@@ -261,6 +260,31 @@ h5.card-title{
   .menu-ppal .col-md-6 {
     padding-right: 0px;
   }
+  .carousel-inner{
+    height: 450px;
+    margin-bottom: 5%;
+  }
+  .carousel-inner img{
+    width: 80%;
+    max-height: 450px;
+  }
+  h5.card-title{
+    display:none;
+  }
+  
+  .card-img-overlay:hover h5{
+    display: block;
+    background-color: var(--gris-footer);
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .card-img-overlay:hover a{
+    color: white;
+    text-decoration: none;
+  }
+  
   .footer{
     padding-top: 2%;
   }
@@ -715,7 +739,7 @@ div.filaCarrito.row{
   }
 
   #productAdded2{
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
   }
   }
