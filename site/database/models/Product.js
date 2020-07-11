@@ -1,9 +1,9 @@
 const config = require("../config/config");
 
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Products";
+    let alias = "product";
     let cols = {
-        product_id: {
+        id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
         category: {
             type: dataTypes.STRING
         }, 
-        subCategory: {
+        subcategory: {
             type: dataTypes.STRING
         },
         brand: {
@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         },
         price: {
-            type: dataTypes.DECIMAL
+            type: dataTypes.DOUBLE
         },
         image1: {
             type: dataTypes.STRING
@@ -40,18 +40,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         stock: {
             type: dataTypes.DOUBLE
-        },
-        created_at: {
-            type: dataTypes.DATE 
-        },
-        updated_at: {
-            type: dataTypes.DATE
         }
     }
     let config = {
-        tableName: "products", //el mismo nombre en el modelo
+        tableName: "product", //el mismo nombre en el modelo
         timestamps: false
     }
-    const Producto = sequelize.define(alias,cols,config)
-    return Producto;
+    const product = sequelize.define(alias,cols,config)
+    return product;
 }

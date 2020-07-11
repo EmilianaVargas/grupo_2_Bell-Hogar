@@ -730,7 +730,7 @@ div.filaCarrito.row{
   height: 100%;
 }
 .product-right{
-  padding-top: 3%;
+  margin-top: 10%;
 }
 .cart-btn{
   background-color: var(--gris-footer);

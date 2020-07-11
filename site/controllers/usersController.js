@@ -78,9 +78,7 @@ let usersController = {
                     res.render('users/login', {errors: errors.errors})
                 };
             } else {
-                //db.State.findAll().then((states)=>{
-                    return res.render("users/register",{errors: [{ msg: 'El usuario no existe, favor de registrarse'}]} );
-                //});
+                res.render('users/register', { errors: [{ msg: 'El usuario no existe, registrate para continuar'}] })
             };
             }).catch(function(error){
                 console.log(error);
