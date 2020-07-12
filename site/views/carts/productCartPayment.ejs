@@ -37,28 +37,42 @@
             <button type="button" class="address-btn" onclick="location.href='/carts/addressCart'" >Envío a domicilio</button>
           </div>
         </div>
+<!-- detalle de domicilios de entrega existentes, se trae el domicilio elegido en la vista de addressCart  -->
+<%if (typeof(status) != "undefined"){
+  if(status == "success"){ %>
+      <div class="alert alert-success" role="alert">
+          <%=mensaje%>
+      </div>
+  <% }
+}%>
 
-        <%if (typeof(status) != "undefined"){
-          if(status == "success"){ %>
-              <div class="alert alert-success" role="alert">
-                  <%=mensaje%>
-              </div>
-          <% }
-      }%>
-  
-      <% if (typeof errors != 'undefined') { %>
-          <div class="alert alert-danger" role="alert">
-              <p>¡Error al cargar el domicilio!</p>
-              <ul>
-                  <% for( let i = 0; i < errors.length; i++ ) { %>
-                      <li>
-                          <%= errors[i].msg %>
-                      </li>
-                  <% } %>
-              </ul>
-          </div>
-      <% } %>
+<% if (typeof errors != 'undefined') { %>
+  <div class="alert alert-danger" role="alert">
+      <p>¡Error al cargar el domicilio!</p>
+      <ul>
+          <% for( let i = 0; i < errors.length; i++ ) { %>
+              <li>
+                  <%= errors[i].msg %>
+              </li>
+          <% } %>
+      </ul>
+  </div>
+<% } %>
 
+<% if(address != undefined){ %>
+  <div class="domicilioEntrega">
+    <ul class="">
+      <li class="">Domicilio de entrega: <%= address.address %></li>
+      <li class="">Codigo postal: <%= address.zip_code %></li>
+      <li class="">localidad: <%= address.locality %></li>
+      <li class="">provincia: <%= address.State.name %></li>
+    </ul>
+  </div>
+<% }else{  %>
+  <div class="container">
+    <h3>Aún no hay un domicio de entrega seleccionado</h3>
+  </div>
+<% }; %>
         <br><label for="payment_method">Método de pago</label>
         <div class="container">
           <div id="payment_options">

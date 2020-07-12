@@ -9,7 +9,30 @@ let cartsController = {
        res.render('carts/productCart',{usuario: req.session.usuarioLogueado});
     },
     'productCartPayment': function(req,res){
-            return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado} );
+        console.log("domicilio-------->" + req.query.domicilio);
+        if(req.query.domicilio != undefined){
+            db.Address.findOne({
+                where: {
+                    id: req.query.domicilio
+                },
+                include: db.State
+            }).then((address)=>{
+                return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado, address});
+            });
+        } else {
+            return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado, address: undefined});
+        }
+
+        // db.Address.findAll({
+        //     limit: 1,
+        //     where: {
+        //         user_id: req.session.usuarioLogueado.id
+        //     },
+        //     order: [ [ 'createdAt', 'DESC' ]],
+        //     include: db.State
+        // }).then((address) => {
+        //     return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado, address: address} );
+        // })
     },
     'addOneProduct': function(req,res){
         //db.___.findAll().then((______)=>{
@@ -22,14 +45,21 @@ let cartsController = {
        // });
     },
     'address': function(req,res){
-        db.State.findAll()
-        .then((states)=>{
-            return res.render("carts/addressCart", {usuario: req.session.usuarioLogueado, states});
+        let dbStates = db.State.findAll();
+        let dbUserAddresses = db.Address.findAll({
+            where: {
+                user_id: req.session.usuarioLogueado.id
+            },
+            include: db.State
+        });
+        Promise.all([dbStates, dbUserAddresses])
+        .then(([states, addresses]) => {
+            return res.render("carts/addressCart", {usuario: req.session.usuarioLogueado, states, addresses});
         });
     },
     'postAddress': function(req,res){
-        let errors = validationResult(req); 
-            if(errors.errors.length == 0){ 
+        let errors = validationResult(req);
+            if(errors.errors.length == 0){
                 let userId = req.session.usuarioLogueado.id;
 
                 db.Address.create({
@@ -40,13 +70,18 @@ let cartsController = {
                     user_id: userId
                 })
                 .then((address) => {
-                    console.log("----------------------"+userId)
+                    console.log("----------------------"+address)
                     if (!address) {
                         res.render('carts/productCartPayment', { errors:errors.errors })
                     } else {
-                        mensaje = "¡El domicilio de entrega se registro exitosamente!";
-                        db.State.findAll().then((states)=>{
-                            return res.render("carts/productCartPayment",{mensaje, status: "success", address:address , usuario: req.session.usuarioLogueado, states});
+                        db.Address.findOne({
+                            where: {
+                                id: address.id
+                            },
+                            include: db.State
+                        }).then((address)=>{
+                            mensaje = "¡El domicilio de entrega se registró exitosamente!";
+                            return res.render("carts/productCartPayment",{mensaje, status: "success", address, usuario: req.session.usuarioLogueado});
                         });
                     }
                 }).catch(function(err){
