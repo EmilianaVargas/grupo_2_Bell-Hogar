@@ -46,7 +46,8 @@ let productsController = {
             })
     },
     'putEditProduct': function(req,res){
-       db.product.update({
+        if(req.file != undefined){
+        db.product.update({
         name: req.body.nombre,
         category:req.body.categoria,
         subcategory:req.body.subcategoria,
@@ -60,6 +61,21 @@ let productsController = {
                 id: req.params.id
                 }
             });
+        } else {
+            db.product.update({
+                name: req.body.nombre,
+                category:req.body.categoria,
+                subcategory:req.body.subcategoria,
+                brand:req.body.marca,
+                description: req.body.descripcion,
+                price:req.body.precio,
+                stock:req.body.stock
+                }, {
+                    where:{
+                        id: req.params.id
+                        }
+                    });
+        }
         res.render('index',{usuario: req.session.usuarioLogueado});
     },
     'formuDelete':function(req,res){
