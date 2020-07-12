@@ -33,7 +33,7 @@ let productsController = {
             image1:req.file.filename,
             stock:req.body.stock
         })
-        res.redirect('/', {usuario: req.session.usuarioLogueado})
+        res.render('index',{usuario: req.session.usuarioLogueado});
     },
     'editProduct': function(req,res){
         db.product.findByPk(req.params.id)

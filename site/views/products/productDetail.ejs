@@ -11,12 +11,12 @@
             <% if(product != null){%>
             <div class ="carousel slide product-left col-12 col-md-6" id="carouselExampleControls" data-ride="carousel">
                 <h1 class="product-name-detail"><%= product.name %></h1>
-                <div class="carousel-inner">
+                <div class="carousel-inner-product">
                     <div class="carousel-item active">
                         <img class="product-img" src="/images/<%= product.image1 %>" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img class="product-img" src="/images/<%= product.image2 %>" class="d-block w-100">
+                        <img class="product-img" src="/images/<%= product.image2     %>" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
                         <img class="product-img" src="/images/<%= product.image4 %>" class="d-block w-100">
@@ -50,10 +50,6 @@
                                 <input type="button" Onclick="location.href='/products/<%= product.id %>/edit '" class="error-button" name="edit" value="Editar Producto"><br><br>
                             <input type="button" Onclick="location.href='/products/<%= product.id %>/delete'" class="error-button" name="delete" value="Eliminar Producto"> 
                             </form>
-<!--                        <form class="delete" action="/products/<%=product.id%>?_method=DELETE" method="post"></form>" method="POST">
-                                <button class="suscription-btn btn-color" id="delete" type="submit">Eliminar producto</button><br><br>
-                                 <input type="button" onclick="history.back()" class="error-button" name="volver atrás" value="Volver atrás">    
-                            </form> -->
                             <% } %>
             </div>
             <div class="especificaciones col-12">
