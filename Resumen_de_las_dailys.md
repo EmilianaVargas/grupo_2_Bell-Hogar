@@ -6,7 +6,8 @@ Participantes:
     • Jiménez, Sorany
     • Correas, Federico 
 
-HERRAMIENTA UTILIZADA:https://docs.google.com/spreadsheets/d/1TTAilRLr-VRizXahGRIWaO5CXD4V4tuRz9Jnb0qwMeQ/edit#gid=1440025700
+HERRAMIENTA UTILIZADA:
+			https://docs.google.com/spreadsheets/d/1TTAilRLr-VRizXahGRIWaO5CXD4V4tuRz9Jnb0qwMeQ/edit#gid=1440025700
 
 
 
@@ -57,3 +58,30 @@ Las soluciones propuestas:
     • Consultar bibliografía de cada inconveniente para proponer resoluciones
     • Solicitar colaboración de compañeros que hubieran tenido inconvenientes similares
 
+
+
+Sprint5__________________________________________________________________________________________________________________________
+FRECUENCIA DE REUNIONES:
+2 videollamadas semanales coordinadas con Tutor asignado, comunicación permanente vía WhatsApp
+
+Afortunadamente se lograron completar todas las tareas propuestas:
+	•Conclusiones de la retro del cuarto sprint
+	•Tablero de trabajo actualizado
+	•Diagrama de base de datos
+	•Script de creación de estructura y de población de base de datos
+	•Creación de carpeta Sequelize con Archivos de configuración y Modelos con sus relacione
+	•Implementar CRUD de usuarios y productos
+
+Los impedimentos encontrados se detallan en la herramienta indicada, a modo de síntesis los principales fueron: 
+    • en el manejo de tablas: muchas dificultades para lograr resultados satisfactorios con Workbench
+    • desde el código de js: lograr correcto funcionamiento de las relaciones de tablas
+    • Estar trabajando simultáneamente en asimilar conocimientos del curso y respectiva practica, a fin de lograr la experiencia que requiere el proyecto integrador en cada sprint.
+      
+
+Las soluciones propuestas:
+    • Testeo de cada creación y edición de producto/usuario
+    • Consultar bibliografía de cada inconveniente para proponer resoluciones
+    • implementación de consultas/exportaciones de db a través de phpMyAdmin 
+
+Principales impresiones sobre la utilidad de esta ceremonia:
+	•Consideramos muy positiva la posibilidad de comunicar lo que se está desarrollando individualmente, a que ritmo y con que dificultad no resuelta, a fin de poder reorganizar tiempos y colaboraciones entre todos. Con el objetivo de que las funcionalidades de cada CRUD se pudieran testear con considerable anticipación a la entrega del sprint y detectar posibles mejoras para desarrollar a futuro.------------------------------------------

@@ -1,28 +1,25 @@
 var express = require('express');
 var router = express.Router();
 let productsController = require('../controllers/productsController');
-const middUploadFile = require('../middlewares/middUploadFile');
+const middUploadProductImage = require('../middlewares/middUploadProductImage');
 
 // Ruta de listado de productos
 router.get('/', productsController.products);
 
-// Ruta de creación de productos
+// Ruta GET - Creación de productos
 router.get('/create', productsController.createProduct);
+// Ruta POST - Guardado de creación de producto
+router.post('/create', middUploadProductImage.uploadFile, productsController.postProduct);
 
-// Ruta de producto particular
+// Ruta de producto clickeado - Detalle
 router.get('/:id', productsController.productDetail);
 
-// Ruta de creación de producto
-router.post('/create', middUploadFile.uploadFile, productsController.postProduct);
-
-// Ruta de edición de productos
+// Rutas de Actualización de productos
 router.get('/:id/edit', productsController.editProduct);   
+router.put('/:id/edit', middUploadProductImage.uploadFile, productsController.putEditProduct);
 
-// Ruta de envío de la edición
-router.put('/:id/edit', productsController.putEditProduct);
-
-// Ruta para eliminar un producto
+// Rutas para eliminar un producto 
 router.get('/:id/delete', productsController.formuDelete);
-router.delete('/:id', productsController.delete);
+router.delete('/:id/delete', productsController.delete);
 
 module.exports = router;

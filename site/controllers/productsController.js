@@ -1,106 +1,100 @@
 const fs = require('fs');
 const path = require('path');
-
-// Lee el JSON de productos
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const productosDB = JSON.parse(fs.readFileSync(productsFilePath,'utf-8'));
-
-// Guarda el json de productos
-function saveJSONfile(products) {
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-}
-
-// Agrega un nuevo producto
-function addProduct(nuevoProducto) {
-    productosDB.push(nuevoProducto);
-    saveJSONfile(productosDB);
-}
-
-function productById(id){
-    let product = null;
-    productosDB.forEach((prod, i) => {
-        if (prod["id"] == id) {
-            product = prod;
-        }
-    });
-    return product;
-}
+let db = require('../database/models');
 
 let productsController = {
     'products': function(req,res){
-        res.render('products');
-    },
-    'createProduct': function(req,res){
-        res.render('productAdd');
-    },
+        db.product.findAll()
+            .then(function(product){
+                res.render('products/products',{product, usuario: req.session.usuarioLogueado});
+            })         
+    }, 
     'productDetail': function(req,res){
-        res.render('productDetail');
+        db.product.findByPk(req.params.id)
+            .then(function(product){
+                if (req.session.usuarioLogueado == undefined) {
+                    return res.render('products/productDetail', {product, usuario: undefined});
+                 }else{
+                    return res.render('products/productDetail', {product, usuario: req.session.usuarioLogueado});
+                 }
+            })
+     },
+     'createProduct': function(req,res){
+        res.render('products/productAdd',{usuario: req.session.usuarioLogueado});
     },
     'postProduct': function(req,res){
-        //Falta verificación de que el producto no exista previamente
-        let nuevoProducto = {
-            id: req.body.id,
+        db.product.create({
             name: req.body.nombre,
             description: req.body.descripcion,
-            category:req.body.categoria,
-            colors:req.body.colores,
+            category: req.body.categoria,
+            subcategory:req.body.subcategoria,
+            brand:req.body.marca,
             price:req.body.precio,
+            image1:req.file.filename,
             stock:req.body.stock
-        }
-        addProduct(nuevoProducto);
-        res.render('productAdd');
+        })
+        res.render('index',{usuario: req.session.usuarioLogueado});
     },
     'editProduct': function(req,res){
-        let product = productById(req.params.id);
-        if(product != null){
-            return res.render('editProduct',{product})
-        } else {
-            return res.render('editProductError');
-        }
+        db.product.findByPk(req.params.id)
+            .then(function(product){
+                if (product != null) {
+                    return res.render('products/editProduct', {product, usuario: req.session.usuarioLogueado});
+                 }else{
+                    return res.render('products/editProductError', {usuario: req.session.usuarioLogueado});
+                 }
+            })
     },
     'putEditProduct': function(req,res){
-        let product = productById(req.body.id);
-        let products = productosDB;
-        
-        
-        if (product != null) {
-            product.name = req.body.name;
-            product.description = req.body.description;
-            product.category = req.body.category;
-            product.colors = req.body.colors;
-            product.price = req.body.price;
-            product.stock = req.body.stock;
-            
-            products.map((prod) => {
-                if(prod.id === product.id){
-                prod.name = product.name;
-                prod.description = product.description;
-                prod.category = product.category;
-                prod.colors = product.colors;
-                prod.price = product.price;
-                prod.stock = product.stock;
-            }});
-            
-            saveJSONfile(products);
-            res.render('products');
+        if(req.file != undefined){
+        db.product.update({
+        name: req.body.nombre,
+        category:req.body.categoria,
+        subcategory:req.body.subcategoria,
+        brand:req.body.marca,
+        description: req.body.descripcion,
+        price:req.body.precio,
+        image1:req.file.filename,
+        stock:req.body.stock
+        }, {
+            where:{
+                id: req.params.id
+                }
+            });
+        } else {
+            db.product.update({
+                name: req.body.nombre,
+                category:req.body.categoria,
+                subcategory:req.body.subcategoria,
+                brand:req.body.marca,
+                description: req.body.descripcion,
+                price:req.body.precio,
+                stock:req.body.stock
+                }, {
+                    where:{
+                        id: req.params.id
+                        }
+                    });
         }
+        res.render('index',{usuario: req.session.usuarioLogueado});
     },
     'formuDelete':function(req,res){
-        let product = productById(req.params.id);
-        if(product != null){
-            return res.render('deleteProduct',{product});
-        } else {
-            return res.render('editProductError');
-        }
+        db.product.findByPk(req.params.id)
+        .then(function(product){
+            if (product != null) {
+                return res.render('products/deleteProduct',{product,usuario: req.session.usuarioLogueado});
+             }else{
+                return res.render('products/editProductError',{usuario: req.session.usuarioLogueado});
+             }
+        })
     },
     'delete': function(req,res){
-        let product = productById(req.body.id);
-        let nuevoArrayProductos = [];
-        let products = productosDB;
-        
-        nuevoArrayProductos = products.filter(prod => prod.id != product.id);
-        saveJSONfile(nuevoArrayProductos);
-        return res.render('products');
+        db.product.destroy({
+            where:{
+                id: req.params.id
+            }
+        })
+        res.render('index',{usuario: req.session.usuarioLogueado});  
     }
 }
 
