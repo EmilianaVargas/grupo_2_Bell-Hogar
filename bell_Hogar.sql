@@ -43,12 +43,13 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`id`, `user_id`, `address`, `zip_code`, `locality`, `state_id`) VALUES
-(5, 3, 'Calle Falsa 1234', 2332, 'Villa Calamuchita', 1),
-(10, 3, 'Calle Falsa 12345687', 100000, 'sasasa', 3),
-(11, 3, 'Calle Fals', -3, 'Godoy Cruz', 1),
-(22, 3, 'Patricias Mendocinas 7- Depto 7', 2222, 'Villa Calamuchita', 1),
-(30, 17, 'Calle Falsa 1234', 12345, 'Godoy Cruz', 2),
-(31, 17, 'Patricias Mendocinas 7- Depto 7', -10, 'Sexta', 3);
+(5, 3, 'Paso de los Andes 1234', 5500, 'Sexta Seccion', 1),
+(10, 3, 'Calle Segunda 321', 5701, '11 de Mayo', 3),
+(11, 3, 'Lavalle 1234', 5501, 'Godoy Cruz', 1),
+(22, 3, 'Patricias Mendocinas 7- Depto 7', 5500, 'Ciudad de Mendoza', 1),
+(30, 17, 'Calle Tercera 1234', 5400, 'Rivadavia', 2),
+(31, 17, '9 de Julio', 5703, 'Divisadero', 3),
+(34, 17, 'Salta 1500', 5500, 'Ciudad de Mendoza', 1);
 
 -- --------------------------------------------------------
 
