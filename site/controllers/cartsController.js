@@ -89,7 +89,18 @@ let cartsController = {
                 })
             } else {
                 console.log(errors)
-                return res.render("carts/productCartPayment",{errors: errors.errors} );
+                let dbStates = db.State.findAll();
+                let dbUserAddresses = db.Address.findAll({
+                    where: {
+                        user_id: req.session.usuarioLogueado.id
+                    },
+                    include: db.State
+                });
+                Promise.all([dbStates, dbUserAddresses])
+                .then(([states, addresses]) => {
+                    return res.render("carts/addressCart", {usuario: req.session.usuarioLogueado, states, addresses, errors: errors.errors});
+                });
+                //return res.render("carts/addressCart",{errors: errors.errors} );
             }
     },
     'delete': function(req,res){

@@ -25,6 +25,18 @@
                 <h1 class="form-title titulo-f">O ingresá un nuevo domicio de entrega:</h1></br>
             <% }; %>
             <br>
+            <% if (typeof errors != 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <p>¡Error al crear nuevo domicilio!</p>
+                    <ul>
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>
+                                <%= errors[i].msg %>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+              <% } %>
             <form action="/carts/addressCart" method="POST">
                 <label for = "domicilio"><h6>Domicilio :</h6></label>
                 <input type="text" class="form-control" id="domicilio" name="domicilio"></br>

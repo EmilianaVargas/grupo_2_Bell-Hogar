@@ -14,7 +14,7 @@
     <div class="container">
       <div id="options_page">
         <!-- <button type="submit" class="continuebuypayment-btn"><a href="/products/:id">Continuar compra</a></button> -->
-        <button type="submit" class="backcart-btn"><a href="/productCart">Volver atrás</a></button>
+        <button type="submit" class="backcart-btn"><a href="/carts/productCart">Volver atrás</a></button>
       </div>
     </div>
 
@@ -37,7 +37,6 @@
             <button type="button" class="address-btn" onclick="location.href='/carts/addressCart'" >Envío a domicilio</button>
           </div>
         </div>
-<!-- detalle de domicilios de entrega existentes, se trae el domicilio elegido en la vista de addressCart  -->
 <%if (typeof(status) != "undefined"){
   if(status == "success"){ %>
       <div class="alert alert-success" role="alert">
