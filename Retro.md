@@ -6,9 +6,8 @@ Vargas, Emiliana
 Jiménez, Sorany  
 Correas, Federico  
 
-SPRINT 1  
-HERRAMIENTA UTILIZADA:
-reetro.io
+﻿RETROSPECTIVA SPRINT 1  
+HERRAMIENTA UTILIZADA: reetro.io
 
 LO POSITIVO
 •	Positiva predisposición para sumar ideas y colaboración.-
@@ -26,9 +25,8 @@ ACCIONES A TOMAR
 •	Promover la motivación y espíritu de camaradería dentro del grupo.
 •	Programar presentaciones parciales por videollamadas que permitan tener contacto con el desarrollo del trabajo.-
 
-SPRINT 2
-HERRAMIENTA UTILIZADA:
-Estrella de Mar.-
+﻿RETROSPECTIVA SPRINT 2
+HERRAMIENTA UTILIZADA:Estrella de Mar.-
 
 START DOING (Comenzar a Hacer)
 •	Programar fechas más acordes a las entregas de subtareas para revisión del grupo.-
@@ -56,20 +54,19 @@ STOP OF (Para de Hacer)
 •	Llegar a la entrega del sprint con las pruebas de las partes en fecha tope.-
 
 
-SPRINT 3 y 4
-HERRAMIENTA UTILIZADA:
-Estrella de Mar.-
+﻿RETROSPECTIVA SPRINT 3 y 4
+HERRAMIENTA UTILIZADA: Estrella de Mar.-
 
 START DOING (Comenzar a Hacer)
-•	Mayor participación INDIVIDUAL en Trello como herramienta de seguimiento de todos los integrantes
-•	Uso de herramienta GitKraken
+•	Mayor participación Individual en Trello como herramienta de seguimiento de  las tareas autoasignadas de cada integrante.
+•	Uso de herramienta GitKraken para agilizar el guardao de cambios en GIT
 •	Repasar responsive de todas las vistas nuevas implementadas o modificadas
 
 MORE OF (Mas de)
 •	Practicas que permitan mantener al dia los temas teóricos de clase e implementación en el proyecto.-
 
 KEEP DOING (Mantenerse Haciendo)
-•	Mantener la positiva predisposición para sumar ideas y colaboración.-
+•	Continua predisposición para sumar ideas y colaboración con tareas adicionales a las asumidas inicialmente.-
 •	Destacar la participación de compañeros que asumen roles importantes en el desarrollo de los trabajos
 •	Continuar utilizando Whatsapp como herramienta que permita mantener contacto constante y citar las reuniones puntuales para documentar las dudas que se van presentando.-
 •	Promover la motivación y espíritu de camaradería dentro del grupo.
