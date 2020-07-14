@@ -3,123 +3,61 @@
 
 <!-- head -->
 <%- include('../partials/head') %>
-<body class="container">
-
-    <!-- header -->
-    <%- include('../partials/header') %>
-
-    <!--Comienzo código del carrito de compras para mobile-->
-    <div class="cart-mobile">
-        <div class="cart-header col-12" >
-            <h3 class="cart-title"><i class="fas fa-shopping-basket" id="icon-cart-mobile"></i><strong> Carrito de compras</strong></h3></br>
-        </div>
-
-    <!--SECTION-->
-    <div class ="container productsCart">
-        <div class = "row">
-            <div class="products-cart col-12">
-                <center>
-                    <article class ="productCart">
-                        <div>
-                            <img class="cart-image col-md-4" src="/images/mesa1.jpg" alt="producto-mesa">
-                        </div>
-                        <div id="col-12">
-                            <span class="col-12"><br>Mesa</span><br>
-                            <p class="col-12">Precio: $19.990,00</p>
-                            <a class="see-product-cart col-12" href="/products/:id">Ver producto</a>
-                            <button type="submit" class="deleteProduct-btn">Eliminar</button>
-                        </div>
-                    </article>
-                    <article class ="productCart">
-                        <div>
-                            <img class="cart-image col-md-4" src="/images/silla-1-1.jpg" alt="producto-silla">
-                        </div>
-                        <div id="col-12">
-                            <span class="col-12"><br>Silla</span><br>
-                            <p class="col-12">Precio: $2.600,00</p>
-                            <a class="see-product-cart col-12" href="/products/:id">Ver producto</a>
-                            <button type="submit" class="deleteProduct-btn">Eliminar</button>
-                        </div>
-                    </article>
-                </center>
-            </div>
-
-        </div>
-        <div id="ticket" class="discountCart">
-            <center>
-                <h5 class="col-12">Usar cupón de descuento</h5>
-                <input class="col-10" id="textField" type="text" placeholder="Introduzca aquí su cupón" class ="ticket-input">
-                <button class="discount-btn col-3" type="submit" class="discount-btn">Aplicar</button>
-            </center>
-        </div>
-        <center>
-            <div class="col-12">
-                <div id="col-8 col-md-3">
-                    <button type="submit" class="cart-options"><a href="/products/:id">Agregar productos</a></button>
+    <body class="container">
+        <!-- header -->
+        <%- include('../partials/header') %>
+        <h1 class="cart-title col-12"><i class="fas fa-shopping-cart"></i> Carrito de compras</h1>
+        <div class="container">
+            <div class="row">
+                <div class="cart-div-titles col-12">
+                    <span class="col-2 cart-title2"></span>
+                    <span class="col-2 cart-title2">Producto</span>
+                    <span class="col-2 cart-title2">Precio</span>
+                    <span class="col-2 cart-title2">Cantidad</span>
+                    <span class="col-2 cart-title2">Subtotal</span>
+                    <span class="col-2 cart-title2"></i></span>
                 </div>
-                <div id="col-8 col-md-3">
-                    <button type="submit" class="cart-options"><a Onclick="location.href= '/carts/productCartPayment'"><b>Continuar compra</b></a></button>
+                <div class="cart-div col-12">
+                    <img class="col-6 col-md-2" src="/images/sofa3.jpg" alt="">
+                    <span class="col-3 col-md-2 cart-title2">Sillón Verde Living</span>
+                    <span class="col-3 col-md-2 cart-title2">$15.000</span>
+                    <span class="col-6 span-mobile"></span>
+                    <span class="col-3 col-md-2 cart-title2">
+                        <form action="" class="form-cart">
+                            <input type="number" name="cantidad" min="1" pattern="^[0-9]+" class="contador-cart">
+                        </form>
+                    </span>
+                    <span class="col-md-2 cart-title2 subt-cart">$15.000</span>
+                    <span class="col-3 col-md-2 cart-title2"><i class="fas fa-trash"></i></span>
                 </div>
-                <div id="col-8 col-md-3">
-                    <button type="submit" class="cart-options"><a href="/products/productDetail/:id">Volver a atrás</a></button>
+                <div class="cart-div col-12">
+                    <img class="col-6 col-md-2" src="/images/sofa3.jpg" alt="">
+                    <span class="col-3 col-md-2 cart-title2">Sillón Verde Living</span>
+                    <span class="col-3 col-md-2 cart-title2">$15.000</span>
+                    <span class="col-6 span-mobile"></span>
+                    <span class="col-3 col-md-2 cart-title2">
+                        <form action="" class="form-cart">
+                            <input type="number" name="cantidad" min="1" pattern="^[0-9]+" class="contador-cart">
+                        </form>
+                    </span>
+                    <span class="col-md-2 cart-title2 subt-cart">$15.000</span>
+                    <span class="col-3 col-md-2 cart-title2"><i class="fas fa-trash"></i></span>
+                </div>
+                <div class="total-cart-div col-12">
+                    <span class="col-6  cart-title2">Total</span>
+                    <span class="col-2 cart-title2"></span>
+                    <span class="col-2 cart-title2">$30.000</span>
+                    <span class="col-2 cart-title2"></span>
+                </div>
+                <div class="btn-cart-div col-12">
+                    <button class="col-12 col-md-2 cart-btn" onclick="history.back()">Volver atrás</button>
+                    <button class="col-12 col-md-2 cart-btn">Vaciar carrito</button>
+                    <button class="col-12 col-md-3 cart-btn" Onclick="location.href='/products'">Agregar más productos</button>
+                    <button class="col-12 col-md-2 end-cart-btn" Onclick="location.href='productCartPayment'">Finalizar compra</button>
                 </div>
             </div>
-        </center>
-    </div>
-    </div>
-    <!--SECTION-->
-
-
-    <!--Comienzo código del carrito de compras para desktop-->
-
-    <div class="cart-desktop">
-      <center><h1 class="cart-title2"><i class="fas fa-shopping-cart"> Carrito de compras</i></h1></center>
-      <div class="container cart-menu-first-row col-11">
-        <div class="row col-12" id="top-bar">
-              <span class="cart-menu-title col-5" id="product-top-bar">Producto</span>
-              <span class="cart-menu-title col-2" id="price-top-bar">Precio</span>
-              <span class="cart-menu-title col-2" id="quantity-top-bar">Cantidad</span>
-              <span class="cart-menu-title col-2" id="total-top-bar">Total</span>
-              <span class="cart-menu-title col-1"></span>
         </div>
-      </div>
-      <div class="container col-11">
-        <div class="filaCarrito row col-12 " id="product-cart-1">
-              <img class="cart-image col-3" src="/images/sofa3.jpg" alt="producto-sillón-verde">
-              <span class="cart-menu-price col-2"><a href="/products/:id">Silla blanca</a></span>
-              <span class="cart-menu-price col-2" id="price-product-cart">$5.000</span>
-              <span class="cart-menu-price col-2">4</span>
-              <span class="cart-menu-price col-2">$20.000</span>
-              <span class="cart-menu-price col-1"><i class="fas fa-trash-alt"></i></span>
-        </div>
-      </div>
-      <div class="container col-11">
-        <div class="filaCarrito row col-12 ">
-              <img class="cart-image col-3" src="/images/sofa3.jpg" alt="producto-sillón-verde">
-              <span class="cart-menu-price col-2"><a href="/products/:id"> Sillón verde</a></span>
-              <span class="cart-menu-price col-2">$27.0000</span>
-              <span class="cart-menu-price col-2">1</span>
-              <span class="cart-menu-price col-2">$27.0000</span>
-              <span class="cart-menu-price col-1"><i class="fas fa-trash-alt"></i></span>
-        </div>
-      </div><br>
-      <div class="container total-price col-11">
-        <div class="row col-12">
-              <span class="cart-menu-price col-3">TOTAL</span>
-              <span class="cart-menu-price col-3"></span>
-              <span class="cart-menu-price col-3"></span>
-              <span class="cart-menu-price col-2">$47.0000</span>
-        </div>
-      </div>
-      <div class="container cart-footer col-11">
-        <div class="row col-12">
-          <button class="cart-buttons col-3"><a href="/">Volver atrás</a></button>
-          <button class="cart-buttons col-3"><a href="/products/:id">Agregar productos</a></button>
-          <button class="cart-buttons col-3"><a Onclick="location.href= '/carts/productCartPayment'">Continuar compra</a></button>
-        </div>
-      </div>
-    </div>
-
+        
         <!-- footer -->
         <%- include('../partials/footer') %>
     </body>

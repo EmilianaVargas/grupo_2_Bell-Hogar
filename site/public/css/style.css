@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap');
-:root{
+:root{ 
   --gris-oscuro: #637a7f;
   --naranja: #aa622d;
   --beige: #e4eabe;
@@ -333,6 +333,7 @@ h5.rebaja{
   background-color: var(--amarillo);
   font-size: 15px;
 }
+
 /* Estilos de Formulario de Registro de Usuario*/
 
 .form-style{
@@ -379,219 +380,143 @@ h5.rebaja{
 }
 
 
-/* Carrito para Mobile Small - PRODUCTCART */
-
-@media (max-width: 345px){
-  .cart-title{
-    display: flex;
-    flex-grow: 0.25;
-    flex-wrap: wrap;
-  }
-  .cart-image{
-    margin-top: 30px;
-  }
-  #icon-cart-mobile{
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    margin-top: 10px;
-  }
-}
-
 /* Carrito para Mobile - PRODUCTCART */
 
 @media (max-width: 499px){
-  .cart-mobile{
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
+  .cart-title{
+    font-size: 20px;
+    text-align: center;
   }
-  .cart-desktop{
+  .cart-title2{
+    font-size: 15px;
+  }
+  .cart-div-titles{
+    display: none
+  }
+  .total-cart-div{
+    display: none
+  }
+  .subt-cart{
     display: none;
   }
-
-.cart {
-  width: 100%;
-  min-height: 0px;
-  padding: 2%;
-  margin: 0 auto;
-  margin-left: 0%;
-  margin-top: 15px;
+  .cart-div{
+    margin-top:1.5%;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .contador-cart{
+    margin-top:6%;
+    width: 65%;
+  }
+  .cart-btn{
+    margin-top: 2%;
+  }
+  .end-cart-btn{
+    margin-top: 2%;
+    background-color: var(--amarillo);
+    color: black;
+    border-color: var(--amarillo);
+  }
 }
 
-.cart-title {
-  width: 100%;
-  height: 10px;
-  margin-top: 1%;
-  top: 5px;
-  left: 435px;
-  text-align: center;
-}
+/* Pago carrito de compras para Mobile- PRODUCTCARTPAYMENT */
 
-.productsCart{
-  margin-top: 3%;
-  margin-bottom: 5%;
-}
+@media (max-width: 499px){
+  .pay-btn{
+    background-color: var(--amarillo);
+  }
 
-.productCart{
-  width: 100%;
-  margin-bottom: 3%;
-}
+  #pay-cart {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-.cart-image{
-  width: 80%;
-}
+  .order{
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-.see-product-cart{
-  text-decoration: none;
-  color: black;
-}
+  .continuebuypayment-btn {
+    border: none;
+    background-color: var(--gris-footer);
+  }
 
-.deleteProduct-btn{
-  border:none;
-  background-color: white;
-}
+  .backcart-btn {
+    border: none;
+    background-color: var(--gris-footer);
+  }
 
-.discountCart {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  width: 10%;
-  margin-bottom: 30px;
-}
+  .backcart-btn a, .continuebuypayment-btn a{
+    text-decoration: none;
+    color:white;
+  }
 
-.discount-btn{
-  margin-top: 3px;
-  justify-content: center;
-  align-items: center;
-}
-
-.ticket-input {
-  width: 10px;
-}
-
-.cart-options {
-  background-color: var(--amarillo);
-  border: 1px solid grey;
-  margin: 3px;
-}
-
-.cart-options a{
-  text-decoration: none;
-  color: black;
-}
-
-#ticket {
-  width: 100%;
-}
-
-#textField {
-  width: 80%;
-}
-
-#textField:focus {
-  border-color: lightslategrey;
-}
-
-#buttons_options {
-  width: 100%;
-  margin-top: 2px;
-}
-
-.addproduct-btn {
-  margin-left: 30%;
-}
-
-.continuebuy-btn {
-  margin-left: 9.3%;;
-  color: black;
-}
-
-.back-btn {
-  margin: 10px;
-  margin-left: 30%;
-  width: 42%;
-}
-
-#backButtonCart {
-  margin-bottom: -30px;;
-}
-
-.back-btn:hover, .continuebuy-btn:hover, .discount-btn:hover, .addproduct-btn:hover {
-  text-decoration: underline;
-}
-}
+  #productAdded2{
+    display: flex; 
+    flex-wrap: wrap;
+  }
+  }
 
 /*Carrito para Tablet y Desktop - PRODUCTCART*/
 
 @media (min-width: 500px){
-.cart-desktop{
+.cart-title{
+  text-align: center;
+  font-size: 30px;
+}
+.cart-div-titles{
+  display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
 }
-.cart-mobile{
-  display: none;
-}
-
-div.filaCarrito.row{
+.cart-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
 }
 .cart-title2{
-  margin-left: 10%;
-  font-size: x-large;
-}
-.cart-menu-first-row{
-  display:flex;
-  flex-wrap: wrap;
-  margin-top: 2%;
-  background-color:var(--gris-footer);
-}
-.cart-menu-title{
-  color:var(--gris-oscuro);
   font-size: 18px;
-  color: white;
   text-align: center;
 }
-.cart-menu-price{
-  font-size: 17px;
-  color:var(--gris-footer);
-  text-align: center;
-  align-content: center;
-  margin-top:1%;
+.span-mobile{
+  display:none;
 }
-.cart-menu-price a{
-  color: black;
+.contador-cart{
+  width: 35%;
 }
-.total-price{
-  border: 1px solid var(--gris-footer);
+.cart-image{    
+  width: 100%;
+  height: 100%;
 }
-.cart-footer{
+.total-cart-div{
   display: flex;
   flex-wrap: wrap;
-  margin-top: 2%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1.5%;
+  border: 1px solid var(--gris-footer);
 }
-.cart-buttons{
-  margin-left: 6%;
-  border: none;
+.btn-cart-div{
+  margin-top: 1.5%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.cart-btn{
   background-color: var(--gris-footer);
   color: white;
 }
-
-.cart-buttons a{
-  text-decoration: none;
-  color: white;
+.end-cart-btn{
+  background-color: var(--amarillo);
+  color: black;
+  border-color: var(--amarillo);
 }
-
-.cart-image{
-  height: 20vh;
-}
-}
-
-
-/* Pago carrito de compras para Desktop- PRODUCTCARTPAYMENT */
+  /* Pago carrito de compras para Desktop- PRODUCTCARTPAYMENT */
 
 @media (min-width: 500px){
 #pay-cart {
@@ -705,44 +630,6 @@ div.filaCarrito.row{
 }
 }
 
-
-/* Pago carrito de compras para Mobile- PRODUCTCARTPAYMENT */
-
-@media (max-width: 499px){
-  .pay-btn{
-    background-color: var(--amarillo);
-  }
-
-  #pay-cart {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .order{
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .continuebuypayment-btn {
-    border: none;
-    background-color: var(--gris-footer);
-  }
-
-  .backcart-btn {
-    border: none;
-    background-color: var(--gris-footer);
-  }
-
-  .backcart-btn a, .continuebuypayment-btn a{
-    text-decoration: none;
-    color:white;
-  }
-
-  #productAdded2{
-    display: flex; 
-    flex-wrap: wrap;
-  }
-  }
 
 
 /* detalle de producto - PRODUCTDETAIL*/
