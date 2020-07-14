@@ -13,7 +13,7 @@ router.post('/create', middUploadProductImage.uploadFile, productsController.pos
 
 // Ruta de producto clickeado - Detalle
 router.get('/:id', productsController.productDetail);
-
+ 
 // Rutas de Actualización de productos
 router.get('/:id/edit', productsController.editProduct);   
 router.put('/:id/edit', middUploadProductImage.uploadFile, productsController.putEditProduct);

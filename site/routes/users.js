@@ -26,7 +26,7 @@ router.get('/success', function(req,res){
 
 
 // Ruta de profile
-router.get('/profile',middInvitados, usersController.profile);
+router.get('/profile/:id',middInvitados, usersController.profile);
 
 
 // Rutas de creación de usuario
@@ -39,6 +39,10 @@ router.put('/update', usersController.update);
 
 // Ruta de logout
 router.post('/logout', usersController.logout);
+
+//Ruta de cambio de pass
+router.get('/:id/editPassword', usersController.editPassword);
+router.post('/:id/editPassword', usersController.postEditPassword);
 
 // Rutas de eliminación de usuario
 //router.get('/delete', middLogueados, usersController.register);
