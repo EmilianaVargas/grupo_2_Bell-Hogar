@@ -17,10 +17,10 @@ let cartsController = {
                 },
                 include: db.State
             }).then((address)=>{
-                return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado, address});
+                return res.render("carts/cartPayment",{usuario: req.session.usuarioLogueado, address});
             });
         } else {
-            return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado, address: undefined});
+            return res.render("carts/cartPayment",{usuario: req.session.usuarioLogueado, address: undefined});
         }
 
         // db.Address.findAll({

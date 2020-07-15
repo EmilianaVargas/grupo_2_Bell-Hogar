@@ -4,7 +4,11 @@
     <div class="card mb-3">
         <div class="row ">
                 <div class="col-md-4">
-                    <img src="/images/avatars/<%=usuario.image %>" class="card-img" alt="...">
+                    <% if (usuario.is_admin == true) { %>
+                    <img src="/images/Logo2.png" class="card-img" alt="...">
+                    <% } else { %>
+                    <img src="/images/users/<%=usuario.image %>" class="card-img" alt="...">
+                    <% } %>
                 </div>
                 <div class="col-md-8">
                     <div class="">
@@ -14,7 +18,7 @@
                                     <% if (usuario.is_admin == false) { %>
                                         <li class="profile-text">Nombre de usuario: <%= usuario.first_name %></li>
                                         <li class="profile-text">Email: <%= usuario.email %></li>
-                                        <li class="profile-text">Dni o CUIT: <%= usuario.dni_cuit %></li>
+                                        <li class="profile-text">DNI o CUIT: <%= usuario.dni_cuit %></li>
                                         <li class="profile-text">Teléfono: <%= usuario.phone %></li>
                                         <br>
                                         <div class="d-flex justify-content-between"></div>
