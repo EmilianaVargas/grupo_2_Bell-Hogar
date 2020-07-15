@@ -1,40 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-    <!-- head -->
-  <%- include('../partials/head') %>
-  
-<!-- header -->
-<%- include('../partials/header') %>
-  
-<body>
-    <div class="cointainer profile-container col-12">
-        <div class="row col-6">
-            <div class="profile-card col-12">
-                <ul class="col-12">
-                    <% if (usuario.is_admin == false) { %>
-                        <li class="profile-text">Nombre de usuario: <%= usuario.first_name %></li>
-                        <li class="profile-text">Email: <%= usuario.email %></li>
-                        <li class="profile-text">Avatar: <img class="col-md-2 col-lg-2" src="/images/users/<%=usuario.image %>"></li>
-                        <br><input type="button" Onclick="location.href='/users/update'" class="editarPerfil" name="editarPerfil" value="Editar Perfil"><br><br>
-                        <input type="button" Onclick="location.href='/users/<%= usuario.id %>/editPassword'" class="editarPerfil" name="editarPassword" value="Cambiar Contraseña">
-                        <% } else { %>
-                            <li class="profile-text">Nombre de usuario: <%= usuario.first_name %></li>
-                            <li class="profile-text">Email: <%= usuario.email %></li>
-                            <li class="profile-text">Avatar: <img class="col-md-2 col-lg-2" src="/images/Logo2.png"></li>
-                            <br><input type="button" Onclick= "location.href= '/products/create'" class="error-button" name="login" value="Agregar Productos"><br><br>
-                            <input type="button" Onclick="location.href='/products'" class="error-button" name="login" value="Editar Productos"><br><br>
-                            <input type="button" Onclick="location.href='/products'" class="error-button" name="login" value="Eliminar Productos"> 
-                         <% } %>
-                </ul>
-                <br>
-                <form class="" action="/users/logout" method="POST">
-                    <button class="cart-buttons" id="logout" type="submit">Cerrar Sesión</button>
-                </form>
-                <br>
-            </div>
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>  
+<body class="container">
+    <div class="card mb-3">
+        <div class="row ">
+                <div class="col-md-4">
+                    <img src="/images/avatars/<%=usuario.image %>" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="">
+                        <h3 class="">Mi cuenta</h3>
+                        <div class="profile-card">
+                                <ul class="col-12">
+                                    <% if (usuario.is_admin == false) { %>
+                                        <li class="profile-text">Nombre de usuario: <%= usuario.first_name %></li>
+                                        <li class="profile-text">Email: <%= usuario.email %></li>
+                                        <li class="profile-text">Dni o CUIT: <%= usuario.dni_cuit %></li>
+                                        <li class="profile-text">Teléfono: <%= usuario.phone %></li>
+                                        <br>
+                                        <div class="d-flex justify-content-between"></div>
+                                            <input type="button" Onclick="location.href='/users/update'" class="profile-button btn-sm" name="editarPerfil" value="Editar Perfil"><br><br>
+                                            <input type="button" Onclick="location.href='/users/<%= usuario.id %>/editPassword'" class="profile-button btn-sm" name="editarPassword" value="Cambiar Contraseña">
+                                        </div>
+                                            <% } else { %>
+                                            <li class="profile-text">Nombre de usuario: <%= usuario.first_name %></li>
+                                            <li class="profile-text">Email: <%= usuario.email %></li>
+                                            <br>
+                                            <div class="d-flex justify-content-between">
+                                                <input type="button" Onclick= "location.href= '/products/create'" class="profile-button btn-sm" name="agregar" value="Agregar Productos"><br><br>
+                                                <input type="button" Onclick="location.href='/products'" class="profile-button btn-sm" name="editar" value="Editar Productos"><br><br>
+                                                <input type="button" Onclick="location.href='/products'" class="profile-button btn-sm" name="eliminar" value="Eliminar Productos"> 
+                                            </div>
+                                        <% } %>
+                                </ul>
+                                <br>                                
+                                    <form class="float-right" action="/users/logout" method="POST">
+                                        <button class="btn-sm" id="logout" type="submit">Cerrar Sesión</button>
+                                    </form>                               
+                                <br>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-<!-- footer -->
 <%- include('../partials/footer') %>
 </body>
 </html>

@@ -705,12 +705,24 @@ h5{
   align-items: center;
 }
 .profile-card{
-  border: 4px solid var(--gris-footer);
+  border: 4px var(--gris-footer);
   padding: 2%;
 }
 
 .profile-text{
-  font-size: 30px;
+  font-size: 17px;
+  color: var(--gris-oscuro)
+}
+
+.avatar{
+  border-radius: 3px;
+  height: auto ;
+}
+.profile-button{
+  background-color: var(--gris-footer);
+  color: white;
+  padding: 5px;
+  margin: 10px;
 }
 
 /*editProductError*/
