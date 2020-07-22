@@ -1,19 +1,20 @@
-<!DOCTYPE html> 
-<html>
   <!-- head -->
   <%- include('../partials/head') %>
   <body class="container">
  <!-- header -->
  <%- include('../partials/header') %>
 
- <!-- header -->
  <div class="container">
-     <div class="row">
-         <div class="edit-form-box col-8 col-md-12">
-            <h1>Editar Producto <%=product.name%></h1>
+  <div class="row">
+    <div class="edit-form-box col-8 col-md-12">
+      <h1>Editar Producto <%=product.name%></h1>
       <h4>Completa los siguientes datos del producto</h4>
-        <form action="/products/<%=product.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-        <label for = "nombre"><h6>Nombre del Producto:</h6></label>
+        <form class="editProduct" action="/products/<%=product.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+          <div class="errores">
+            <ul>
+            </ul>
+          </div>
+          <label for = "nombre"><h6>Nombre del Producto:</h6></label>
             <input name="nombre" id="nombre" type="text" class="form-control" value="<%= product.name %> "></br>
           <label for = "descripcion"><h6>Descripción:</h6></label>
             <input name="descripcion" id= "descripcion" type="text" class="form-control" value="<%= product.description %> "></br>
@@ -29,13 +30,13 @@
             <input name="image1" id="image1" type="file" class="btn-color "accept=".jpg, .jpeg, .png" ><br><br>
           <label for = "stock"><h6>Stock:</h6></label><br>
             <input name="stock" id="stock" type="text" class="form-control" value="<%= product.stock %> "></br>
-        <button class="suscription-btn btn-color "  id="editarProducto" type="submit">Confirmar edicion</button><br>
-        <button class="suscription-btn btn-color "  id="borrarProducto" type="reset">Resetear edición</button>
+          <button class="suscription-btn btn-color "  id="editarProducto" type="submit">Confirmar edicion</button><br>
+          <button class="suscription-btn btn-color "  id="borrarProducto" type="reset">Resetear edición</button>
         </form>
-         </div>
+      </div>
      </div>
  </div>
-      
+
     <!-- footer -->
     <%- include('../partials/footer') %>
   </body>
