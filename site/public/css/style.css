@@ -378,7 +378,34 @@ h5.rebaja{
   background-color: var(--amarillo);
   border-color: var(--gris-oscuro);
 }
+.ul-div-errores li{
+  font-size: 15px;
+  color: red;
+  margin-left: 0;
+}
 
+.p-register{
+  font-size: 12px;
+  display: inline;
+}
+#checkMay{
+  display: none;
+}
+#timesMay{
+  display: none;
+}
+#checkMin{
+  display: none;
+}
+#timesMin{
+  display: none;
+}
+#checkNum{
+  display: none;
+}
+#timesNum{
+  display: none;
+}
 
 /* Carrito para Mobile - PRODUCTCART */
 
