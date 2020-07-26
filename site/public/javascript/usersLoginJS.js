@@ -4,11 +4,11 @@ window.addEventListener("load", function(){
         let errores = [];
 
         let emailInput = document.getElementById("email");
-        regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if(emailInput.value = ""){
-            errores.push("Ingrese su email")
-        } else if(regexEmail.test(emailInput.value)===false){
-            errores.push("El email es inválido")
+        let regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        if(emailInput.value == ""){
+            errores.push("El email es obligatorio");
+        } else if (regexEmail.test(emailInput.value) == false){
+            errores.push("El email es inválido");
         }
 
         let passInput = document.getElementById("password");
