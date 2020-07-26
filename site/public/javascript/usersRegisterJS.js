@@ -6,14 +6,14 @@ window.addEventListener("load", function(){
         let nombreInput = document.getElementById("nombre");
         if (nombreInput.value == ""){
             errores.push("El nombre es obligatorio")
-        } else if (nombreInput.value.length < 2) {
+        } else if (nombreInput.value.length < 3) {
             errores.push("El nombre debe tener más de dos caracteres")
         }
 
         let apellidoInput = document.getElementById("apellido");
         if (apellidoInput.value == ""){
             errores.push("El apellido es obligatorio")
-        } else if (nombreInput.value.length <= 2) {
+        } else if (nombreInput.value.length < 3) {
             errores.push("El apellido debe tener más de dos caracteres")
         }
 
@@ -70,15 +70,16 @@ window.addEventListener("load", function(){
             pNum.style.color = 'red';
             timesNum.style.display= 'inline';
             checkNum.style.display = 'none';
-        }
-
+        }        
+        
         var fileInput = document.getElementById('image');
         var filePath = fileInput.value;
         var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-        if(!allowedExtensions.exec(filePath)){
-            errores.push("Debe subir una imagen con extensión .jpg, .jpeg, .png o .gif")
+        if(Image.value != undefined){
+            if(!allowedExtensions.exec(filePath)){
+                errores.push("Debe subir una imagen con extensión .jpg, .jpeg, .png o .gif")
+            }
         }
-
 
         if(errores.length > 0){
             e.preventDefault();
@@ -86,7 +87,6 @@ window.addEventListener("load", function(){
             for (let i = 0; i < errores.length; i++){
                 erroresList.innerHTML += "<li>" + "-" + errores[i] + "</li>"
             }
-            console.log(errores)
         }
     })
 })
