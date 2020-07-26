@@ -167,7 +167,21 @@ let usersController = {
                     res.render('users/editPassword', {usuario: req.session.usuarioLogueado, mensaje: mensaje})
                 }
             })
+    },
+   'refreshUser': async function(req, res){
+    let usuarioRefrescado = await db.User.findOne(
+    {
+       where: { email: req.session.usuarioLogueado },
+       include: [{association: "carritoUsuario"}] 
+    });
+    if (usuarioRefrescado instanceof db.User) {
+       req.session.usuarioLogueado = usuarioRefrescado; 
+       return usuarioRefrescado;
+    } else{
+       return null;
     }
+ },
+
 }
 
 module.exports = usersController;

@@ -9,12 +9,13 @@ const middInvitados = require('../middlewares/middInvitado')
 // Detalle de productos en el carrito
 router.get('/productCart', cartsController.productCart);
 
+
 // Incorporacion de productos al carrito
-//router.post('/', cartsController.addOneProduct);
+router.post('/productCart', cartsController.addProduct);
 
 // Confirmacion de carrito
 router.get('/productCartPayment', middInvitados, cartsController.productCartPayment);
-//router.put('/:id', cartsController.update);
+router.put('/:id', cartsController.confirm);
 
 
 //retiro en tienda
@@ -29,7 +30,7 @@ router.post('/addressCart', [
     check('localidad').isLength({min: 3}).withMessage('- Localidad inválida')
   ],cartsController.postAddress);
 
-// Rutas de edición de usuario
+// Rutas de eliminacion de carrito
 //router.delete('/:id', cartsController.delete);
 
 module.exports = router;

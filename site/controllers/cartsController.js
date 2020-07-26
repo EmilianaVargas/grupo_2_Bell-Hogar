@@ -3,10 +3,49 @@ const path = require('path');
 const {check, validationResult,body } = require('express-validator');
 let db=require('../database/models');
 const sequelize = db.sequelize;
+const usersController = require('./usersController');
+let productsController = require('./productsController');
+
 
 let cartsController = {
+    'renderWithMessage'(req, res, mensaje=null, status=null){
+        let msj = mensaje;
+        let stat = status;
+        usersController.refreshUser(req, res) 
+        .then(function(usuarioRefrescado){
+           return res.render("productCart", {mensaje: msj, status: stat, usuario: req.session.usuarioLogueado});
+        }).catch(function(error){
+           let mensaje = "Error: no se pudieron obtener los datos del carro de compras. Detalle: " + error;
+           let status = "error";
+           return res.render("productCart", {mensaje: mensaje, status: status, usuario: req.session.usuarioLogueado});
+        });
+     },
     'productCart': function(req,res){
-       res.render('carts/productCart',{usuario: req.session.usuarioLogueado});
+        //cartsController.renderWithMessage(req,res);
+        if(req.session.usuarioLogueado == undefined){
+            mensaje = "¡Ingresá tu email y contraseña para continuar";
+            return res.render('users/login',{mensaje: mensaje, status: "success"});
+        } else {
+            db.Cart.findOne({
+                include:[
+                    {association:"Product"},
+                    {association:"User"},
+                ],
+                where:{
+                    user_id: req.session.usuarioLogueado
+                    //y que el status del carrito sea activo (no finalizado/confirmado)
+                },
+            })
+            .then(function(cartProduct){
+                if (cartProduct == null) {
+                    mensaje = "Aun no hay productos cargados en tu carrito";
+                    return res.render("carts/productCart",{products:undefined, mensaje: mensaje, status: "success", usuario: req.session.usuarioLogueado});
+                }else{
+                    return res.render("carts/productCart",{products: cartProduct.Product, usuario: req.session.usuarioLogueado});
+                }
+            })
+            .catch(error=>console.log(error))
+        }
     },
     'productCartPayment': function(req,res){
         console.log("domicilio-------->" + req.query.domicilio);
@@ -22,25 +61,58 @@ let cartsController = {
         } else {
             return res.render("carts/cartPayment",{usuario: req.session.usuarioLogueado, address: undefined});
         }
-
-        // db.Address.findAll({
-        //     limit: 1,
-        //     where: {
-        //         user_id: req.session.usuarioLogueado.id
-        //     },
-        //     order: [ [ 'createdAt', 'DESC' ]],
-        //     include: db.State
-        // }).then((address) => {
-        //     return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado, address: address} );
-        // })
     },
-    'addOneProduct': function(req,res){
-        //db.___.findAll().then((______)=>{
-            return res.render("______" );
-       // });
+    'addProduct': function(req,res){
+        if(req.session.usuarioLogueado == undefined){
+            mensaje = "¡Ingresá tu email y contraseña para continuar";
+            return res.render('users/login',{mensaje: mensaje, status: "success"});
+        } else {
+            db.Cart.findOne({
+                include:[
+                    {association:"Product"},
+                    {association:"User"},
+                ],
+                where:{
+                    user_id: req.session.usuarioLogueado,
+                    finished: false,
+                },
+            })
+            .then(function(carrito){
+                let productFind = null;
+                for (i=0; i<carrito.Product.length; i++){
+                    if(carrito.Product[i].id == req.params.id){
+                        productFind = carrito.Product[i];
+                        break;
+                    }
+                }
+                if(productFind!=null){
+                    let mensaje = "Atención!: El producto que deseas ya estaba añadido a tu carrito de compras!";
+                    let status = "warning";
+                    productsController.renderWithMessage(req, res, mensaje, status);
+                }else{
+                    db.cartProduct.create({
+                        cart_id:carrito[i].id,
+                        product_id: req.params.id,
+                        units: 1,
+                    })
+                    .then(function(item){ 
+                        let mensaje = `El producto [Codigo ${item.product_id}] se agregó a tu carrito de compras.`;
+                        let status = "info";
+                        productsController.renderWithMessage(req, res, mensaje, status);
+                     })
+                    .catch(function(error) { 
+                        let mensaje = "Error: el producto no se pudo agregar al carrito de compras. Detalle: " + error;
+                        let status = "error";
+                        productsController.renderWithMessage(req, res, mensaje, status);
+                     });
+                }
+                res.render("carts/productCart",{carrito: carrito.Product, usuario: req.session.usuarioLogueado});
+            })
+            .catch(error=>console.log(error))
+        }
     },
-    'update': function(req,res){
-        //db.____.findAll().then((_________)=>{
+    'confirm': function(req,res){
+        //db.____.update/findOrCrate().then((_________)=>{
             return res.render("____" );
        // });
     },
@@ -104,7 +176,7 @@ let cartsController = {
             }
     },
     'delete': function(req,res){
-        //db.____.findAll().then((_________)=>{
+        //db.____.destroy().then((_________)=>{
             return res.render("____" );
        // });
     },

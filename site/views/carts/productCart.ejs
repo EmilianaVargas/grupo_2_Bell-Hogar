@@ -1,52 +1,40 @@
-<!DOCTYPE html>
-<html>
-
 <!-- head -->
 <%- include('../partials/head') %>
     <body class="container">
         <!-- header -->
         <%- include('../partials/header') %>
-        <h1 class="cart-title col-12"><i class="fas fa-shopping-cart"></i> Carrito de compras</h1>
-        <div class="container">
-            <div class="row">
-                <div class="cart-div-titles col-12">
-                    <span class="col-2 cart-title2"></span>
-                    <span class="col-2 cart-title2">Producto</span>
-                    <span class="col-2 cart-title2">Precio</span>
-                    <span class="col-2 cart-title2">Cantidad</span>
-                    <span class="col-2 cart-title2">Subtotal</span>
-                    <span class="col-2 cart-title2"></i></span>
-                </div>
-                <div class="cart-div col-12">
-                    <img class="col-6 col-md-2" src="/images/sofa3.jpg" alt="">
-                    <span class="col-3 col-md-2 cart-title2">Sillón Verde Living</span>
-                    <span class="col-3 col-md-2 cart-title2">$15.000</span>
-                    <span class="col-6 span-mobile"></span>
-                    <span class="col-3 col-md-2 cart-title2">
-                        <form action="" class="form-cart">
-                            <input type="number" name="cantidad" min="1" pattern="^[0-9]+" class="contador-cart">
-                        </form>
-                    </span>
-                    <span class="col-md-2 cart-title2 subt-cart">$15.000</span>
-                    <span class="col-3 col-md-2 cart-title2"><i class="fas fa-trash"></i></span>
-                </div>
-                <div class="cart-div col-12">
-                    <img class="col-6 col-md-2" src="/images/sofa3.jpg" alt="">
-                    <span class="col-3 col-md-2 cart-title2">Sillón Verde Living</span>
-                    <span class="col-3 col-md-2 cart-title2">$15.000</span>
-                    <span class="col-6 span-mobile"></span>
-                    <span class="col-3 col-md-2 cart-title2">
-                        <form action="" class="form-cart">
-                            <input type="number" name="cantidad" min="1" pattern="^[0-9]+" class="contador-cart">
-                        </form>
-                    </span>
-                    <span class="col-md-2 cart-title2 subt-cart">$15.000</span>
-                    <span class="col-3 col-md-2 cart-title2"><i class="fas fa-trash"></i></span>
-                </div>
+            <h1 class="cart-title col-12"><i class="fas fa-shopping-cart"></i> Carrito de compras</h1>
+            <div class="container">
+                <div class="row">
+                    <% if(products.length>0){ %>
+                    <div class="cart-div-titles col-12">
+                        <span class="col-2 cart-title2"></span>
+                        <span class="col-2 cart-title2"> Producto </span>
+                        <span class="col-2 cart-title2"> Precio </span>
+                        <span class="col-2 cart-title2"> Cantidad </span>
+                        <span class="col-2 cart-title2"> Subtotal </span>
+                        <span class="col-2 cart-title2"></i></span>
+                    </div>
+                    <div class="cart-div col-12">
+                        <% for(let i=0; i< products.length; i++){ %> 
+                        <img class="col-6 col-md-2" src="/images/<%= products[i].image1 %>" alt="">
+                        <span class="col-3 col-md-2 cart-title2"><%= products[i].name %></span>
+                        <span class="col-3 col-md-2 cart-title2">$<%= products[i].price %></span>
+                        <span class="col-6 span-mobile"></span>
+                        <span class="col-3 col-md-2 cart-title2">
+                            <form action="" class="form-cart">
+                                <input type="number" name="cantidad" min="1" pattern="^[0-9]+" class="contador-cart">
+                            </form>   <!-- deberia tener tope maximo de unidades en stock estimadas -->
+                        </span>
+                        <span class="col-md-2 cart-title2 subt-cart">$<%= products[i].price %></span>
+                        <span class="col-3 col-md-2 cart-title2"><i class="fas fa-trash"></i></span>
+                        <%  } %>
+                    </div>
+
                 <div class="total-cart-div col-12">
                     <span class="col-6  cart-title2">Total</span>
                     <span class="col-2 cart-title2"></span>
-                    <span class="col-2 cart-title2">$30.000</span>
+                    <span class="col-2 cart-title2">$sumar filas</span>
                     <span class="col-2 cart-title2"></span>
                 </div>
                 <div class="btn-cart-div col-12">
@@ -55,6 +43,19 @@
                     <button class="col-12 col-md-3 cart-btn" Onclick="location.href='/products'">Agregar más productos</button>
                     <button class="col-12 col-md-2 end-cart-btn" Onclick="location.href='productCartPayment'">Finalizar compra</button>
                 </div>
+                <% } else { %> 
+                    <div class="cart-div-titles col-12">
+                        <p>Carrito vacío </p>
+                        <%if (typeof(status) != "undefined"){
+                            if(status == "success"){ %>
+                                <div class="alert alert-success" role="alert">
+                                    <%=mensaje%>
+                                </div>
+                             <% }
+                        }%>
+                    </div>
+                <% } %> 
+
             </div>
         </div>
         
