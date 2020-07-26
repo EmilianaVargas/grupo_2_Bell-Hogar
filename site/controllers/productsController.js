@@ -7,8 +7,8 @@ let productsController = {
         db.product.findAll()
             .then(function(product){
                 res.render('products/products',{product, usuario: req.session.usuarioLogueado});
-            })         
-    }, 
+            })
+    },
     'productDetail': function(req,res){
         db.product.findByPk(req.params.id)
             .then(function(product){
@@ -94,7 +94,7 @@ let productsController = {
                 id: req.params.id
             }
         })
-        res.render('index',{usuario: req.session.usuarioLogueado});  
+        res.render('index',{usuario: req.session.usuarioLogueado});
     }
 }
 
