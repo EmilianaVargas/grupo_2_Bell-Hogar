@@ -16,14 +16,14 @@ const {check, validationResult, body} = require('express-validator');
             .exists().withMessage('Descripción no definida.')
             .trim()
             .isLength({min: 20}).withMessage('Error: La descripción del producto debe tener al menos 20 caracteres.'),
-         /*check('category')
+         check('categoria')
             .exists().withMessage('Categoría no definida.')
             .trim()
             .isLength({min: 3}).withMessage('Error: La categoría debe tener al menos 3 caracteres.'),
-         check('subcategoría')
+         check('subcategoria')
             .exists().withMessage('Subcategoría no definida.')
             .trim()
-            .isNumeric().withMessage('Error: No es una subcategoría válida.'),
+            .isLength({min: 3}).withMessage('Error: La Subcategoria debe contener al menos 3 caracteres.'),
          check('marca')
             .exists().withMessage('Marca no definido.')
             .trim()
@@ -31,7 +31,7 @@ const {check, validationResult, body} = require('express-validator');
          check('precio')
             .exists().withMessage('precio no definido.')
             .trim()
-            .isNumeric().withMessage('Error: El precio no es válido.'),*/
+            .isNumeric().withMessage('Error: El precio no es válido.'),
       ],
    }
 
