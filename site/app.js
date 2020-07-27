@@ -12,6 +12,7 @@ var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
 var cartsRouter = require('./routes/carts');
+const middProducts = require('./middlewares/middProducts');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(middRecordame);
+app.use-(middProducts);
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);

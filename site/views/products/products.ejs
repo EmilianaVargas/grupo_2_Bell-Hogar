@@ -10,12 +10,12 @@
     <% if (usuario == undefined) { %>
     <% } else if(usuario.is_admin == false){%>
     <% } else { %>
-        <br><h4 class="product-title-admin col-12">Seleccione el producto que desea eliminar o editar</h4>       
+        <br><h4 class="product-title-admin col-12">Seleccione el producto que desea eliminar o editar</h4>
     <% } %>
     <div class="container">
         <div class="row">
             <div class ="view-products">
-                <% product.forEach(product => { %> 
+                <% product.forEach(product => { %>
                 <article class="view-product col-12 col-md-4 col-lg-3">
                     <div>
                         <img src="images/<%= product.image1 %> " alt="">
@@ -23,13 +23,13 @@
                         <h5 class="product-price-view">$<%= product.price %> </h5> <!-- categoria y marca?? -->
                     </div>
                 </article>
-                <% }); %>                
+                <% }); %>
             </div>
         </div>
     </div>
-            
-            <!-- Products --> 
+
+            <!-- Products -->
             <!-- footer -->
-            <%- include('../partials/footer') %>    
+            <%- include('../partials/footer') %>
         </body>
         </html>
