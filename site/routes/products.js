@@ -3,6 +3,8 @@ var router = express.Router();
 let productsController = require('../controllers/productsController');
 const middUploadProductImage = require('../middlewares/middUploadProductImage');
 const middProducts = require('../middlewares/middProducts');
+const {check, validationResult,body } = require('express-validator');
+
 
 // Ruta de listado de productos
 router.get('/', productsController.products);

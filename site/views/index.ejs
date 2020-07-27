@@ -40,6 +40,30 @@
       <span class="sr-only">Siguiente</span>
     </a>
   </div>
+
+
+  <%if (typeof(status) != "undefined"){
+    if(status == "success"){ %>
+        <div class="alert alert-success" role="alert">
+            <%=mensaje%>
+        </div>
+    <% }
+  }%>
+  
+  <% if (typeof errors != 'undefined') { %>
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            <% for( let i = 0; i < errors.length; i++ ) { %>
+                <li>
+                    <%= errors[i].msg %>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+  <% } %>
+
+
+
   <div class="card-deck">
     <div class="card bg-ligth">
       <img src="/images/prueba3.jpg" class="card-img" alt="...">
