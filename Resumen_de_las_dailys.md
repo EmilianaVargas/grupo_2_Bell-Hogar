@@ -85,3 +85,38 @@ Las soluciones propuestas:
 
 Principales impresiones sobre la utilidad de esta ceremonia:
 	•Consideramos muy positiva la posibilidad de comunicar lo que se está desarrollando individualmente, a que ritmo y con que dificultad no resuelta, a fin de poder reorganizar tiempos y colaboraciones entre todos. Con el objetivo de que las funcionalidades de cada CRUD se pudieran testear con considerable anticipación a la entrega del sprint y detectar posibles mejoras para desarrollar a futuro.------------------------------------------
+
+Sprint 6__________________________________________________________________________________________________________________________
+FRECUENCIA DE REUNIONES:
+2 videollamadas semanales coordinadas con Tutor asignado, comunicación permanente vía WhatsApp
+
+Afortunadamente se lograron completar todas las tareas propuestas:
+	•Conclusiones de la retro del quinto sprint
+	•Tablero de trabajo actualizado
+	•Archivo daily.md​ con nuestras opiniones sobre las dailies / weeklies	
+	•Validaciones del backend con Express Validator​ (Registro de usuarios - Login de usuarios - Creación y modificación de productos)
+	•Validaciones del frontend con ​ JS​ + validator.js​  (Registro de usuarios - Login de usuarios - Creación y modificación de productos)
+
+
+Los impedimentos encontrados se detallan en la herramienta indicada 
+		https://docs.google.com/spreadsheets/d/1TTAilRLr-VRizXahGRIWaO5CXD4V4tuRz9Jnb0qwMeQ/edit#gid=1440025700, 
+A modo de síntesis los principales fueron: 
+    • CRUD Carrito: manejo de tablas pivot - refresh de la sesion del usuario al cargar un item de producto en la DB
+    • error en la carga de modificaciones de algunos archivos en el repositorio remoto
+    • Estar trabajando simultáneamente en asimilar conocimientos del curso y respectiva practica, a fin de lograr la experiencia que requiere el proyecto integrador en cada sprint.
+      
+
+Las soluciones propuestas:
+    • Consultar bibliografía de cada inconveniente para proponer resoluciones
+    • Solicitud de materiao de consulta al mentor
+
+Principales impresiones sobre la utilidad de esta ceremonia: Consideramos muy positiva la posibilidad de comunicar lo que se está desarrollando individualmente, a que ritmo y con que dificultad no resuelta en un lapso breve de tiempo, a fin de poder reorganizarnos y colaborar entre todos para llegar con lo obligatorio a la entrega del sprint.---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

@@ -6,6 +6,8 @@ Vargas, Emiliana
 Jiménez, Sorany  
 Correas, Federico  
 
+
+-----------------------------------------------------------------------------------------------------------------------------
 ﻿RETROSPECTIVA SPRINT 1  
 HERRAMIENTA UTILIZADA: reetro.io
 
@@ -25,6 +27,8 @@ ACCIONES A TOMAR
 •	Promover la motivación y espíritu de camaradería dentro del grupo.
 •	Programar presentaciones parciales por videollamadas que permitan tener contacto con el desarrollo del trabajo.-
 
+
+-----------------------------------------------------------------------------------------------------------------------------
 ﻿RETROSPECTIVA SPRINT 2
 HERRAMIENTA UTILIZADA:Estrella de Mar.-
 
@@ -53,13 +57,13 @@ LESS OF (Menos de)
 STOP OF (Para de Hacer)
 •	Llegar a la entrega del sprint con las pruebas de las partes en fecha tope.-
 
-
+-----------------------------------------------------------------------------------------------------------------------------
 ﻿RETROSPECTIVA SPRINT 3 y 4
 HERRAMIENTA UTILIZADA: Estrella de Mar.-
 
 START DOING (Comenzar a Hacer)
 •	Mayor participación Individual en Trello como herramienta de seguimiento de  las tareas autoasignadas de cada integrante.
-•	Uso de herramienta GitKraken para agilizar el guardao de cambios en GIT
+•	Uso de herramienta GitKraken para agilizar el guardado de cambios en GIT
 •	Repasar responsive de todas las vistas nuevas implementadas o modificadas
 
 MORE OF (Mas de)
@@ -80,5 +84,33 @@ STOP OF (Parar de Hacer)
 •	Utilizar clases con nombres que puedan ser repetidas en los estilos de la e-commerce.-
 
 
+-----------------------------------------------------------------------------------------------------------------------------
+﻿RETROSPECTIVA SPRINT 5
+HERRAMIENTA UTILIZADA: Estrella de Mar.-
 
+START DOING (Comenzar a Hacer)
+🔸️Repasar tareas secundarias para mejorar navegabilidad de la pagina y visualización responsive de todas las vistas modificadas
+🔸️Ultimar detalles del desarrollo del carrito 
+
+
+MORE OF (Mas de)
+🔸️Participación Individual en Trello como herramienta de seguimiento de  las tareas auto asignadas de cada integrante.
+🔸️Uso de herramienta GitKraken para agilizar el guardado de cambios en GIT
+🔸️Continuar con el objetivo de lograr la versión estable con un margen de días previos a la fecha de presentacion del sprint
+
+
+
+KEEP DOING (Mantenerse Haciendo)
+🔸️Continua predisposición para sumar ideas y colaboración con tareas adicionales a las asumidas inicialmente.-
+🔸️Contacto constante para lograr el ritmo de dailys propuesto
+🔸️Promover la motivación y espíritu de camaradería dentro del grupo.
+🔸️Incrementar la frecuencia de presentaciones parciales por videollamadas que permitan tener contacto con el desarrollo del trabajo del compañero.-
+
+LESS OF (Menos de)
+🔸️Demorarnos en lograr la versión estable y su respectivo merge en git.
+
+STOP OF (Parar de Hacer)
+🔸️Programar pruebas de las funcionalidades desarrolladas muy cercanas a fecha tope.
+
+-----------------------------------------------------------------------------------------------------------------------------
 
