@@ -42,13 +42,14 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <button type="submit" class="cart-btn"><a href="/carts/productCart">Agregar al carrito</a></button><br><br>
+               
                 <% if (usuario == undefined) { %>
                     <% } else if (usuario.is_admin == false) { %>
+                        <button type="submit" class="cart-btn"><a href="/carts/productCart">Agregar al carrito</a></button><br><br>
                          <% } else { %>
                             <form action="">
                                 <input type="button" Onclick="location.href='/products/<%= product.id %>/edit '" class="error-button" name="edit" value="Editar Producto"><br><br>
-                            <input type="button" Onclick="location.href='/products/<%= product.id %>/delete'" class="error-button" name="delete" value="Eliminar Producto"> 
+                                <input type="button" Onclick="location.href='/products/<%= product.id %>/delete'" class="error-button" name="delete" value="Eliminar Producto"> 
                             </form>
                                 <% } %>
             </div>
