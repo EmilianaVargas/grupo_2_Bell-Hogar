@@ -134,6 +134,40 @@ let usersController = {
            return res.render("users/login",{mensaje, status: "success", usuario: undefined});
         });
      },
+     'editPassword': (req,res) => {
+        if(req.session.usuarioLogueado != undefined){
+            let mensaje = ""
+            res.render('users/editPassword', {usuario: req.session.usuarioLogueado, mensaje: mensaje});
+        } else {
+            res.render('users/error-invitados')
+        }
+     },
+     'postEditPassword': (req,res) =>{
+        db.User.findByPk(req.params.id)
+            .then(function(user){
+                let pass = bcrypt.compareSync(req.body.oldPassword, user.password)
+                console.log(pass)
+                if(pass == true){
+                    if(req.body.newPassword == req.body.newPassword2){
+                        let newPass = bcrypt.hashSync(req.body.newPassword, 10)
+                        db.User.update({
+                            password: newPass
+                        },{
+                            where:{
+                                id: req.params.id
+                            }
+                        })
+                        res.render('users/profile', {usuario: req.session.usuarioLogueado})
+                    } else {
+                        let mensaje = "Las contraseñas no coinciden"
+                        res.render('users/editPassword', {usuario: req.session.usuarioLogueado, mensaje: mensaje})
+                    }
+                } else {
+                    let mensaje = "Los datos ingresados no son correctos"
+                    res.render('users/editPassword', {usuario: req.session.usuarioLogueado, mensaje: mensaje})
+                }
+            })
+    }
 }
 
 module.exports = usersController;
