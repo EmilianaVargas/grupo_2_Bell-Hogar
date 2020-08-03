@@ -43,10 +43,13 @@ let productsController = {
                 subcategory:req.body.subcategoria,
                 brand:req.body.marca,
                 price:req.body.precio,
-                image1:req.file.filename,
+                image1:req.files[0].filename,
+                image2:req.files[1].filename,
+                image3:req.files[2].filename,
                 stock:req.body.stock
             })
             .then((creacion) => {
+                console.log(req.files);
                 if (!creacion) {
                     res.render('index', { errors:errors.errors })
                 } else {

@@ -21,7 +21,7 @@ var upload = multer({
       }
     callback(null, true)
   }
-}).single('image1');
+}).array('images',3);
 
 
 // End File uploads config ---------------------------------------------------------
