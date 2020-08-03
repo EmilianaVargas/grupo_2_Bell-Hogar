@@ -87,6 +87,22 @@ let apiProductsController = {
                 }
             res.json(respuesta);   
             });
+    },
+    'productsByCategoryName': function(req,res){
+        db.product.findAll({
+            attributes: {exclude:["id","price","description","subcategory","brand","image1","image2","image3","image4"]},
+            order: ["category"]
+          })
+            .then(function(products){
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: products.length
+                    },
+                    data: products,
+                }
+            res.json(respuesta);   
+            });
     }
 }
 

@@ -8,5 +8,6 @@ router.get('/count', apiProductsController.productsCount);
 router.get('/mas-stock', apiProductsController.productsMasStock);
 router.get('/menos-stock', apiProductsController.productsMenosStock);
 router.get('/category', apiProductsController.productsByCategory);
+router.get('/category-products', apiProductsController.productsByCategoryName);
 
 module.exports = router;
