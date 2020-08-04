@@ -8,6 +8,7 @@ let apiUsersController = {
                 let respuesta = {
                     meta: {
                         status: 200,
+                        total: usersCount,
                     },
                     data: usersCount
                 }
@@ -16,7 +17,7 @@ let apiUsersController = {
     },
     'usersEmail':function(req,res){
         db.User.findAll({
-            attributes: {exclude:["id","dni_cuit","is_admin","image","phone","phone","created_at","updated_at","password","address_id","payment_id"]},
+            attributes: {exclude:["dni_cuit","is_admin","image","phone","phone","created_at","updated_at","password","address_id","payment_id"]},
         })
             .then(function(usersEmail){
                 let respuesta = {
