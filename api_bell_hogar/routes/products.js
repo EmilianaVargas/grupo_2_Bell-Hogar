@@ -9,5 +9,6 @@ router.get('/mas-stock', apiProductsController.productsMasStock);
 router.get('/menos-stock', apiProductsController.productsMenosStock);
 router.get('/category', apiProductsController.productsByCategory);
 router.get('/category-products', apiProductsController.productsByCategoryName);
+router.get('/last-product', apiProductsController.lastProduct);
 
 module.exports = router;

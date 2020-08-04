@@ -107,6 +107,22 @@ let apiProductsController = {
                 }
             res.json(respuesta);
             });
+    },
+    'lastProduct': function(req,res){
+       db.product.max("id")
+        .then(function(maxId){
+            db.product.findByPk(maxId)
+                .then(function(product){
+                    let respuesta = {
+                        meta: {
+                            status:200,
+                            total: product.length
+                        },
+                        data: product
+                    }
+                    res.json(respuesta)
+                })
+        })
     }
 }
 
