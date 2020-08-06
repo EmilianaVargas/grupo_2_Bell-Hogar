@@ -73,7 +73,8 @@ let usersController = {
                             let expiracion = new Date(Date.now() + 900000);
                             res.cookie('recordame', usuarioPorLoguearse.email, {expires: expiracion}); // podríamos enviar el id en vez del email
                         };
-                    res.render('index', {usuario: usuarioPorLoguearse});
+                    let mensajeNews = " "
+                    res.render('index', {usuario: usuarioPorLoguearse, mensajeNews: mensajeNews});
                 }else {
                     res.render('users/login', {errors: errors.errors})
                 };

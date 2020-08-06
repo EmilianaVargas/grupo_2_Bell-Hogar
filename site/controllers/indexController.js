@@ -5,8 +5,8 @@ let db = require('../database/models');
 
 let indexController = {
     'index': function(req,res){
-        let mensaje = ""
-        res.render('index',{usuario: req.session.usuarioLogueado, mensaje:mensaje});
+        let mensajeNews = ""
+        res.render('index',{usuario: req.session.usuarioLogueado, mensajeNews:mensajeNews});
     },
     // 'productCart': function(req,res){
     //     res.render('productCart',{usuario: req.session.usuarioLogueado});
@@ -22,8 +22,8 @@ let indexController = {
             email: req.body.email
         })
             .then(function(newsletter){
-                let mensaje = "Ya te suscribiste a las mejores ofertas"
-                res.render('index',{mensaje:mensaje})
+                let mensajeNews = "Ya te suscribiste a las mejores ofertas"
+                res.render('index',{mensajeNews:mensajeNews})
             })
     }
 }

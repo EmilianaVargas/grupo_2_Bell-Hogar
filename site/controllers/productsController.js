@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 let db = require('../database/models');
 const {check, validationResult,body } = require('express-validator');
+var mensajeNews = " ";
 
 let productsController = {
     'products': function(req,res){
@@ -51,10 +52,10 @@ let productsController = {
             .then((creacion) => {
                 console.log(req.files);
                 if (!creacion) {
-                    res.render('index', { errors:errors.errors })
+                    res.render('index', { errors:errors.errors, mensajeNews: mensajeNews })
                 } else {
                     mensaje = "¡El producto se creó exitosamente!";
-                    return res.render('index',{mensaje: mensaje, status: "success", usuario:req.session.usuarioLogueado});
+                    return res.render('index',{mensaje: mensaje, mensajeNews: mensajeNews, status: "success", usuario:req.session.usuarioLogueado});
                 }
             })
             .catch(function(err){
@@ -105,17 +106,17 @@ let productsController = {
             })
             .then((edicion) => {
                 if (!edicion) {
-                    res.render('index', { errors:errors.errors })
+                    res.render('index', { errors:errors.errors, mensajeNews: mensajeNews })
                 } else {
                     mensaje = "¡El producto se actualizó exitosamente!";
-                    return res.render('index',{mensaje: mensaje, status: "success", usuario:req.session.usuarioLogueado});
+                    return res.render('index',{mensaje: mensaje, mensajeNews: mensajeNews, status: "success", usuario:req.session.usuarioLogueado});
                 }
             })
             .catch(function(err){
                 console.log(err);
             })
         }else{
-            res.render('index',{errors: errors.errors});
+            res.render('index',{errors: errors.errors, mensajeNews: mensajeNews });
         }
 },
 'formuDelete':function(req,res){
@@ -134,7 +135,7 @@ let productsController = {
             id: req.params.id
         }
     })
-    res.render('index',{usuario: req.session.usuarioLogueado});
+    res.render('index',{usuario: req.session.usuarioLogueado, mensajeNews: mensajeNews });
 }
 }
 
