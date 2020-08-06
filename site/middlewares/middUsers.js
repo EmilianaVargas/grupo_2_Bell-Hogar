@@ -11,7 +11,7 @@ const {check, validationResult, body} = require('express-validator');
          check('id')
             .exists().withMessage('DNI no definido.')
             .trim()
-            .isNumeric({min: 7}).withMessage('Error: No es un DNI válido.'),
+            .isLength({min: 7}).withMessage('Error: No es un DNI válido.'),
          check('nombre')
             .exists().withMessage('Nombre no definido.')
             .trim()
@@ -23,7 +23,7 @@ const {check, validationResult, body} = require('express-validator');
          check('telefono')
             .exists().withMessage('Telefono no definido.')
             .trim()
-            .isNumeric().withMessage('Error: No es un telefono válido.'),
+            .isInt().withMessage('Error: No es un telefono válido.'),
          // check('domicilio')
          //    .exists().withMessage('Domicilio no definido.')
          //    .trim(),
