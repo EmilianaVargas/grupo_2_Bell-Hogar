@@ -6,6 +6,9 @@ let middInvitado = require('../middlewares/middInvitado')
 // Ruta de inicio
 router.get('/', indexController.index);
 
+//Ruta newseletters
+router.post('/', indexController.news);
+
 // // Ruta de carrito
 // router.get('/productCart', indexController.productCart);
 

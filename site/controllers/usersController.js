@@ -6,7 +6,7 @@ let db = require('../database/models');
 
 let usersController = {
     'register': function(req,res){
-        //db.State.findAll().then((states)=>{
+        //db.State.findAll().then((states)=>{ 
             return res.render("users/register" );
        // });
     },
@@ -71,7 +71,7 @@ let usersController = {
                     req.session.usuarioLogueado = usuarioPorLoguearse;
                         if(req.body.recordame != undefined){ //los checkbox si no están tildados son undefined
                             let expiracion = new Date(Date.now() + 900000);
-                            res.cookie('recordame', usuarioPorLoguearse.email, {expires: expiracion});
+                            res.cookie('recordame', usuarioPorLoguearse.email, {expires: expiracion}); // podríamos enviar el id en vez del email
                         };
                     res.render('index', {usuario: usuarioPorLoguearse});
                 }else {

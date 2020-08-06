@@ -7,7 +7,6 @@ const middUsers = require('../middlewares/middUsers');
 const middLogueados = require('../middlewares/middUsuariosLogueados')
 const middInvitados = require('../middlewares/middInvitado')
 
-
 // Rutas de login
 router.get('/login',middLogueados, usersController.login);
 router.post('/login', [
@@ -26,7 +25,7 @@ router.get('/success', function(req,res){
 
 
 // Ruta de profile
-router.get('/profile',middInvitados, usersController.profile);
+router.get('/profile', middInvitados, usersController.profile);
 
 
 // Rutas de creación de usuario
