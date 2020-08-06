@@ -44,6 +44,7 @@
                 </div>
                
                 <% if (usuario == undefined) { %>
+                    <button type="submit" class="cart-btn"><a href="/carts/productCart">Agregar al carrito</a></button><br><br>
                     <% } else if (usuario.is_admin == false) { %>
                         <button type="submit" class="cart-btn"><a href="/carts/productCart">Agregar al carrito</a></button><br><br>
                          <% } else { %>

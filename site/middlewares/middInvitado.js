@@ -6,4 +6,4 @@ function invitadoMidd(req,res,next){
     }
 }
 
-module.exports = invitadoMidd;
+module.exports = invitadoMidd; 

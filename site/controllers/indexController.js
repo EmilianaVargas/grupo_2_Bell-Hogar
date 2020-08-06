@@ -23,7 +23,7 @@ let indexController = {
         })
             .then(function(newsletter){
                 let mensajeNews = "Ya te suscribiste a las mejores ofertas"
-                res.render('index',{mensajeNews:mensajeNews})
+                res.render('index',{mensajeNews:mensajeNews, usuario: req.session.usuarioLogueado})
             })
     }
 }

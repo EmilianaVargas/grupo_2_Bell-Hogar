@@ -5,7 +5,7 @@ const {check, validationResult,body } = require('express-validator');
 const middUploadFile = require('../middlewares/middUploadFile');
 const middUsers = require('../middlewares/middUsers');
 const middLogueados = require('../middlewares/middUsuariosLogueados')
-const middInvitados = require('../middlewares/middInvitado')
+const middInvitados = require('../middlewares/middInvitado') 
 
 // Rutas de login
 router.get('/login',middLogueados, usersController.login);

@@ -10,7 +10,7 @@ var storage = multer.diskStorage({
   }
 });
 
-var upload = multer({
+var upload = multer({ 
   storage: storage,
   fileFilter: function (req, file, callback) {
     var ext = path.extname(file.originalname);

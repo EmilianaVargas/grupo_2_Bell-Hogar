@@ -4,7 +4,7 @@ const bcrypt=require('bcrypt');
 const {check, validationResult,body } = require('express-validator');
 let db = require('../database/models');
 
-let usersController = {
+let usersController = { 
     'register': function(req,res){
         //db.State.findAll().then((states)=>{ 
             return res.render("users/register" );
