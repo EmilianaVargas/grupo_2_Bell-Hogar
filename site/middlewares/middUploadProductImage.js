@@ -17,7 +17,7 @@ var upload = multer({
     ext = ext.toLowerCase(); //para convertir a minuscula extension de image en mayuscula
 
     if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') {
-        return callback(new Error('La iamgen de ser JPG, PNG, JPEG.'))
+        return callback(new Error('Las imágenes deben ser 3, en formato JPG, PNG o JPEG.'))
       }
     callback(null, true)
   }

@@ -45,14 +45,14 @@ window.addEventListener("load", function(){
             alert("El campo precio debe ser un número positivo");
             }
 
-        let campoImage1 = document.querySelector("input#image1");
-        var filePath = campoImage1.value;
+        let campoImages = document.querySelector("input#images");
+        var filePath = campoImages.value;
         var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
             if(campoImage1.value != undefined){
                 if(!allowedExtensions.exec(filePath)){
                     evento.preventDefault();
-                    errores.push("Debe subir una imagen con extensión .jpg, .jpeg, .png o .gif")
-                    alert("Debe subir una imagen con extensión .jpg, .jpeg, .png o .gif")
+                    errores.push("Debe subir 3 imágenes con extensión .jpg, .jpeg, .png o .gif")
+                    alert("Debe subir 3 imágenes con extensión .jpg, .jpeg, .png o .gif")
                 }
             }
 
@@ -113,11 +113,11 @@ window.addEventListener("load", function(){
             errores.push("El campo precio debe ser un número positivo");
             alert("El campo precio debe ser un número positivo");
             }
-        let campoImage1 = document.querySelector("input#image1");
-            if(campoImage1.value == ""){
+        let campoImages = document.querySelector("input#images");
+            if(campoImages.value == ""){
                 evento.preventDefault();
-                errores.push("El campo imagen está vacío");
-                alert("El campo imagen no debe estar vacío");
+                errores.push("El campo imágenes está vacío");
+                alert("Debe subir 3 imágenes con extensión .jpg, .jpeg, .png o .gif");
             }
         let campoStock = document.querySelector("input#stock");
             if(campoStock.value < 0){

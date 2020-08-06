@@ -79,7 +79,7 @@ let productsController = {
         if (typeof req.file == undefined) { // validar imagen 
             let nuevoError = {
                 value: '',
-                msg: 'Error: es obligatorio subir una imagen de producto(jpg, jpeg o png).',
+                msg: 'Error: es obligatorio subir 3 imágenes de producto(jpg, jpeg o png).',
                 param: 'image',
                 location: 'files'
             }
@@ -94,13 +94,15 @@ let productsController = {
                 brand:req.body.marca,
                 description: req.body.descripcion,
                 price:req.body.precio,
-                image1:req.file.filename,
+                image1:req.files[0].filename,
+                image2:req.files[1].filename,
+                image3:req.files[2].filename,
                 stock:req.body.stock
             }, {
                 where:{
                     id: req.params.id
                 }
-            })            
+            })
             .then((edicion) => {
                 if (!edicion) {
                     res.render('index', { errors:errors.errors })
