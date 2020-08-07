@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- head -->
+  <%- include('../partials/head') %>
+  
+<!-- header -->
+<%- include('../partials/header') %>
+  
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="profile-div col-12">
+                <div class="left-profile col-4">
+                    <p class="p-profile"><%= usuario.first_name %> <%= usuario.last_name %></p>
+                    <p class="p-profile"><%= usuario.email %></p>
+                    <p class="p-profile"><%= usuario.phone %></p>
+                    <p class="p-profile"><%= usuario.adress %></p>
+                    <input type="button" Onclick="location.href='/users/update'" class="editarPerfil" name="editarPerfil" value="Editar Perfil">
+                    <br><br><form class="" action="/users/logout" method="POST">
+                        <button class="cart-buttons" id="logout" type="submit">Cerrar Sesión</button>
+                    </form>
+                </div>
+                <div class="left-profile col-8">
+                    <div class="orders col-12">
+                        <span class="col-6">Órdenes</span>
+                        <span class="col-6">Fecha de entrega</span>
+                    </div>
+                    <div class="order-date col-12">
+                        <div class="orders-number col-6">
+                            <span class="col-12">Orden 1</span>
+                            <span class="col-12">Orden 2</span>
+                            <span class="col-12">Orden 3</span>
+                            <span class="col-12">Orden 4</span>
+                            <span class="col-12">Orden 5</span>
+                        </div>
+                        <div class="orders-number col-6">
+                            <span class="col-12">31/7/2019</span>
+                            <span class="col-12">10/11/2019</span>
+                            <span class="col-12">3/1/2020</span>
+                            <span class="col-12">4/2/2020</span>
+                            <span class="col-12">Esperando confirmación</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+<!-- footer -->
+<%- include('../partials/footer') %>
+</body>
+</html>

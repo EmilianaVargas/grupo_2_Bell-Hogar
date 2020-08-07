@@ -730,10 +730,20 @@ h5{
 .profile-card{
   border: 4px solid var(--gris-footer);
   padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .profile-text{
   font-size: 30px;
+}
+.profile-div{
+  display:flex;
+  flex-wrap: wrap;
+}
+.order-date{
+  display: flex;
+  flex-wrap: wrap ;
 }
 /*editProductError*/
 .edit-error-box{
@@ -799,4 +809,19 @@ h5{
 .adm-btn-dlt{
   background-color: transparent;
   border: none;
+}
+
+/* Contacto */
+.contact-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact-title{
+  font-size: 33px;
+  margin-bottom: 3%;
+  text-align: center;
+}
+.contact-title2{
+  font-size: 17px;
 }

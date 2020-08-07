@@ -90,7 +90,7 @@ let usersController = {
     },
     'profile': function(req,res){
         if(req.session.usuarioLogueado != undefined){
-            res.render('users/profile',{usuario: req.session.usuarioLogueado})
+            res.render('users/newProfile',{usuario: req.session.usuarioLogueado})
         } else {
             res.render('users/error-invitados')
         }
