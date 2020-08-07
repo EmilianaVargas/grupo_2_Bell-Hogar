@@ -23,6 +23,14 @@ router.put('/:id/edit', middUploadProductImage.uploadFile, middProducts.register
 
 // Rutas para eliminar un producto
 router.get('/:id/delete', productsController.formuDelete);
-router.delete('/:id/delete', productsController.delete);
+router.put('/:id/delete', productsController.delete);
+
+
+// Rutas para habilitar un producto
+router.get('/:id/habilitar', productsController.habilitar);
+router.put('/:id/habilitar', productsController.habilitarPut);
+
+// Ruta de adm de productos
+router.get('/adm/prod', productsController.admProd);
 
 module.exports = router;

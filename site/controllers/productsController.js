@@ -6,7 +6,11 @@ var mensajeNews = " ";
 
 let productsController = {
     'products': function(req,res){
-        db.product.findAll()
+        db.product.findAll({
+            where:{
+                enabled: 1
+            }
+        })
         .then(function(product){
             res.render('products/products',{product, usuario: req.session.usuarioLogueado});
         })
@@ -47,7 +51,8 @@ let productsController = {
                 image1:req.files[0].filename,
                 image2:req.files[1].filename,
                 image3:req.files[2].filename,
-                stock:req.body.stock
+                stock:req.body.stock,
+                enabled: 1
             })
             .then((creacion) => {
                 console.log(req.files);
@@ -130,12 +135,40 @@ let productsController = {
     })
 },
 'delete': function(req,res){
-    db.product.destroy({
+    db.product.update({
+        enabled: 0
+    }, {
         where:{
             id: req.params.id
         }
     })
     res.render('index',{usuario: req.session.usuarioLogueado, mensajeNews: mensajeNews });
+},
+'habilitar':function(req,res){
+    db.product.findByPk(req.params.id)
+    .then(function(product){
+        if (product != null) {
+            return res.render('products/habilitarProd',{product,usuario: req.session.usuarioLogueado});
+        }else{
+            return res.render('products/editProductError',{usuario: req.session.usuarioLogueado});
+        }
+    })
+},
+'habilitarPut': function(req,res){
+    db.product.update({
+        enabled: 1
+    }, {
+        where:{
+            id: req.params.id
+        }
+    })
+    res.render('index',{usuario: req.session.usuarioLogueado, mensajeNews: mensajeNews });
+},
+'admProd':function(req,res){
+    db.product.findAll()
+        .then(function(product){
+            res.render("products/admProd",{product:product,usuario:req.session.usuarioLogueado})
+        })
 }
 }
 

@@ -759,3 +759,44 @@ h5{
 .sibling-fade:hover .li-menu:not(:hover) {
   opacity: 0.5;
 }
+
+
+/* Prueba hover */
+.img-adm{
+  display: inline;
+}
+.product-name-adm{
+  display: inline;
+}
+.product-price-adm{
+  display: inline;
+}
+.adm-btn-edit{
+  background-color: var(--gris-footer);
+  color: white;
+}
+.adm-title{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 1%;
+}
+.add-btn-adm{
+  background-color: var(--gris-footer);
+  color: white; 
+}
+.adm-btn-add-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1%;
+}
+.adm-close{
+  background-color: var(--gris-footer);
+  color: white;
+  margin-top: 3%;
+}
+.adm-btn-dlt{
+  background-color: transparent;
+  border: none;
+}

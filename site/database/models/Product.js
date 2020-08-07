@@ -40,6 +40,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         stock: {
             type: dataTypes.DOUBLE
+        },
+        enabled: {
+            type: dataTypes.DOUBLE
         }
     }
     let config = {
