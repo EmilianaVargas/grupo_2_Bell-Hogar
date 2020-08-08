@@ -7,44 +7,79 @@
 <%- include('../partials/header') %>
   
 <body>
+    <% if (usuario.is_admin == 0) { %>
     <div class="container">
         <div class="row">
             <div class="profile-div col-12">
-                <div class="left-profile col-4">
+                <div class="left-profile col-12 col-md-4">
+                    <p class="p-profile-data">Datos personales</p>
                     <p class="p-profile"><%= usuario.first_name %> <%= usuario.last_name %></p>
                     <p class="p-profile"><%= usuario.email %></p>
                     <p class="p-profile"><%= usuario.phone %></p>
                     <p class="p-profile"><%= usuario.adress %></p>
-                    <input type="button" Onclick="location.href='/users/update'" class="editarPerfil" name="editarPerfil" value="Editar Perfil">
-                    <br><br><form class="" action="/users/logout" method="POST">
-                        <button class="cart-buttons" id="logout" type="submit">Cerrar Sesión</button>
+                    <input type="button" Onclick="location.href='/users/update'" class="profile-btn" name="editarPerfil" value="Editar Perfil">
+                    <br><br><form class="profile-btn-desktop" action="/users/logout" method="POST">
+                        <button class="profile-btn" id="logout" type="submit">Cerrar Sesión</button>
                     </form>
                 </div>
-                <div class="left-profile col-8">
+                <div class="left-profile col-12 col-md-8">
+                    <p class="p-profile-data-orders col-12">Mis órdenes</p>
                     <div class="orders col-12">
-                        <span class="col-6">Órdenes</span>
-                        <span class="col-6">Fecha de entrega</span>
+                        <span class="col-6 col-md-3">Orden</span>
+                        <span class="col-3 date-profile">Fecha de pedido</span>
+                        <span class="col-3 delivery-profile">Entrega</span>
+                        <span class="col-6 col-md-3">Estado</span>
                     </div>
                     <div class="order-date col-12">
-                        <div class="orders-number col-6">
-                            <span class="col-12">Orden 1</span>
-                            <span class="col-12">Orden 2</span>
-                            <span class="col-12">Orden 3</span>
-                            <span class="col-12">Orden 4</span>
-                            <span class="col-12">Orden 5</span>
-                        </div>
-                        <div class="orders-number col-6">
-                            <span class="col-12">31/7/2019</span>
-                            <span class="col-12">10/11/2019</span>
-                            <span class="col-12">3/1/2020</span>
-                            <span class="col-12">4/2/2020</span>
-                            <span class="col-12">Esperando confirmación</span>
-                        </div>
+                        <span class="col-6 col-md-3">215</span>
+                        <span class="col-3 date-profile">12/12/2020</span>
+                        <span class="col-3 delivery-profile">A domicilio</span>
+                        <span class="col-6 col-md-3">Entregado</span>
                     </div>
+                    <div class="order-date col-12">
+                        <span class="col-6 col-md-3">347</span>
+                        <span class="col-3 date-profile">11/1/2020</span>
+                        <span class="col-3 delivery-profile">A domicilio</span>
+                        <span class="col-6 col-md-3">Entregado</span>
+                    </div>
+                    <div class="order-date col-12">
+                        <span class="col-6 col-md-3">625</span>
+                        <span class="col-3 date-profile">12/2/2020</span>
+                        <span class="col-3 delivery-profile">Retiro en depósito</span>
+                        <span class="col-6 col-md-3">Entregado</span>
+                    </div>
+                    <div class="order-date col-12">
+                        <span class="col-6 col-md-3">715</span>
+                        <span class="col-3 date-profile">22/3/2020</span>
+                        <span class="col-3 delivery-profile">A domicilio</span>
+                        <span class="col-6 col-md-3">Entregado</span>
+                    </div>
+                    <div class="order-date col-12">
+                        <span class="col-6 col-md-3">810</span>
+                        <span class="col-3 date-profile">24/5/2020</span>
+                        <span class="col-3 delivery-profile">Retiro en depósito</span>
+                        <span class="col-6 col-md-3">Entregado</span>
+                    </div>
+                    <div class="order-date col-12">
+                        <span class="col-6 col-md-3">1003</span>
+                        <span class="col-3 date-profile">30/7/2020</span>
+                        <span class="col-3 delivery-profile">A domicilio</span>
+                        <span class="col-6 col-md-3">Pendiente</span>
+                    </div>
+                    <div class="order-date col-12">
+                        <span class="col-6 col-md-3">1003</span>
+                        <span class="col-3 date-profile">5/8/2020</span>
+                        <span class="col-3 delivery-profile">A domicilio</span>
+                        <span class="col-6 col-md-3">Pendiente</span>
+                    </div>
+                    <br><form class="profile-btn-mob" action="/users/logout" method="POST">
+                        <button class="profile-btn" id="logout" type="submit">Cerrar Sesión</button>
+                    </form>
                 </div>
             </div>
         </div>        
     </div>
+    <% } %>
 <!-- footer -->
 <%- include('../partials/footer') %>
 </body>

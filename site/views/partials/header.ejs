@@ -25,9 +25,12 @@
                 <% if(typeof usuario == 'undefined'){ %>
                   <li><a href="/users/login">Iniciar sesión <i class="far fa-address-card"></i></a></li>
                   <li><a href="/carts/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
-               <% } else { %>
+               <% } else if (usuario.is_admin == 0) { %>
                   <li><a href="/users/profile"><%= usuario.first_name %><i class="far fa-address-card"></i></a></li>
                   <li><a href="/carts/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
+               <% } else { %>
+                <li><a href="/products/adm/prod"><%= usuario.first_name %><i class="far fa-address-card"></i></a></li>
+                <li><a href="/carts/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
                <% } %>
               </ul>
             </div>
@@ -38,9 +41,12 @@
             <% if(typeof usuario == 'undefined'){ %>
               <li><a href="/users/login">Iniciar sesión <i class="far fa-address-card"></i></a></li>
               <li><a href="/carts/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
-           <% } else { %>
-              <li><a href="/users/profile"><%= usuario.first_name %> <i class="far fa-address-card"></i></a></li>
+           <% } else if (usuario.is_admin == 0) { %>
+              <li><a href="/users/profile"><%= usuario.first_name %><i class="far fa-address-card"></i></a></li>
               <li><a href="/carts/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
+           <% } else { %>
+            <li><a href="/products/adm/prod"><%= usuario.first_name %><i class="far fa-address-card"></i></a></li>
+            <li><a href="/carts/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
            <% } %>
           </ul>
           <ul class="menu-ppal col-md-12 sibling-fade">
