@@ -843,3 +843,49 @@ h5{
 .contact-title2{
   font-size: 17px;
 }
+
+/* Parrafos de error - validaciones front PRODUCTOS  */
+.pNombre{
+  display: none;
+  color: crimson;
+}
+.pDescripcion{
+  display: none;
+  color: crimson;
+}
+.pCategoria{
+  display: none;
+  color: crimson;
+}
+.pSubcategoria{
+  display: none;
+  color: crimson;
+}
+.pMarca{
+  display: none;
+  color: crimson;
+}
+.pImages{
+  display: none;
+  color: crimson;
+}
+.pPrecio{
+  display: none;
+  color: crimson;
+}
+.pStock{
+  display: none;
+  color: crimson;
+}
+.validator{
+  margin-bottom: 1rem;
+}
+label{
+  margin-bottom: 1rem;
+}
+#images{
+  padding-left: 0px;
+}
+.btnProduct{
+  text-align: right;
+}

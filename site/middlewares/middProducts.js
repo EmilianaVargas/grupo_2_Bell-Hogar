@@ -32,6 +32,10 @@ const {check, validationResult, body} = require('express-validator');
             .exists().withMessage('precio no definido.')
             .trim()
             .isNumeric().withMessage('Error: El precio no es válido.'),
+         check('stock')
+            .exists().withMessage('Stock no definido.')
+            .trim()
+            .isNumeric().withMessage('Error: El stock no es válido.'),
       ],
    }
 

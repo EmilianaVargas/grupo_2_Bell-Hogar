@@ -57,7 +57,7 @@ let productsController = {
             .then((creacion) => {
                 console.log(req.files);
                 if (!creacion) {
-                    res.render('index', { errors:errors.errors, mensajeNews: mensajeNews })
+                    res.render('index', { errors:errors.errors, mensajeNews: mensajeNews, usuario: req.session.usuarioLogueado})
                 } else {
                     mensaje = "¡El producto se creó exitosamente!";
                     return res.render('index',{mensaje: mensaje, mensajeNews: mensajeNews, status: "success", usuario:req.session.usuarioLogueado});
@@ -67,7 +67,7 @@ let productsController = {
                 console.log(err);
             })
         } else {
-            return res.render("products/productAdd",{errors: errors.errors} );
+            return res.render("products/productAdd",{errors: errors.errors, usuario: req.session.usuarioLogueado} );
         }
     },
     'editProduct': function(req,res){
@@ -111,7 +111,7 @@ let productsController = {
             })
             .then((edicion) => {
                 if (!edicion) {
-                    res.render('index', { errors:errors.errors, mensajeNews: mensajeNews })
+                    res.render('index', { errors:errors.errors, mensajeNews: mensajeNews, usuario: req.session.usuarioLogueado })
                 } else {
                     mensaje = "¡El producto se actualizó exitosamente!";
                     return res.render('index',{mensaje: mensaje, mensajeNews: mensajeNews, status: "success", usuario:req.session.usuarioLogueado});
@@ -121,7 +121,7 @@ let productsController = {
                 console.log(err);
             })
         }else{
-            res.render('index',{errors: errors.errors, mensajeNews: mensajeNews });
+            res.render('index',{errors: errors.errors, mensajeNews: mensajeNews , usuario: req.session.usuarioLogueado });
         }
 },
 'formuDelete':function(req,res){
