@@ -5,11 +5,11 @@
  <%- include('../partials/header') %>
 
  <div class="container">
-  <div class="row">
-    <div class="edit-form-box">
+  <div class="row col-12">
+    <div class="edit-form-box col-12">
       <h1>Editar Producto <%=product.name%></h1><br>
       <h4>Completa los siguientes datos del producto</h4><br>
-        <form class="editProduct" action="/products/<%=product.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form class="editProduct col-12" action="/products/<%=product.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
 
           <label class="col-12 col-md-10" for = "nombre"><h6>Nombre del Producto:</h6>
             <input name="nombre" id="nombre" type="text" class="form-control" value="<%= product.name %> ">
