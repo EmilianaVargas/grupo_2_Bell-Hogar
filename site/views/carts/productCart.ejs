@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html>
-
-<!-- head -->
 <%- include('../partials/head') %>
-    <body class="container">
+<body class="container">
         <!-- header -->
         <%- include('../partials/header') %>
         <h1 class="cart-title col-12"><i class="fas fa-shopping-cart"></i> Carrito de compras</h1>
         <div class="container">
             <div class="row">
+                <%if (typeof(status) != undefined){
+                    if(status == "success"){ %>
+                        <div class="alert alert-<%=status%>" role="alert">
+                            <%=mensaje%>
+                        </div>
+                    <% } else if (status == "warning"){ %>
+                        <div class="alert alert-<%=status%>" role="alert">
+                            <%=mensaje%>
+                        </div>
+                    <%} else if (status == "info"){ %>
+                        <div class="alert alert-<%=status%>" role="alert">
+                            <%=mensaje%>
+                        </div>
+                    <%}
+                }%>
+
+                <% if (cart == undefined) { %>
+                    <h1>No hay productos en tu carrito</h1>
+                    <div class="btn-cart-div col-12">
+                        <button class="col-12 col-md-3 cart-btn" Onclick="location.href='/products'">Agregar productos</button>
+                    </div>
+                <% } else { %>
                 <div class="cart-div-titles col-12">
                     <span class="col-2 cart-title2"></span>
                     <span class="col-2 cart-title2">Producto</span>
@@ -18,43 +36,53 @@
                     <span class="col-2 cart-title2"></i></span>
                 </div>
                 <div class="cart-div col-12">
-                    <img class="col-6 col-md-2" src="/images/sofa3.jpg" alt="">
-                    <span class="col-3 col-md-2 cart-title2">Sillón Verde Living</span>
-                    <span class="col-3 col-md-2 cart-title2">$15.000</span>
-                    <span class="col-6 span-mobile"></span>
-                    <span class="col-3 col-md-2 cart-title2">
-                        <form action="" class="form-cart">
-                            <input type="number" name="cantidad" min="1" pattern="^[0-9]+" class="contador-cart">
-                        </form>
-                    </span>
-                    <span class="col-md-2 cart-title2 subt-cart">$15.000</span>
-                    <span class="col-3 col-md-2 cart-title2"><i class="fas fa-trash"></i></span>
-                </div>
-                <div class="cart-div col-12">
-                    <img class="col-6 col-md-2" src="/images/sofa3.jpg" alt="">
-                    <span class="col-3 col-md-2 cart-title2">Sillón Verde Living</span>
-                    <span class="col-3 col-md-2 cart-title2">$15.000</span>
-                    <span class="col-6 span-mobile"></span>
-                    <span class="col-3 col-md-2 cart-title2">
-                        <form action="" class="form-cart">
-                            <input type="number" name="cantidad" min="1" pattern="^[0-9]+" class="contador-cart">
-                        </form>
-                    </span>
-                    <span class="col-md-2 cart-title2 subt-cart">$15.000</span>
-                    <span class="col-3 col-md-2 cart-title2"><i class="fas fa-trash"></i></span>
+                    <% cart.Product.forEach((product, i) => { %>
+                        <img class="col-6 col-md-2" src="/images/<%= product.image1 %>"  alt="">
+                        <span class="col-3 col-md-2 cart-title2"><%= product.name %></span>
+                        <span class="col-3 col-md-2 cart-title2">$<%=  product.price %></span>
+                        <span class="col-6 span-mobile"></span>
+                        <span class="col-3 col-md-2 cart-title2">
+                            <form action="/carts/<%=product.id%>?_method=PUT" method="post">
+                                <td>
+                                    <input type="number" name="cantidad" value="<%= cart_products[i].units %>" min="1" pattern="^[0-9]+" class="contador-cart">
+                                </td>
+                                <td>
+                                   <input class="icon-update" type="submit" value="ok" width="5" name="guardar" title="Pincha aquí para guardar la configuración del ítem">
+                                </td>
+                             </form>
+                        </span>
+                        <span class="col-md-2 cart-title2 subt-cart">$<%= cart_products[i].subtotal %></span>
+                        <span class="col-3 col-md-2 cart-title2">
+                            <form class="" action="/carts/product/<%=product.id%>?_method=DELETE" method="post">
+                                 <button class="cart-btn" type="submit" value="" name="delete" title="Eliminar producto"><i class="fas fa-trash"></i></button>
+                            </form>
+                        </span>
+                    <% }); %>
                 </div>
                 <div class="total-cart-div col-12">
-                    <span class="col-6  cart-title2">Total</span>
+                    <span class="col-6 cart-title2">Total</span>
                     <span class="col-2 cart-title2"></span>
-                    <span class="col-2 cart-title2">$30.000</span>
+                    <span class="col-2 cart-title2">$<%= total %></span>
+
                     <span class="col-2 cart-title2"></span>
                 </div>
                 <div class="btn-cart-div col-12">
-                    <button class="col-12 col-md-2 cart-btn" onclick="history.back()">Volver atrás</button>
-                    <button class="col-12 col-md-2 cart-btn">Vaciar carrito</button>
-                    <button class="col-12 col-md-3 cart-btn" Onclick="location.href='/products'">Agregar más productos</button>
-                    <button class="col-12 col-md-2 end-cart-btn" Onclick="location.href='productCartPayment'">Finalizar compra</button>
+                    <div class="col-3 col-md-3">
+                        <button class="cart-btn" onclick="history.back()">Volver atrás</button>
+                    </div>
+                    <div class="col-3 col-md-3">
+                        <form class="" action="/carts/<%=cart.id%>?_method=DELETE" method="POST">
+                            <button class="cart-btn" type="submit">Vaciar carrito</button>
+                        </form>
+                    </div>
+                    <div class="col-3 col-md-3">
+                        <button class="cart-btn" Onclick="location.href='/products'">Agregar productos</button>
+                    </div>
+                    <div class="col-3 col-md-3">
+                        <button class="end-cart-btn" Onclick="location.href='/carts/productCartPayment'">Finalizar compra</button>
+                    </div>
                 </div>
+                <% } %>
             </div>
         </div>
         

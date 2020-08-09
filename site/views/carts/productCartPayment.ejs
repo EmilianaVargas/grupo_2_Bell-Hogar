@@ -1,4 +1,3 @@
-
 <!-- head -->
 <%- include('../partials/head') %>
 <body class="container">
@@ -6,117 +5,106 @@
   <%- include('../partials/header') %>
   <!--Comienzo código del pago de carrito de compra-->
   <div class="cartPayment-header" >
-    <h3 class="fas fa-shopping-basket"> Finalizar compra</h3></br>
+    <h1 class="cart-payment-title">Confirmar compra</h1>
   </div>
 
-  <section id="pay-cart">
-
-    <div class="container">
-      <div id="options_page">
-        <!-- <button type="submit" class="continuebuypayment-btn"><a href="/products/:id">Continuar compra</a></button> -->
-        <button type="submit" class="backcart-btn"><a href="/carts/productCart">Volver atrás</a></button>
-      </div>
-    </div>
-
-    <div class="formCart col-12 col-md-6">
-      <ul class="">
-            <li class="">Nombre de usuario: <%= usuario.first_name %></li>
-            <li class="">Apellido: <%= usuario.last_name %></li>
-            <li class="">DNI o CUIT: <%= usuario.dni_cuit %></li>
-            <li class="">Teléfono: <%= usuario.phone %></li>
-            <li class="">Email: <%= usuario.email %></li>
-      </ul>
-      <br>
-
-
-
-        <label for="method_delivery">Método de entrega</label>
-        <div class="container">
-          <div id="options_delivery">
-            <button type="button" class="sucursal-btn">Retiro en sucursal</button>
-            <button type="button" class="address-btn" onclick="location.href='/carts/addressCart'" >Envío a domicilio</button>
-          </div>
-        </div>
-<%if (typeof(status) != "undefined"){
-  if(status == "success"){ %>
-      <div class="alert alert-success" role="alert">
-          <%=mensaje%>
-      </div>
-  <% }
-}%>
-
-<% if (typeof errors != 'undefined') { %>
-  <div class="alert alert-danger" role="alert">
-      <p>¡Error al cargar el domicilio!</p>
-      <ul>
-          <% for( let i = 0; i < errors.length; i++ ) { %>
-              <li>
-                  <%= errors[i].msg %>
-              </li>
-          <% } %>
-      </ul>
-  </div>
-<% } %>
-
-<% if(address != undefined){ %>
-  <div class="domicilioEntrega">
-    <ul class="">
-      <li class="">Domicilio de entrega: <%= address.address %></li>
-      <li class="">Codigo postal: <%= address.zip_code %></li>
-      <li class="">localidad: <%= address.locality %></li>
-      <li class="">provincia: <%= address.State.name %></li>
-    </ul>
-  </div>
-<% }else{  %>
   <div class="container">
-    <h3>Aún no hay un domicio de entrega seleccionado</h3>
-  </div>
-<% }; %>
-        <br><label for="payment_method">Método de pago</label>
-        <div class="container">
-          <div id="payment_options">
-            <button type="submit" class="cash-btn">Efectivo</button>
-            <button type="submit" class="credit-btn">Tarjeta de crédito</button>
-            <button type="submit" class="dedit-btn">Tarjeta de débito</button>
-          </div>
+    <div class="row">
+        <div class="cart-payment-div">
+            <div class="cart-payment-left col-10 col-md-7">
+                <form action="">
+                    <label class="cart-payment-data col-12" for="">Nombre completo</label>
+                        <input class="cart-payment-input col-12" type="text" readonly value="<%= usuario.first_name %> <%= usuario.last_name %>">
+                    <label class="cart-payment-data col-12" for="">DNI o CUIT</label>
+                        <input class="cart-payment-input col-12" type="text" readonly value="<%= usuario.dni_cuit %>">
+                    <label class="cart-payment-data col-12" for="">Teléfono</label>
+                        <input class="cart-payment-input col-12" type="text" readonly value="<%= usuario.phone %>">
+                    <div class="form-row">
+                      <div class="col-5">
+                        <label class="cart-payment-data " for="">Domicilio</label><br>
+                          <input class="cart-payment-input form-control" type="text" readonly value="<%= address.address %>">
+                      </div>
+                      <div class="col">
+                        <label class="cart-payment-data" for="">CP</label><br>
+                          <input class="cart-payment-input form-control" type="text" readonly value="<%= address.zip_code %>">
+                      </div>
+                      <div class="col-5">
+                          <label class="cart-payment-data" for="">Localidad</label><br>
+                          <input class="cart-payment-input form-control" type="text" readonly value="<%= address.locality %>">
+                      </div>
+                        </div>
+                      <label class="cart-payment-data col-12" for="">Email</label>
+                        <input class="cart-payment-input col-12" type="text" readonly value="<%= usuario.email %>">
+                </form>
+                <form class="cart-payment-data form-cart col-12" action="">
+                    <span class="radio-cart"><label for = “”>Seleccione método de entrega</label></span>
+                    <br><input type ="radio" name = "entrega" value="entrega"> Entrega a domicilio
+                    <br><br><input type ="radio" name = "entrega" value="retiro"> Retiro en tienda
+                </form>
+                <form class="cart-payment-data form-cart col-12" action="">
+                    <span class="radio-cart"><br><label for = “”>Seleccione método de pago</label></span>
+                    <br><input type ="radio" name = "pago" value="efectivo"> Efectivo/Transferencia
+                    <br><br><input type ="radio" name = "pago" value="credito"> Tarjeta de crédito
+                    <br><br><input type ="radio" name = "pago" value="debito"> Tarjeta de débito
+                </form>
+            </div>
+            <div class="cart-payment-right col-5">
+                <div class="products-payment col-12">
+                <p class="cart-payment-title2">Resumen de tu compra</p>
+                    <div class="products-cart-payment">
+                        <div class="col-6">
+                            <img class="cart-payment-img" src="/images/sofa3.jpg" alt="">
+                        </div>
+                        <div class="col-6">
+                            <span class="p-right-cart col-2">Sillón Verde Living</span>
+                            <span class="p-right-cart col-2">$15.000</span>
+                            <span class="p-right-cart col-2">Cantidad: 1</span>
+                       </div>
+                    </div>
+                    <div class="products-cart-payment">
+                        <div class="col-6">
+                            <img class="cart-payment-img" src="/images/sofa3.jpg" alt="">
+                        </div>
+                        <div class="col-6">
+                            <span class="p-right-cart col-2">Sillón Verde Living</span>
+                            <span class="p-right-cart col-2">$15.000</span>
+                            <span class="p-right-cart col-2">Cantidad: 2</span>
+                       </div>
+                    </div>
+                </div>
+                <div class="cart-totals col-10 col-md-12">
+                    <div class="total-title col-4 col-md-6">
+                        <span class="col-12 total-cart-payment">Subtotal: </span>
+                        <span class="col-12 total-cart-payment">Descuento: </span>
+                        <span class="col-12 total-cart-payment">Total: </span>
+                    </div>
+                    <div class="total-prices col-4 col-md-6">
+                        <span class="col-12 total-cart-payment">$45.000</span>
+                        <span class="col-12 total-cart-payment">$0</span>
+                        <span class="col-12 total-cart-payment">$45.000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-payment-btn col-12">
+                <button class="col-12 col-md-2 end-cart-btn" Onclick="location.href='productCartPayment'">Siguiente</button>
+                <button class="col-12 col-md-2 cart-btn" onclick="history.back()">Volver atrás</button>
+            </div>
+            <div class="cart-total-mob col-12">
+                <span class="col-12 total-cart-payment-mob">Resumen de tu compra</span>
+                <div class="total-title-mob col-6">
+                    <span class="col-12 total-cart-payment">Subtotal: </span>
+                    <span class="col-12 total-cart-payment">Descuento: </span>
+                    <span class="col-12 total-cart-payment">Total: </span>
+                </div>
+                <div class="total-prices-mob col-6">
+                    <span class="col-12 total-cart-payment">$45.000</span>
+                    <span class="col-12 total-cart-payment">$0</span>
+                    <span class="col-12 total-cart-payment">$45.000</span>
+                </div>
+            </div>
         </div>
-
     </div>
-
-    <div class="order">  <!--row col-4 col-md-4-->
-      <div class="order_detail">
-        <br><h3 id="detailCartProducts">Detalle del pedido</h3>
-        <div>
-          <ul>
-            <li>
-              <div class="detail_products_cart">
-                <div id="productAdded1">
-                  <center>
-                    <span><br>Mesa</span><br>
-                    <p>Precio: $19.990,00</p>
-                    <img width="30%" src="/images/mesa1.jpg" alt="producto-mesa">
-                    <!-- <a href="/productDetail">Ver producto</a> -->
-                  </center>
-                </div>
-                <div id="productAdded2">
-                  <center>
-                    <span><br>Silla</span><br>
-                    <p>Precio: $2.600,00</p>
-                    <img width="30%" src="/images/silla-1-1.jpg" alt="producto-silla">
-                    <!-- <a href="/productDetail">Ver producto</a> -->
-                  </center>
-                </div>
-                <div class="totalToPay">
-                  <p><br><u>Subtotal</u>: $22.590,00<br><u>Descuento</u>: 20,00%<br><u>Total a pagar</u>: $18.072,00</p><br>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <center><button type="submit" class="pay-btn">Pagar</button></center>
-      </div>
-    </div>
-  </section>
+</div>
 
   <!-- footer -->
   <%- include('../partials/footer') %>
