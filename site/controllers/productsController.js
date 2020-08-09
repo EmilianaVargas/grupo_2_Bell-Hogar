@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 let db = require('../database/models');
+let Sequelize = db.sequelize;
+const Op = Sequelize.Op;
 const {check, validationResult,body } = require('express-validator');
 var mensajeNews = " ";
 
@@ -169,8 +171,42 @@ let productsController = {
         .then(function(product){
             res.render("products/admProd",{product:product,usuario:req.session.usuarioLogueado})
         })
-}
+},
+'search': function(req,res){
+    db.product.findAll({
+        where:{
+            [db.Sequelize.Op.or]: [
+                {name:
+                    {[db.Sequelize.Op.like]:'%' + req.body.search + '%'}
+                },
+                {description:
+                    {[db.Sequelize.Op.like]:'%' + req.body.search + '%'}
+                },
+                {category:
+                    {[db.Sequelize.Op.like]:'%' + req.body.search + '%'}
+                },
+            ],
+            enabled : 1
+        },
+        order:[
+            ["name","DESC"]
+    ],
+        limit: 10,
+    })
+    .then(function(product){
+        let mensaje = null;
+        if(product.length === 0){
+            mensaje = "No se encontraron resultados para: ";
+        }else{
+            mensaje = "Se encontraron los siguientes resultados para: ";
+        }
+
+        res.render("products/productsSearch",{product, mensaje, search: req.body.search,  usuario:req.session.usuarioLogueado})
+    })
+    .catch(function(error){
+        console.log(error)
+    })
+    },
 }
 
 module.exports = productsController;
-

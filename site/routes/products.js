@@ -9,6 +9,9 @@ const {check, validationResult,body } = require('express-validator');
 // Ruta de listado de productos
 router.get('/', productsController.products);
 
+// Ruta de busqueda de productos
+router.post('/search', productsController.search);
+
 // Ruta GET - Creación de productos
 router.get('/create', productsController.createProduct);
 // Ruta POST - Guardado de creación de producto
@@ -21,7 +24,7 @@ router.get('/:id', productsController.productDetail);
 router.get('/:id/edit', productsController.editProduct);
 router.put('/:id/edit', middUploadProductImage.uploadFile, middProducts.registerProductValidation, productsController.putEditProduct);
 
-// Rutas para eliminar un producto
+// Rutas para deshabilitar un producto
 router.get('/:id/delete', productsController.formuDelete);
 router.put('/:id/delete', productsController.delete);
 
