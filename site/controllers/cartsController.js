@@ -231,24 +231,22 @@ let cartsController = {
         });
     },
     'finishedCart': function(req,res){
-        db.Cart.max("id",
-        {
-            where: {
-                user_id: req.session.usuarioLogueado.id,
-            }
-        })
-        .then(function(maxId){
-            db.Cart.update({
-                where:{
-                    id: maxId
-                },
+        db.Cart.update({
                 finished: true,
-            })
-                .then(function(finishedCart){
+                total: 12345,
+                }, 
+                { where:{
+                        user_id: req.session.usuarioLogueado.id,
+                        finished: false,
+                    },
+                }).then(function(finishedCart){
+                    console.log(finishedCart)
                     res.redirect('/')
-                })
-    })
-    },
+                });
+        }
+
+
+
     // 'address': function(req,res){
     //     let dbStates = db.State.findAll();
     //     let dbUserAddresses = db.Address.findAll({

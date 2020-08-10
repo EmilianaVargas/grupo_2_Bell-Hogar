@@ -903,3 +903,9 @@ label{
 .btnProduct{
   text-align: right;
 }
+
+.p-stock{
+  color: var(--azul-oscuro);
+  font-size: 12px;
+  font-weight: lighter;
+}

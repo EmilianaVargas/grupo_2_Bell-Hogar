@@ -23,7 +23,8 @@ router.delete('/:id', cartsController.deleteCart);
 
 // Confirmacion de carrito
 router.get('/productCartPayment', middInvitados, cartsController.productCartPayment);
-router.post('/productCartPayment', middInvitados, cartsController.finishedCart);
+router.post('/productCartPayment/finish', middInvitados, cartsController.finishedCart);
+
 //router.put('/:id', cartsController.update);
 
 
