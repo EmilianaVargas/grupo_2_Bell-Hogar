@@ -41,19 +41,17 @@ let cartsController = {
             })
         }
     },
-
     'productCart': function(req,res){
         cartsController.renderCart(req,res);
     },
     'productCartPayment': function(req,res){
-        db.Address.findOne({
-            where: {
-                user_id: req.session.usuarioLogueado.id
-            }
-        }).then((address) => {
-            console.log(address);
-            return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado, address} );
-        })
+        if(req.session.usuarioLogueado == undefined){
+            res.render('users/error-invitados')
+        } else {
+            db.User.findByPk(req.session.usuarioLogueado.id).then((address) => {
+                return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado} );
+            })
+        }
     },
     'addOneProduct': function(req,res){
         if(req.session.usuarioLogueado == undefined){
@@ -174,12 +172,12 @@ let cartsController = {
                     product_id: product_id
                 }
             }).then(function(){
-                db.CartProduct.findAndCountAll({
+                db.CartProduct.count({
                     where: {
                         cart_id: cart.id,
                     }
                 }).then(function(count){
-                    if(count["count"] === 0){
+                    if(count === 0){
                         db.Cart.destroy({
                             where: {
                                 user_id: user_id,

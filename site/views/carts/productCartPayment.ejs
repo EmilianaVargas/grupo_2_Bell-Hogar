@@ -19,20 +19,8 @@
                         <input class="cart-payment-input col-12" type="text" readonly value="<%= usuario.dni_cuit %>">
                     <label class="cart-payment-data col-12" for="">Teléfono</label>
                         <input class="cart-payment-input col-12" type="text" readonly value="<%= usuario.phone %>">
-                    <div class="form-row">
-                      <div class="col-5">
-                        <label class="cart-payment-data " for="">Domicilio</label><br>
-                          <input class="cart-payment-input form-control" type="text" readonly value="<%= address.address %>">
-                      </div>
-                      <div class="col">
-                        <label class="cart-payment-data" for="">CP</label><br>
-                          <input class="cart-payment-input form-control" type="text" readonly value="<%= address.zip_code %>">
-                      </div>
-                      <div class="col-5">
-                          <label class="cart-payment-data" for="">Localidad</label><br>
-                          <input class="cart-payment-input form-control" type="text" readonly value="<%= address.locality %>">
-                      </div>
-                        </div>
+                    <label class="cart-payment-data col-12" for="">Domicilio</label>
+                        <input class="cart-payment-input col-12" type="text" readonly value="<%= usuario.adress %>">
                       <label class="cart-payment-data col-12" for="">Email</label>
                         <input class="cart-payment-input col-12" type="text" readonly value="<%= usuario.email %>">
                 </form>
