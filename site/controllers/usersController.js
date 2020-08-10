@@ -90,7 +90,15 @@ let usersController = {
     },
     'profile': function(req,res){
         if(req.session.usuarioLogueado != undefined){
-            res.render('users/newProfile',{usuario: req.session.usuarioLogueado})
+            db.Cart.findAll({
+                where: {
+                    user_id: req.session.usuarioLogueado.id,
+                    finished: 1
+                }
+            })
+            .then(function(cart){
+                res.render('users/newProfile',{usuario: req.session.usuarioLogueado, cart: cart})
+            })
         } else {
             res.render('users/error-invitados')
         }

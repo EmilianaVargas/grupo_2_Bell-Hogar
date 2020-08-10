@@ -6,6 +6,9 @@ let apiProductsController = {
     'productsList':function(req,res){
         db.product.findAll({
             attributes: {exclude:["description","subcategory","image1","image2","image3","image4",]},
+            where:{
+                enabled:1
+            }
         })
             .then(function(products){
                 let respuesta = {

@@ -30,48 +30,20 @@
                         <span class="col-3 delivery-profile">Entrega</span>
                         <span class="col-6 col-md-3">Estado</span>
                     </div>
-                    <div class="order-date col-12">
-                        <span class="col-6 col-md-3">215</span>
-                        <span class="col-3 date-profile">12/12/2020</span>
-                        <span class="col-3 delivery-profile">A domicilio</span>
-                        <span class="col-6 col-md-3">Entregado</span>
-                    </div>
-                    <div class="order-date col-12">
-                        <span class="col-6 col-md-3">347</span>
-                        <span class="col-3 date-profile">11/1/2020</span>
-                        <span class="col-3 delivery-profile">A domicilio</span>
-                        <span class="col-6 col-md-3">Entregado</span>
-                    </div>
-                    <div class="order-date col-12">
-                        <span class="col-6 col-md-3">625</span>
-                        <span class="col-3 date-profile">12/2/2020</span>
-                        <span class="col-3 delivery-profile">Retiro en depósito</span>
-                        <span class="col-6 col-md-3">Entregado</span>
-                    </div>
-                    <div class="order-date col-12">
-                        <span class="col-6 col-md-3">715</span>
-                        <span class="col-3 date-profile">22/3/2020</span>
-                        <span class="col-3 delivery-profile">A domicilio</span>
-                        <span class="col-6 col-md-3">Entregado</span>
-                    </div>
-                    <div class="order-date col-12">
-                        <span class="col-6 col-md-3">810</span>
-                        <span class="col-3 date-profile">24/5/2020</span>
-                        <span class="col-3 delivery-profile">Retiro en depósito</span>
-                        <span class="col-6 col-md-3">Entregado</span>
-                    </div>
-                    <div class="order-date col-12">
-                        <span class="col-6 col-md-3">1003</span>
-                        <span class="col-3 date-profile">30/7/2020</span>
-                        <span class="col-3 delivery-profile">A domicilio</span>
-                        <span class="col-6 col-md-3">Pendiente</span>
-                    </div>
-                    <div class="order-date col-12">
-                        <span class="col-6 col-md-3">1003</span>
-                        <span class="col-3 date-profile">5/8/2020</span>
-                        <span class="col-3 delivery-profile">A domicilio</span>
-                        <span class="col-6 col-md-3">Pendiente</span>
-                    </div>
+                    <% if (cart.length != 0) { %>
+                     <% cart.forEach(cart => { %>
+                            <div class="order-date col-12">
+                                <span class="col-6 col-md-3"><%= cart.id %> </span> 
+                                <span class="col-3 date-profile"><%= cart.created_at %> </span>
+                                <span class="col-3 delivery-profile">A domicilio</span>
+                                <span class="col-6 col-md-3">Pendiente</span>
+                            </div>
+                        <% }) %>
+                        <% } else { %>
+                            <div class="order-date col-12">
+                                <h5 class="no-order col-12">Todavía no hay ningún pedido realizado</h5>
+                            </div>
+                    <% } %>
                     <br><form class="profile-btn-mob" action="/users/logout" method="POST">
                         <button class="profile-btn" id="logout" type="submit">Cerrar Sesión</button>
                     </form>
