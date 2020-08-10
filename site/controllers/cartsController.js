@@ -51,8 +51,37 @@ let cartsController = {
         if(req.session.usuarioLogueado == undefined){
             res.render('users/error-invitados')
         } else {
-            db.User.findByPk(req.session.usuarioLogueado.id).then((usuario) => {
-                return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado, toThousand, formatPrice } );
+            db.User.findByPk(req.session.usuarioLogueado.id)
+            .then((usuario) => {
+                db.Cart.findOne({
+                    where:{
+                        user_id: usuario.id,
+                        finished: false,
+                    },
+                    include:[
+                        {association:"Product"},
+                    ],
+                }).then(function(cart) {
+                    if(cart){
+                        db.CartProduct.findAll({
+                            where:{
+                                cart_id: cart.id,
+                            }
+                        }).then(function(cart_products) {
+                            let total = 0;
+
+                            if(cart_products){
+                                cart_products.forEach((product, i) => {
+                                    total += product.subtotal;
+                                });
+                            }
+
+                            return res.render("carts/productCartPayment",{usuario, cart, cart_products, total, toThousand, formatPrice});
+                        })
+                    }
+                })
+            }).catch(function(error) {
+                console.log(error);
             })
         }
     },
@@ -234,7 +263,7 @@ let cartsController = {
         db.Cart.update({
                 finished: true,
                 total: 12345,
-                }, 
+                },
                 { where:{
                         user_id: req.session.usuarioLogueado.id,
                         finished: false,

@@ -36,61 +36,38 @@
                     <br><br><input type ="radio" name = "pago" value="debito"> Tarjeta de débito
                 </form>
             </div>
+
+        <!-- resumen carrito confirmado -->
             <div class="cart-payment-right col-5">
                 <div class="products-payment col-12">
                 <p class="cart-payment-title2">Resumen de tu compra</p>
+                <% cart.Product.forEach((product, i) => { %>
                     <div class="products-cart-payment">
                         <div class="col-6">
-                            <img class="cart-payment-img" src="/images/sofa3.jpg" alt="">
+                            <img class="cart-payment-img" src="/images/electrodomesticos/<%= product.name %> - imagen 2.jpg" alt="">
                         </div>
                         <div class="col-6">
-                            <span class="p-right-cart col-2">Sillón Verde Living</span>
-                            <span class="p-right-cart col-2">$15.000</span>
-                            <span class="p-right-cart col-2">Cantidad: 1</span>
+                            <span class="p-right-cart col-2"><%= product.name %></span>
+                            <span class="p-right-cart col-2">$ <%= formatPrice(product.price) %></span>
+                            <span class="p-right-cart col-2">Cantidad: <%= cart_products[i].units %></span>
                        </div>
                     </div>
-                    <div class="products-cart-payment">
-                        <div class="col-6">
-                            <img class="cart-payment-img" src="/images/sofa3.jpg" alt="">
-                        </div>
-                        <div class="col-6">
-                            <span class="p-right-cart col-2">Sillón Verde Living</span>
-                            <span class="p-right-cart col-2">$15.000</span>
-                            <span class="p-right-cart col-2">Cantidad: 2</span>
-                       </div>
-                    </div>
+                <% }); %>
                 </div>
                 <div class="cart-totals col-10 col-md-12">
                     <div class="total-title col-4 col-md-6">
-                        <span class="col-12 total-cart-payment">Subtotal: </span>
-                        <span class="col-12 total-cart-payment">Descuento: </span>
                         <span class="col-12 total-cart-payment">Total: </span>
                     </div>
                     <div class="total-prices col-4 col-md-6">
-                        <span class="col-12 total-cart-payment">$45.000</span>
-                        <span class="col-12 total-cart-payment">$0</span>
-                        <span class="col-12 total-cart-payment">$45.000</span>
+                        <span class="col-12 total-cart-payment">$<%= formatPrice(total) %></span>
                     </div>
                 </div>
             </div>
             <div class="cart-payment-btn col-12">
                 <form action="/carts/productCartPayment/finish" method="POST">
-                    <button type="submit" class="col-12 col-md-2 end-cart-btn">Siguiente</button>
+                    <button type="submit" class="end-cart-btn">Siguiente</button>
                 </form>
-                <button class="col-12 col-md-2 cart-btn">Volver atrás</button>
-            </div>
-            <div class="cart-total-mob col-12">
-                <span class="col-12 total-cart-payment-mob">Resumen de tu compra</span>
-                <div class="total-title-mob col-6">
-                    <span class="col-12 total-cart-payment">Subtotal: </span>
-                    <span class="col-12 total-cart-payment">Descuento: </span>
-                    <span class="col-12 total-cart-payment">Total: </span>
-                </div>
-                <div class="total-prices-mob col-6">
-                    <span class="col-12 total-cart-payment">$45.000</span>
-                    <span class="col-12 total-cart-payment">$0</span>
-                    <span class="col-12 total-cart-payment">$45.000</span>
-                </div>
+                <button class="col-12 col-md-2 cart-btn" Onclick="location.href='/carts/productCart'">Volver atrás</button>
             </div>
         </div>
     </div>
