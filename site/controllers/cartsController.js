@@ -230,6 +230,25 @@ let cartsController = {
             carritoController.renderWithMessage(req, res, mensaje, status);
         });
     },
+    'finishedCart': function(req,res){
+        db.Cart.max("id",
+        {
+            where: {
+                user_id: req.session.usuarioLogueado.id,
+            }
+        })
+        .then(function(maxId){
+            db.Cart.update({
+                where:{
+                    id: maxId
+                },
+                finished: true,
+            })
+                .then(function(finishedCart){
+                    res.redirect('/')
+                })
+    })
+    },
     // 'address': function(req,res){
     //     let dbStates = db.State.findAll();
     //     let dbUserAddresses = db.Address.findAll({
@@ -290,5 +309,4 @@ let cartsController = {
     //         }
     // },
 }
-
 module.exports = cartsController
