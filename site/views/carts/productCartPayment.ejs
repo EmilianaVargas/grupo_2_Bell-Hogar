@@ -43,13 +43,13 @@
                 <p class="cart-payment-title2">Resumen de tu compra</p>
                 <% cart.Product.forEach((product, i) => { %>
                     <div class="products-cart-payment">
-                        <div class="col-6">
+                        <div class="col-5">
                             <img class="cart-payment-img" src="/images/electrodomesticos/<%= product.name %> - imagen 2.jpg" alt="">
                         </div>
-                        <div class="col-6">
-                            <span class="p-right-cart col-2"><%= product.name %></span>
-                            <span class="p-right-cart col-2">$ <%= formatPrice(product.price) %></span>
-                            <span class="p-right-cart col-2">Cantidad: <%= cart_products[i].units %></span>
+                        <div class="products-cart-payment-data col-7">
+                            <span class="p-right-cart-name col-12"><%= product.name %></span>
+                            <span class="p-right-cart col-12">$ <%= formatPrice(product.price) %></span>
+                            <span class="p-right-cart col-12">Cantidad: <%= cart_products[i].units %></span>
                        </div>
                     </div>
                 <% }); %>

@@ -125,6 +125,10 @@ h5.rebaja{
   color: white;
 }
 
+.products-cart-payment-data{
+  display:flex;
+  flex-wrap: wrap;
+}
 
 /* .nuestraHistoria{
   margin-bottom: 15px;
@@ -203,7 +207,6 @@ h5.rebaja{
 .profile-btn-desktop{
   display:none;
 }
-
 
 /* para desktop */
 @media (min-width: 500px) {
@@ -641,7 +644,6 @@ h5.rebaja{
   .products-cart-payment{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     margin-top: 1%;
     text-align: center;
   }
