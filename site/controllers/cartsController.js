@@ -4,6 +4,9 @@ const {check, validationResult,body } = require('express-validator');
 let db=require('../database/models');
 const sequelize = db.sequelize;
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const formatPrice = (price) => toThousand(Math.round(price));
+
 let cartsController = {
     'renderCart' : function(req,res, mensaje = null, status = null){
         if(req.session.usuarioLogueado == undefined){
@@ -12,8 +15,8 @@ let cartsController = {
             db.Cart.findOne({
                 where:{
                     user_id: req.session.usuarioLogueado.id,
+                    finished: false,
                 },
-                finished: 0,
                 include:[
                     {association:"Product"},
                 ],
@@ -32,11 +35,11 @@ let cartsController = {
 
                             let msj = mensaje;
                             let stat = status;
-                            res.render('carts/productCart',{usuario: req.session.usuarioLogueado, cart, cart_products, total, mensaje: msj, status: stat});
+                            res.render('carts/productCart',{usuario: req.session.usuarioLogueado, cart, cart_products,  toThousand, formatPrice, total, mensaje: msj, status: stat});
                         }
                     })
                 } else {
-                    res.render('carts/productCart',{usuario: req.session.usuarioLogueado, cart: undefined, mensaje: undefined, status: undefined});
+                    res.render('carts/productCart',{usuario: req.session.usuarioLogueado, toThousand, formatPrice, cart: undefined, mensaje: undefined, status: undefined});
                 }
             })
         }
@@ -48,8 +51,8 @@ let cartsController = {
         if(req.session.usuarioLogueado == undefined){
             res.render('users/error-invitados')
         } else {
-            db.User.findByPk(req.session.usuarioLogueado.id).then((address) => {
-                return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado} );
+            db.User.findByPk(req.session.usuarioLogueado.id).then((usuario) => {
+                return res.render("carts/productCartPayment",{usuario: req.session.usuarioLogueado, toThousand, formatPrice } );
             })
         }
     },
@@ -60,7 +63,7 @@ let cartsController = {
             db.Cart.findOrCreate({
                 where:{
                     user_id: req.session.usuarioLogueado.id,
-                    finished: 0,
+                    finished: false,
                 },
                 defaults: {
                     total: 0,
@@ -120,7 +123,7 @@ let cartsController = {
                     db.Cart.findOne({
                         where:{
                             user_id: user_id,
-                            finished: 0,
+                            finished: false,
                         }
                     }).then(function(cart) {
                         db.CartProduct.findOne({
@@ -163,7 +166,7 @@ let cartsController = {
         db.Cart.findOne({
             where:{
                 user_id: user_id,
-                finished: 0,
+                finished: false,
              }
         }).then(function(cart) {
             db.CartProduct.destroy({

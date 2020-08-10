@@ -6,6 +6,9 @@ const Op = Sequelize.Op;
 const {check, validationResult,body } = require('express-validator');
 var mensajeNews = " ";
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const formatPrice = (price) => toThousand(Math.round(price));
+
 let productsController = {
     'products': function(req,res){
         db.product.findAll({
@@ -14,21 +17,21 @@ let productsController = {
             }
         })
         .then(function(product){
-            res.render('products/products',{product, usuario: req.session.usuarioLogueado});
+            res.render('products/products',{product, usuario: req.session.usuarioLogueado, toThousand, formatPrice});
         })
     },
     'productDetail': function(req,res){
         db.product.findByPk(req.params.id)
         .then(function(product){
             if (req.session.usuarioLogueado == undefined) {
-                return res.render('products/productDetail', {product, usuario: undefined});
+                return res.render('products/productDetail', {product, usuario: undefined, toThousand, formatPrice});
             }else{
-                return res.render('products/productDetail', {product, usuario: req.session.usuarioLogueado});
+                return res.render('products/productDetail', {product, usuario: req.session.usuarioLogueado, toThousand, formatPrice});
             }
         })
     },
     'createProduct': function(req,res){
-        res.render('products/productAdd',{usuario: req.session.usuarioLogueado});
+        res.render('products/productAdd',{usuario: req.session.usuarioLogueado , toThousand, formatPrice});
     },
     'postProduct': function(req,res){
         let errors = validationResult(req); // validar variable errors
@@ -41,7 +44,6 @@ let productsController = {
             }
             errors.errors.push(nuevoError);
         };
-        
         if(errors.errors.length == 0){
             db.product.create({
                 name: req.body.nombre,
@@ -59,24 +61,24 @@ let productsController = {
             .then((creacion) => {
                 console.log(req.files);
                 if (!creacion) {
-                    res.render('index', { errors:errors.errors, mensajeNews: mensajeNews, usuario: req.session.usuarioLogueado})
+                    res.render('index', { errors:errors.errors, mensajeNews: mensajeNews, usuario: req.session.usuarioLogueado, toThousand, formatPrice})
                 } else {
                     mensaje = "¡El producto se creó exitosamente!";
-                    return res.render('index',{mensaje: mensaje, mensajeNews: mensajeNews, status: "success", usuario:req.session.usuarioLogueado});
+                    return res.render('index',{mensaje: mensaje, mensajeNews: mensajeNews, status: "success", usuario:req.session.usuarioLogueado, toThousand, formatPrice});
                 }
             })
             .catch(function(err){
                 console.log(err);
             })
         } else {
-            return res.render("products/productAdd",{errors: errors.errors, usuario: req.session.usuarioLogueado} );
+            return res.render("products/productAdd",{errors: errors.errors, usuario: req.session.usuarioLogueado, toThousand, formatPrice} );
         }
     },
     'editProduct': function(req,res){
         db.product.findByPk(req.params.id)
         .then(function(product){
             if (product != null) {
-                return res.render('products/editProduct', {product, usuario: req.session.usuarioLogueado});
+                return res.render('products/editProduct', {product, usuario: req.session.usuarioLogueado, toThousand, formatPrice});
             }else{
                 return res.render('products/editProductError', {usuario: req.session.usuarioLogueado});
             }
@@ -130,7 +132,7 @@ let productsController = {
     db.product.findByPk(req.params.id)
     .then(function(product){
         if (product != null) {
-            return res.render('products/deleteProduct',{product,usuario: req.session.usuarioLogueado});
+            return res.render('products/deleteProduct',{product,usuario: req.session.usuarioLogueado, toThousand, formatPrice});
         }else{
             return res.render('products/editProductError',{usuario: req.session.usuarioLogueado});
         }
@@ -150,9 +152,9 @@ let productsController = {
     db.product.findByPk(req.params.id)
     .then(function(product){
         if (product != null) {
-            return res.render('products/habilitarProd',{product,usuario: req.session.usuarioLogueado});
+            return res.render('products/habilitarProd',{product,usuario: req.session.usuarioLogueado, toThousand, formatPrice});
         }else{
-            return res.render('products/editProductError',{usuario: req.session.usuarioLogueado});
+            return res.render('products/editProductError',{usuario: req.session.usuarioLogueado, toThousand, formatPrice});
         }
     })
 },
@@ -169,7 +171,7 @@ let productsController = {
 'admProd':function(req,res){
     db.product.findAll()
         .then(function(product){
-            res.render("products/admProd",{product:product,usuario:req.session.usuarioLogueado})
+            res.render("products/admProd",{product:product,usuario:req.session.usuarioLogueado, toThousand, formatPrice})
         })
 },
 'search': function(req,res){
@@ -201,7 +203,7 @@ let productsController = {
             mensaje = "Se encontraron los siguientes resultados para: ";
         }
 
-        res.render("products/productsSearch",{product, mensaje, search: req.body.search,  usuario:req.session.usuarioLogueado})
+        res.render("products/productsSearch",{product, mensaje, search: req.body.search,  usuario:req.session.usuarioLogueado, toThousand, formatPrice})
     })
     .catch(function(error){
         console.log(error)

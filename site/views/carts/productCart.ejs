@@ -39,7 +39,7 @@
                     <% cart.Product.forEach((product, i) => { %>
                         <img class="col-6 col-md-2" src="/images/electrodomesticos/<%= product.name %> - imagen 2.jpg"  alt="">
                         <span class="col-3 col-md-2 cart-title2"><%= product.name %></span>
-                        <span class="col-3 col-md-2 cart-title2">$<%=  product.price %></span>
+                        <span class="col-3 col-md-2 cart-title2">$<%= formatPrice(product.price) %></span>
                         <span class="col-6 span-mobile"></span>
                         <span class="col-3 col-md-2 cart-title2">
                             <form action="/carts/<%=product.id%>?_method=PUT" method="post">
@@ -51,7 +51,7 @@
                                 </td>
                              </form>
                         </span>
-                        <span class="col-md-2 cart-title2 subt-cart">$<%= cart_products[i].subtotal %></span>
+                        <span class="col-md-2 cart-title2 subt-cart">$<%= formatPrice(cart_products[i].subtotal) %></span>
                         <span class="col-3 col-md-2 cart-title2">
                             <form class="" action="/carts/product/<%=product.id%>?_method=DELETE" method="post">
                                  <button class="cart-btn" type="submit" value="" name="delete" title="Eliminar producto"><i class="fas fa-trash"></i></button>
@@ -62,7 +62,7 @@
                 <div class="total-cart-div col-12">
                     <span class="col-6 cart-title2">Total</span>
                     <span class="col-2 cart-title2"></span>
-                    <span class="col-2 cart-title2">$<%= total %></span>
+                    <span class="col-2 cart-title2">$<%= formatPrice(total) %></span>
 
                     <span class="col-2 cart-title2"></span>
                 </div>
