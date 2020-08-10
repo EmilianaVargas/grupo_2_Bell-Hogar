@@ -37,7 +37,7 @@
                 </div>
                 <div class="cart-div col-12">
                     <% cart.Product.forEach((product, i) => { %>
-                        <img class="col-6 col-md-2" src="/images/<%= product.image1 %>"  alt="">
+                        <img class="col-6 col-md-2" src="/images/electrodomesticos/<%= product.name %> - imagen 2.jpg"  alt="">
                         <span class="col-3 col-md-2 cart-title2"><%= product.name %></span>
                         <span class="col-3 col-md-2 cart-title2">$<%=  product.price %></span>
                         <span class="col-6 span-mobile"></span>
@@ -47,7 +47,7 @@
                                     <input type="number" name="cantidad" value="<%= cart_products[i].units %>" min="1" pattern="^[0-9]+" class="contador-cart">
                                 </td>
                                 <td>
-                                   <input class="icon-update" type="submit" value="ok" width="5" name="guardar" title="Pincha aquí para guardar la configuración del ítem">
+                                   <input class="icon-update" type="submit" value="Aplicar" width="5" name="guardar" title="Pincha aquí para guardar la configuración del ítem">
                                 </td>
                              </form>
                         </span>
