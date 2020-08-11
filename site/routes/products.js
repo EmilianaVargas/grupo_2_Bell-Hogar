@@ -22,7 +22,7 @@ router.get('/:id', productsController.productDetail);
 
 // Rutas de Actualización de productos
 router.get('/:id/edit', productsController.editProduct);
-router.put('/:id/edit', middUploadProductImage.uploadFile, middProducts.registerProductValidation, productsController.putEditProduct);
+router.put('/:id/edit', middProducts.registerProductValidation, middUploadProductImage.uploadFile, productsController.putEditProduct);
 
 // Rutas para deshabilitar un producto
 router.get('/:id/delete', productsController.formuDelete);

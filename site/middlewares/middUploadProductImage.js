@@ -3,7 +3,7 @@ const path = require('path');
 
 // Start File uploads config ---------------------------------------------------------
 var storage = multer.diskStorage({
-  destination: path.join(__dirname,'../public/images'),
+  destination: path.join(__dirname,'../public/images/electrodomesticos'),
   filename: function (req, file, cb) {
     cb(null, file.originalname);
     console.log(file);
